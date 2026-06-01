@@ -317,7 +317,7 @@ export default function App() {
       setIsSubmitting(false);
     }, 500);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
     setTimeout(() => {
