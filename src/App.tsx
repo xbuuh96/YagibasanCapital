@@ -31,7 +31,6 @@ import {
 function Impressum() {
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
-      {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a
           href="#"
@@ -53,14 +52,11 @@ function Impressum() {
         </div>
       </nav>
 
-      {/* Impressum Content */}
       <section className="py-20 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#e0937a] rounded-full blur-[250px] opacity-10 pointer-events-none"></div>
-
         <h1 className="text-4xl md:text-5xl font-bold font-serif-elegant mb-16 text-[#e0937a] drop-shadow-[0_0_15px_rgba(224,147,122,0.2)]">
           Impressum
         </h1>
-
         <div className="space-y-12 text-gray-300 font-light leading-relaxed relative z-10">
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
@@ -74,7 +70,6 @@ function Impressum() {
               57271 Hilchenbach
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
               Kontakt
@@ -91,7 +86,6 @@ function Impressum() {
               </a>
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
@@ -104,7 +98,6 @@ function Impressum() {
               57271 Hilchenbach
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
               Tätigkeitsbeschreibung
@@ -123,7 +116,6 @@ function Impressum() {
               </span>
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
               EU-Plattform zur Online-Streitbeilegung
@@ -142,7 +134,6 @@ function Impressum() {
               finden.
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-semibold text-[#efe7dd] mb-4 border-b border-[#e0937a]/20 pb-2">
               Verbraucherstreitbeilegung / Universalschlichtungsstelle
@@ -175,7 +166,7 @@ Untere Wiesenstra&szlig;e 30<br />
 57271 Hilchenbach</p>
 <p>Telefon: 015753698917<br />
 E-Mail: Office@yagibasan-capital.de</p>
- <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
+<p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
 <h3>Speicherdauer</h3> <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.</p>
 <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3> <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.</p>
 <h3>Empf&auml;nger von personenbezogenen Daten</h3> <p>Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine &Uuml;bermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.</p>
@@ -184,7 +175,7 @@ E-Mail: Office@yagibasan-capital.de</p>
 <h3>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h3> <p>Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
 <h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3> <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
 <h3>Auskunft, Berichtigung und L&ouml;schung</h3> <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
-<h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3> <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p> <ul> <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li> <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> </ul> <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderer nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+<h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3> <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p> <ul> <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li> <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> </ul> <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer another nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
 <h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3> <p>Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &bdquo;http://&ldquo; auf &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p> <p>Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist, k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen werden.</p>
 <h2>4. Datenerfassung auf dieser Website</h2>
 <h3>Cookies</h3> <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt.</p> <p>Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p> <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p> <p>Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.</p> <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p> <p>Sofern weitere Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dies dieser Datenschutzerkl&auml;rung entnehmen.</p>
@@ -198,7 +189,6 @@ E-Mail: Office@yagibasan-capital.de</p>
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
-      {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a
           href="#"
@@ -220,7 +210,6 @@ E-Mail: Office@yagibasan-capital.de</p>
         </div>
       </nav>
 
-      {/* Datenschutz Content */}
       <section className="py-20 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative">
         <style
           dangerouslySetInnerHTML={{
@@ -239,7 +228,6 @@ E-Mail: Office@yagibasan-capital.de</p>
           }}
         />
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#e0937a] rounded-full blur-[250px] opacity-10 pointer-events-none"></div>
-
         <div
           className="datenschutz-content relative z-10"
           dangerouslySetInnerHTML={{ __html: datenschutzHTML }}
@@ -258,13 +246,10 @@ export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  // Neue DSGVO-Zustände (Checkboxen)
   const [budgetConsent, setBudgetConsent] = useState(false);
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [auditConsent, setAuditConsent] = useState(false);
 
-  // Routing Listener für die Unterseiten
   useEffect(() => {
     const onHashChange = () => {
       const hash = window.location.hash;
@@ -282,33 +267,6 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
-  const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
-
-  const handleOpenModal = (e) => {
-    e.preventDefault();
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    document.body.style.overflow = "auto";
-    setTimeout(() => {
-      setIsSuccess(false);
-      setIsSubmitting(false);
-    }, 500);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSuccess(true);
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  // Coast FIRE Countdown Logik (12. Juni 2030)
   useEffect(() => {
     const targetDate = new Date("2030-06-12T00:00:00").getTime();
     const updateCountdown = () => {
@@ -330,27 +288,42 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // DSGVO: Cookiebot Script Injektion in den <head>
   useEffect(() => {
-    /* 
-      HINWEIS ZUM "SCRIPT ERROR":
-      Externe Scripts wie Cookiebot werfen in Vorschau-Umgebungen einen "Script error.",
-      da die Vorschau-URL noch nicht in deinem Cookiebot-Account registriert ist.
-      Um die Vorschau fehlerfrei zu halten, ist das Skript hier auskommentiert.
-      
-      FÜR DEN LIVE-BETRIEB: 
-      Füge dieses Script direkt in die "index.html" (bzw. Site-Settings <head>) deines 
-      Web-Builders ein. Das Einbinden über React (useEffect) passiert oft zu spät, 
-      um Drittanbieter (wie Analytics) im Auto-Blocking-Modus zuverlässig zu stoppen!
+    // Cookiebot script is commented out here to prevent "Script error." in the preview environment.
+    // For live operation, copy the script tag directly into the <head> of your web builder.
+    /*
+    const script = document.createElement('script');
+    script.id = 'Cookiebot';
+    script.src = 'https://consent.cookiebot.com/uc.js';
+    script.setAttribute('data-cbid', '37adc352-7e27-4515-94ae-07a745cdc031');
+    script.setAttribute('data-blockingmode', 'auto');
+    script.type = 'text/javascript';
+    document.head.appendChild(script);
     */
-    // const script = document.createElement('script');
-    // script.id = 'Cookiebot';
-    // script.src = 'https://consent.cookiebot.com/uc.js';
-    // script.setAttribute('data-cbid', '37adc352-7e27-4515-94ae-07a745cdc031');
-    // script.setAttribute('data-blockingmode', 'auto');
-    // script.type = 'text/javascript';
-    // document.head.appendChild(script);
   }, []);
+
+  const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
+  const handleOpenModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = "auto";
+    setTimeout(() => {
+      setIsSuccess(false);
+      setIsSubmitting(false);
+    }, 500);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSuccess(true);
+      setIsSubmitting(false);
+    }, 1500);
+  };
 
   const depotWerte = { etfs: 55, aktien: 37, krypto: 8 };
   const colors = { etfs: "#efe7dd", aktien: "#e0937a", krypto: "#c5a059" };
@@ -369,7 +342,6 @@ export default function App() {
     return { pct: 100, label: "Echtes Geld", color: "#efe7dd" };
   };
   const centerData = getCenterText();
-
   const circumference = 2 * Math.PI * 40;
   const kryptoOffset = 0;
   const aktienOffset = -((depotWerte.krypto / 100) * circumference);
@@ -434,7 +406,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
-      {/* Google Fonts & Smooth Scrolling */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -445,7 +416,6 @@ export default function App() {
         }}
       />
 
-      {/* Navigation */}
       <nav className="sticky top-0 z-[100] flex items-center justify-between px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-300">
         <div className="flex items-center">
           <img
@@ -471,13 +441,11 @@ export default function App() {
         </div>
       </nav>
 
-      {/* SECTION 1: HERO */}
       <section className="relative px-6 py-16 overflow-hidden md:py-24 md:px-12 lg:px-24">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#e0937a] rounded-full blur-[250px] opacity-10 pointer-events-none"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-24">
           <div className="w-full md:w-1/2 flex flex-col items-start text-left">
-            {/* Logo und Slogan - Vergrößert und perfekt zueinander zentriert */}
             <div className="flex flex-col items-center mx-auto md:mx-0 mb-12 mt-4">
               <img
                 src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
@@ -488,7 +456,6 @@ export default function App() {
                 Werte für Generationen
               </p>
             </div>
-
             <h1 className="mb-14 leading-[1.1]">
               <span className="block text-[#efe7dd] font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-2 uppercase">
                 Über Geld spricht man nicht?
@@ -497,7 +464,6 @@ export default function App() {
                 Über Geld spricht man!
               </span>
             </h1>
-
             <div className="border-l-4 border-[#e0937a] pl-6 py-4 mb-10 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.3)]">
               <p className="text-2xl md:text-3xl font-semibold text-[#efe7dd] tracking-wide">
                 Schön, dass du hier bist.
@@ -506,7 +472,6 @@ export default function App() {
                 Willkommen bei Yagibasan Capital.
               </p>
             </div>
-
             <p className="text-base md:text-lg text-gray-300 mb-10 leading-relaxed max-w-lg font-light">
               Jeder fängt mal an – ganz egal, ob du neu in der Finanzwelt bist
               oder dein Depot bereits läuft, hier bist du genau richtig. Lass
@@ -532,7 +497,6 @@ export default function App() {
               </a>
             </div>
           </div>
-
           <div className="w-full md:w-1/2 relative flex justify-center md:justify-end mt-12 md:mt-0">
             <div className="absolute inset-0 bg-[#e0937a] blur-[100px] opacity-25 rounded-full scale-75 pointer-events-none"></div>
             <div className="relative w-full max-w-md aspect-[3/4] rounded-t-[10rem] border border-white/5 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center bg-[#1a1a1a] group hover:shadow-[0_0_50px_rgba(224,147,122,0.3)] transition-all duration-500 cursor-pointer">
@@ -546,7 +510,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERMEZZO 1 */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -558,7 +521,6 @@ export default function App() {
         </p>
       </div>
 
-      {/* SECTION 2: ABOUT ME */}
       <section
         id="about"
         className="scroll-mt-32 md:scroll-mt-40 relative bg-[#111] py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
@@ -569,7 +531,6 @@ export default function App() {
             <h2 className="text-[#e0937a] text-sm font-bold tracking-[0.2em] uppercase mb-6">
               Die Realität
             </h2>
-
             <h3 className="mb-10 leading-[1.3]">
               <span className="block text-[#efe7dd] font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 drop-shadow-md">
                 Mein Name ist Burak.
@@ -578,7 +539,6 @@ export default function App() {
                 Ich bin der Gründer von Yagibasan Capital.
               </span>
             </h3>
-
             <div className="border-l-4 border-[#e0937a] pl-6 py-6 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_30px_-10px_rgba(224,147,122,0.3)] mt-12 relative">
               <p className="text-[#efe7dd] font-serif-elegant italic text-xl leading-relaxed">
                 „Ich bin heute nicht hier, um euch zu erzählen, dass ich auf
@@ -587,7 +547,6 @@ export default function App() {
               </p>
             </div>
           </div>
-
           <div className="w-full lg:w-7/12 space-y-6 text-gray-300 leading-relaxed text-lg font-light pt-2">
             <p>
               Und ja, ich bin Angestellter. Genau wie die allermeisten von euch.
@@ -618,7 +577,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 2.5: DIE PHILOSOPHIE */}
       <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -635,7 +593,6 @@ export default function App() {
               Schritten basiert.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#111] border border-white/5 p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-14 h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
@@ -650,7 +607,6 @@ export default function App() {
                 auf. Ohne Fundament stürzt das beste Haus ein.
               </p>
             </div>
-
             <div className="bg-[#111] border border-white/5 p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-14 h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Shield className="w-7 h-7 text-[#e0937a]" />
@@ -664,7 +620,6 @@ export default function App() {
                 kannst – egal was im Alltag passiert.
               </p>
             </div>
-
             <div className="bg-[#111] border border-white/5 p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-14 h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <TrendingUp className="w-7 h-7 text-[#e0937a]" />
@@ -682,7 +637,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 2.7: MEIN VERSPRECHEN */}
       <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-[#111] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
@@ -703,7 +657,6 @@ export default function App() {
               </p>
             </div>
           </div>
-
           <div className="w-full lg:w-7/12 flex flex-col gap-10">
             <div className="flex gap-6 items-start group">
               <div className="mt-1 bg-[#1a1a1a] p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
@@ -720,7 +673,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
             <div className="flex gap-6 items-start group">
               <div className="mt-1 bg-[#1a1a1a] p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <ShieldCheck className="w-8 h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
@@ -736,7 +688,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
             <div className="flex gap-6 items-start group">
               <div className="mt-1 bg-[#1a1a1a] p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <Settings className="w-8 h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
@@ -752,7 +703,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
             <div className="flex gap-6 items-start group">
               <div className="mt-1 bg-[#1a1a1a] p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <MessageCircle className="w-8 h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
@@ -772,52 +722,48 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 2.8: ZAHLEN & FAKTEN */}
       <section className="relative py-12 px-6 md:px-12 lg:px-24 border-y border-[#e0937a]/20 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#e0937a]/15 via-transparent to-[#e0937a]/15 pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-[#e0937a]/20">
-          <div className="px-4">
-            <h4 className="text-3xl md:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 items-center md:divide-x md:divide-[#e0937a]/20 gap-8 md:gap-0">
+          <div className="px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-serif-elegant text-[#e0937a] mb-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
+              Einer von euch
+            </h4>
+            <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">
+              Von Arbeitnehmer für Arbeitnehmer
+            </p>
+          </div>
+          <div className="px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
               Top 1%
             </h4>
             <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">
               Altersklasse in DE
             </p>
-            <p className="text-[10px] text-gray-500 font-light mt-1">
-              (ohne Erbe)
-            </p>
+            <p className="text-xs text-gray-500 font-light mt-1">(ohne Erbe)</p>
           </div>
-          <div className="px-4">
-            <h4 className="text-3xl md:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-              100%
-            </h4>
-            <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">
-              Skin in the Game
-            </p>
-          </div>
-          <div className="px-4">
-            <h4 className="text-3xl md:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
+          <div className="px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
               100%
             </h4>
             <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">
               Unabhängig
             </p>
-            <p className="text-[10px] text-gray-500 font-light mt-1">
+            <p className="text-xs text-gray-500 font-light mt-1">
               (Keine Provisionen)
             </p>
           </div>
-          <div className="px-4">
-            <h4 className="text-3xl md:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-              0
+          <div className="px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
+              Fokus
             </h4>
             <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">
-              Leere Versprechen
+              Erfolg braucht Geduld, nicht Glück
             </p>
           </div>
         </div>
       </section>
 
-      {/* INTERMEZZO 2 */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -829,7 +775,6 @@ export default function App() {
         </p>
       </div>
 
-      {/* SECTION 3: DEPOT (Interaktiv & Countdown) */}
       <section
         id="depot"
         className="scroll-mt-32 md:scroll-mt-40 relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#111]"
@@ -849,7 +794,6 @@ export default function App() {
               aufzubauen.
             </p>
           </div>
-
           <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-32">
             <div className="relative w-80 h-80 flex items-center justify-center group">
               <svg
@@ -864,7 +808,6 @@ export default function App() {
                   strokeWidth="8"
                   fill="none"
                 />
-
                 <circle
                   cx="50"
                   cy="50"
@@ -888,7 +831,6 @@ export default function App() {
                   onMouseEnter={() => setHoveredAsset("krypto")}
                   onMouseLeave={() => setHoveredAsset(null)}
                 />
-
                 <circle
                   cx="50"
                   cy="50"
@@ -912,7 +854,6 @@ export default function App() {
                   onMouseEnter={() => setHoveredAsset("aktien")}
                   onMouseLeave={() => setHoveredAsset(null)}
                 />
-
                 <circle
                   cx="50"
                   cy="50"
@@ -937,7 +878,6 @@ export default function App() {
                   onMouseLeave={() => setHoveredAsset(null)}
                 />
               </svg>
-
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
                 <span
                   className="text-4xl md:text-5xl font-bold font-serif-elegant transition-colors duration-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
@@ -950,7 +890,6 @@ export default function App() {
                 </span>
               </div>
             </div>
-
             <div className="w-full max-w-md flex flex-col">
               <div className="space-y-2 mb-10">
                 <div
@@ -981,7 +920,6 @@ export default function App() {
                     {depotWerte.etfs} %
                   </span>
                 </div>
-
                 <div
                   className={`flex items-center justify-between py-3 px-4 rounded-xl cursor-pointer transition-all duration-500 border ${
                     hoveredAsset === "aktien"
@@ -1010,7 +948,6 @@ export default function App() {
                     {depotWerte.aktien} %
                   </span>
                 </div>
-
                 <div
                   className={`flex items-center justify-between py-3 px-4 rounded-xl cursor-pointer transition-all duration-500 border ${
                     hoveredAsset === "krypto"
@@ -1040,7 +977,6 @@ export default function App() {
                   </span>
                 </div>
               </div>
-
               <div className="bg-gradient-to-r from-[#e0937a]/15 to-transparent p-6 rounded-lg border border-[#e0937a]/30 shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.4)] relative overflow-hidden group hover:border-[#e0937a]/60 transition-colors">
                 <Clock className="absolute -right-4 -top-4 w-24 h-24 text-[#e0937a] opacity-10 group-hover:scale-110 transition-transform duration-700" />
                 <div className="relative z-10">
@@ -1050,7 +986,6 @@ export default function App() {
                   <p className="text-2xl font-serif-elegant text-[#efe7dd] mb-5">
                     12. Juni 2030
                   </p>
-
                   <div className="flex gap-4">
                     <div className="text-center">
                       <div className="text-2xl md:text-3xl font-bold bg-[#111] px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
@@ -1087,7 +1022,6 @@ export default function App() {
                   </div>
                 </div>
               </div>
-
               <div className="mt-12 p-6 border border-[#e0937a]/30 rounded-xl bg-gradient-to-r from-[#e0937a]/15 via-[#1a1a1a] to-[#111] flex justify-between items-center shadow-[0_10px_30px_rgba(224,147,122,0.2)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.35)] hover:border-[#e0937a]/60 transition-all duration-500 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#e0937a] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="relative z-10">
@@ -1107,7 +1041,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 4: KAUFKRAFT-RECHNER */}
       <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-[#1a1a1a] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -1126,26 +1059,50 @@ export default function App() {
               wird:
             </p>
           </div>
-
           <div className="bg-[#111] rounded-2xl border border-white/5 p-8 md:p-12 shadow-[0_10px_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500/50 via-transparent to-[#e0937a]"></div>
-
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {[5, 10, 20, 30].map((years) => (
-                <button
-                  key={years}
-                  onClick={() => setCalcYears(years)}
-                  className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${
-                    calcYears === years
-                      ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
-                      : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
-                  }`}
-                >
-                  Nach {years} Jahren
-                </button>
-              ))}
+              <button
+                onClick={() => setCalcYears(5)}
+                className={`px-6 md:px-8 py-3 rounded-full font-bold transition-all duration-300 ${
+                  calcYears === 5
+                    ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
+                    : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
+                }`}
+              >
+                Nach 5 Jahren
+              </button>
+              <button
+                onClick={() => setCalcYears(10)}
+                className={`px-6 md:px-8 py-3 rounded-full font-bold transition-all duration-300 ${
+                  calcYears === 10
+                    ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
+                    : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
+                }`}
+              >
+                Nach 10 Jahren
+              </button>
+              <button
+                onClick={() => setCalcYears(20)}
+                className={`px-6 md:px-8 py-3 rounded-full font-bold transition-all duration-300 ${
+                  calcYears === 20
+                    ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
+                    : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
+                }`}
+              >
+                Nach 20 Jahren
+              </button>
+              <button
+                onClick={() => setCalcYears(30)}
+                className={`px-6 md:px-8 py-3 rounded-full font-bold transition-all duration-300 ${
+                  calcYears === 30
+                    ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
+                    : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
+                }`}
+              >
+                Nach 30 Jahren
+              </button>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="text-center p-8 rounded-xl border border-red-900/30 bg-red-900/10 relative overflow-hidden group hover:border-red-900/50 transition-colors">
                 <h4 className="text-xl text-gray-300 font-medium mb-2">
@@ -1163,7 +1120,6 @@ export default function App() {
                   {(startkapital - kaufkraft).toLocaleString("de-DE")} €
                 </div>
               </div>
-
               <div className="text-center p-8 rounded-xl border border-[#e0937a]/30 bg-[#e0937a]/5 relative overflow-hidden group hover:border-[#e0937a]/60 hover:shadow-[0_0_30px_rgba(224,147,122,0.15)] transition-all duration-500">
                 <h4 className="text-xl text-[#efe7dd] font-medium mb-2">
                   Investiert / Depot
@@ -1181,18 +1137,15 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            <p className="text-center text-lg md:text-xl font-serif-elegant italic text-[#efe7dd] mt-12 mb-6 max-w-2xl mx-auto drop-shadow-[0_0_5px_rgba(224,147,122,0.2)]">
-              „Das ist kein Glückspiel, sondern reine Mathematik. Wer wartet,
+            <p className="text-center text-xl md:text-2xl font-serif-elegant text-[#efe7dd] mt-12 mb-6">
+              Das ist kein Glückspiel, sondern reine Mathematik. Wer wartet,
               verliert jeden Tag bares Geld an ein fehlerhaftes System. Wer
-              handelt, lässt die Zeit für sich arbeiten.{" "}
-              <span className="font-bold text-[#e0937a] not-italic">
-                Deine Zeit ist JETZT!
+              handelt, lässt die Zeit für sich arbeiten. Deine Zeit ist{" "}
+              <span className="text-[#e0937a] font-bold drop-shadow-[0_0_10px_rgba(224,147,122,0.4)]">
+                JETZT!
               </span>
-              “
             </p>
-
-            <p className="text-center text-[11px] text-gray-500 font-light max-w-xl mx-auto border-t border-white/5 pt-4">
+            <p className="text-center text-[11px] text-gray-500 mt-4 font-light max-w-xl mx-auto">
               *Beispielhafte historische Durchschnittswerte. Inflation entwertet
               dein Geld. Ein weltweit gestreuter Aktien-ETF brachte historisch
               durchschnittlich ca. 8 % Rendite pro Jahr.
@@ -1201,7 +1154,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERMEZZO 3 */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -1212,19 +1164,16 @@ export default function App() {
         </p>
       </div>
 
-      {/* SECTION 5: MENTORING */}
       <section
         id="mentoring"
         className="scroll-mt-32 md:scroll-mt-40 relative bg-[#111] pt-24 pb-12 px-6 md:px-12 lg:px-24 overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.08)_0%,transparent_70%)] pointer-events-none"></div>
-
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-5xl font-bold uppercase mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               Das 16-Modul Mentoring
             </h3>
-
             <div className="border-t-4 border-[#e0937a] pt-8 pb-10 px-8 mb-16 bg-gradient-to-b from-[#e0937a]/15 to-transparent rounded-b-xl shadow-[inset_0_10px_30px_-10px_rgba(224,147,122,0.3)] text-left md:text-center mx-auto max-w-3xl">
               <p className="text-lg md:text-xl text-[#efe7dd] leading-relaxed font-light">
                 Du möchtest eine intensive 1:1 Betreuung? Im Mentoring gehen wir
@@ -1236,18 +1185,16 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left mb-16 max-w-5xl mx-auto">
-            {/* SÄULE 1 */}
-            <div className="bg-[#1a1a1a] p-8 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
-              <span className="absolute top-4 right-6 text-[90px] md:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
+            <div className="bg-[#1a1a1a] p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+              <span className="absolute top-4 right-6 text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 01
               </span>
               <div className="relative z-10 flex flex-col flex-1 h-full">
                 <div className="flex-1 flex flex-col">
-                  {/* Edlere Überschrift mit feiner Linie */}
                   <h4 className="text-xl font-serif-elegant font-bold text-[#efe7dd] border-b border-[#e0937a]/20 pb-3 mb-4 pr-12 group-hover:border-[#e0937a]/50 transition-colors">
                     Das Fundament & Der Neustart
                   </h4>
-                  <p className="text-[13px] md:text-sm text-gray-400 font-light leading-relaxed mb-6">
+                  <p className="text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">
                     Wir räumen deine Finanzen ein für alle Mal gründlich auf.
                     Wir starten ganz am Anfang und klären einfach und logisch,
                     was Geld überhaupt ist, wie unser modernes Geldsystem
@@ -1258,8 +1205,7 @@ export default function App() {
                     Live-Call.
                   </p>
                 </div>
-                {/* Garantiert symmetrische Höhe für Dein Ergebnis */}
-                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] md:min-h-[170px] lg:min-h-[160px] flex flex-col justify-start">
+                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1272,19 +1218,16 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            {/* SÄULE 2 */}
-            <div className="bg-[#1a1a1a] p-8 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
-              <span className="absolute top-4 right-6 text-[90px] md:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
+            <div className="bg-[#1a1a1a] p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+              <span className="absolute top-4 right-6 text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 02
               </span>
               <div className="relative z-10 flex flex-col flex-1 h-full">
                 <div className="flex-1 flex flex-col">
-                  {/* Edlere Überschrift mit feiner Linie */}
                   <h4 className="text-xl font-serif-elegant font-bold text-[#efe7dd] border-b border-[#e0937a]/20 pb-3 mb-4 pr-12 group-hover:border-[#e0937a]/50 transition-colors">
                     Die Basics & Dein ETF-Sparplan
                   </h4>
-                  <p className="text-[13px] md:text-sm text-gray-400 font-light leading-relaxed mb-6">
+                  <p className="text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">
                     Wir stellen deine Finanzen auf ein logisches Kontensystem um
                     und automatisieren deine Sparrate komplett. Ohne, dass du
                     jeden Monat manuell eingreifen musst. Du lernst die
@@ -1293,8 +1236,7 @@ export default function App() {
                     kompliziertes Fachchinesisch.
                   </p>
                 </div>
-                {/* Garantiert symmetrische Höhe für Dein Ergebnis */}
-                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] md:min-h-[170px] lg:min-h-[160px] flex flex-col justify-start">
+                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1307,19 +1249,16 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            {/* SÄULE 3 */}
-            <div className="bg-[#1a1a1a] p-8 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
-              <span className="absolute top-4 right-6 text-[90px] md:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
+            <div className="bg-[#1a1a1a] p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+              <span className="absolute top-4 right-6 text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 03
               </span>
               <div className="relative z-10 flex flex-col flex-1 h-full">
                 <div className="flex-1 flex flex-col">
-                  {/* Edlere Überschrift mit feiner Linie */}
                   <h4 className="text-xl font-serif-elegant font-bold text-[#efe7dd] border-b border-[#e0937a]/20 pb-3 mb-4 pr-12 group-hover:border-[#e0937a]/50 transition-colors">
                     Der Turbo (Deine ersten Einzelaktien)
                   </h4>
-                  <p className="text-[13px] md:text-sm text-gray-400 font-light leading-relaxed mb-6">
+                  <p className="text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">
                     Jetzt schalten wir den Zusatz-Motor für dein Depot ein. Wir
                     gehen gemeinsam in die Praxis und machen Schritt für Schritt
                     deine ersten Käufe von ausgewählten Qualitätsaktien
@@ -1328,8 +1267,7 @@ export default function App() {
                     abschottest.
                   </p>
                 </div>
-                {/* Garantiert symmetrische Höhe für Dein Ergebnis */}
-                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] md:min-h-[170px] lg:min-h-[160px] flex flex-col justify-start">
+                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1342,19 +1280,16 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            {/* SÄULE 4 */}
-            <div className="bg-[#1a1a1a] p-8 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
-              <span className="absolute top-4 right-6 text-[90px] md:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
+            <div className="bg-[#1a1a1a] p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+              <span className="absolute top-4 right-6 text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 04
               </span>
               <div className="relative z-10 flex flex-col flex-1 h-full">
                 <div className="flex-1 flex flex-col">
-                  {/* Edlere Überschrift mit feiner Linie */}
                   <h4 className="text-xl font-serif-elegant font-bold text-[#efe7dd] border-b border-[#e0937a]/20 pb-3 mb-4 pr-12 group-hover:border-[#e0937a]/50 transition-colors">
                     Absicherung & Deine Freiheit
                   </h4>
-                  <p className="text-[13px] md:text-sm text-gray-400 font-light leading-relaxed mb-6">
+                  <p className="text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">
                     Wir bereiten dich perfekt auf schlechte Zeiten an der Börse
                     vor, damit du bei einem Crash keine Panik bekommst, sondern
                     die Ruhe bewahrst und die Schnäppchenkurse für dich nutzt.
@@ -1363,8 +1298,7 @@ export default function App() {
                     Exit-Szenario.
                   </p>
                 </div>
-                {/* Garantiert symmetrische Höhe für Dein Ergebnis */}
-                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] md:min-h-[170px] lg:min-h-[160px] flex flex-col justify-start">
+                <div className="pt-6 border-t border-white/10 mt-auto min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1378,7 +1312,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* 100-Euro-Challenge Highlight Box */}
           <div className="max-w-4xl mx-auto bg-[#1a1a1a] border border-[#e0937a]/50 p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(224,147,122,0.2)] mb-16 relative overflow-hidden text-left group">
             <div className="absolute inset-0 bg-gradient-to-r from-[#e0937a]/10 via-transparent to-[#e0937a]/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
@@ -1422,7 +1355,7 @@ export default function App() {
             <a
               href="#"
               onClick={handleOpenModal}
-              className="group flex items-center gap-4 bg-transparent border-2 border-[#e0937a] text-[#e0937a] font-bold px-10 py-5 rounded-sm hover:bg-[#e0937a] hover:text-[#1a1a1a] hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(224,147,122,0.5)] transition-all duration-300 relative z-10"
+              className="group flex items-center gap-4 bg-[#1a1a1a] border-2 border-[#e0937a] text-[#e0937a] font-bold px-10 py-5 rounded-sm hover:bg-[#e0937a] hover:text-[#1a1a1a] hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(224,147,122,0.5)] transition-all duration-300 relative z-10"
             >
               Zum Erstgespräch bewerben
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1431,7 +1364,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERMEZZO 4 (J.P. Morgan) */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -1443,7 +1375,6 @@ export default function App() {
         </p>
       </div>
 
-      {/* SECTION 6: PREMIUM MITGLIEDSCHAFT */}
       <section
         id="premium"
         className="scroll-mt-32 md:scroll-mt-40 relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]"
@@ -1463,7 +1394,6 @@ export default function App() {
               Vermögensaufbaus.
             </p>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
@@ -1507,7 +1437,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
             <div className="w-full flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-8 bg-[#333] flex items-center px-4 gap-2 border-b border-black/50">
@@ -1534,7 +1463,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 7: PAKET-VERGLEICH */}
       <section
         id="pakete"
         className="scroll-mt-32 md:scroll-mt-40 relative py-20 px-6 md:px-12 lg:px-24 border-y border-white/5 bg-[#111] overflow-hidden"
@@ -1550,7 +1478,6 @@ export default function App() {
               deiner aktuellen Phase passt.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
               <h4 className="text-2xl font-serif-elegant mb-2 text-gray-300">
@@ -1594,7 +1521,6 @@ export default function App() {
                 Kostenlos mitlesen
               </a>
             </div>
-
             <div className="bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e0937a] text-[#1a1a1a] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-sm shadow-[0_5px_15px_rgba(224,147,122,0.5)]">
                 Am Beliebtesten
@@ -1646,7 +1572,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
             <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group">
               <h4 className="text-2xl font-serif-elegant mb-2 text-gray-300 group-hover:text-[#e0937a] transition-colors">
                 1:1 Mentoring
@@ -1692,7 +1617,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERMEZZO 5 (Stoisches Prinzip) */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -1703,7 +1627,6 @@ export default function App() {
         </p>
       </div>
 
-      {/* SECTION 8: TOOLS */}
       <section className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -1713,7 +1636,6 @@ export default function App() {
           <h3 className="text-3xl md:text-5xl font-bold uppercase mb-12">
             Meine Empfehlungen
           </h3>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <a
               href="#"
@@ -1764,7 +1686,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 9: NEWSLETTER */}
       <section
         id="newsletter"
         className="scroll-mt-32 md:scroll-mt-40 relative py-12 px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden border-y border-[#e0937a]/20"
@@ -1820,7 +1741,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 10: FREEBIE (Budgetplaner) */}
       <section className="relative bg-[#1a1a1a] py-20 px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.08)_0%,transparent_50%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24">
@@ -1831,7 +1751,6 @@ export default function App() {
             <h3 className="text-3xl md:text-5xl font-bold uppercase mb-6">
               Der einfache Budgetplaner
             </h3>
-
             <div className="border-l-4 border-[#e0937a] pl-6 py-4 mb-8 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.3)]">
               <p className="text-[#efe7dd] font-light leading-relaxed">
                 Ein guter Überblick ist die halbe Miete. Wenn du anfangen
@@ -1840,7 +1759,6 @@ export default function App() {
                 und ohne unnötigen Schnickschnack.
               </p>
             </div>
-
             <form className="flex flex-col gap-4 w-full">
               <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <input
@@ -1905,7 +1823,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 11: FAQ */}
       <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.05)_0%,transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-6xl mx-auto">
@@ -1918,7 +1835,6 @@ export default function App() {
               Antworten rund um die Pakete und das Mentoring.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             {faqs.map((faq, index) => (
               <div
@@ -1959,7 +1875,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERMEZZO 6 */}
       <div className="w-full bg-[#0a0a0a] py-12 px-6 text-center border-t border-[#e0937a]/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
@@ -1970,17 +1885,14 @@ export default function App() {
         </p>
       </div>
 
-      {/* FOOTER */}
       <footer className="bg-[#0a0a0a] border-t border-white/5 py-12 px-6 md:px-12 lg:px-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(224,147,122,0.1)_0%,transparent_50%)] pointer-events-none"></div>
-
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-12">
           <div className="flex justify-center pb-8 border-b border-white/5">
             <h2 className="text-[#e0937a] font-bold tracking-[0.8em] uppercase text-sm md:text-xl drop-shadow-[0_0_15px_rgba(224,147,122,0.5)]">
               Werte für Generationen
             </h2>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.8fr_1.2fr_1fr_1.2fr] gap-12 text-left">
             <div className="flex justify-center lg:justify-start">
               <img
@@ -1989,12 +1901,10 @@ export default function App() {
                 className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-[0_0_20px_rgba(224,147,122,0.15)] hover:scale-105 transition-transform cursor-pointer opacity-80 hover:opacity-100"
               />
             </div>
-
             <div className="flex flex-col gap-5 pl-12 lg:pl-8">
               <h4 className="text-[#efe7dd] font-semibold text-lg mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-full max-w-[200px]">
                 Kontakt
               </h4>
-
               <div className="flex items-start gap-4 group cursor-pointer relative -ml-12">
                 <div className="w-10 h-10 shrink-0 rounded-full border border-[#e0937a]/30 bg-[#e0937a]/10 flex items-center justify-center text-[#e0937a] group-hover:bg-[#e0937a] group-hover:text-[#1a1a1a] group-hover:shadow-[0_0_15px_rgba(224,147,122,0.5)] transition-all duration-300">
                   <MapPin className="w-4 h-4" />
@@ -2011,7 +1921,6 @@ export default function App() {
                   </p>
                 </div>
               </div>
-
               <div className="flex items-center gap-4 group cursor-pointer mt-1 relative -ml-12">
                 <div className="w-10 h-10 shrink-0 rounded-full border border-[#e0937a]/30 bg-[#e0937a]/10 flex items-center justify-center text-[#e0937a] group-hover:bg-[#e0937a] group-hover:text-[#1a1a1a] group-hover:shadow-[0_0_15px_rgba(224,147,122,0.5)] transition-all duration-300">
                   <Mail className="w-4 h-4" />
@@ -2023,7 +1932,6 @@ export default function App() {
                   office@yagibasancapital.de
                 </a>
               </div>
-
               <div className="flex items-center gap-4 group cursor-pointer mt-1 relative -ml-12">
                 <div className="w-10 h-10 shrink-0 rounded-full border border-[#e0937a]/30 bg-[#e0937a]/10 flex items-center justify-center text-[#e0937a] group-hover:bg-[#e0937a] group-hover:text-[#1a1a1a] group-hover:shadow-[0_0_15px_rgba(224,147,122,0.5)] transition-all duration-300">
                   <Phone className="w-4 h-4" />
@@ -2036,7 +1944,6 @@ export default function App() {
                 </a>
               </div>
             </div>
-
             <div className="flex flex-col gap-4">
               <h4 className="text-[#efe7dd] font-semibold text-lg mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-fit">
                 Rechtliches
@@ -2060,7 +1967,6 @@ export default function App() {
                 AGB
               </a>
             </div>
-
             <div className="flex flex-col gap-4">
               <h4 className="text-[#efe7dd] font-semibold text-lg mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-fit">
                 Hinweis
@@ -2083,7 +1989,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* MODAL: MENTORING AUDIT */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
           <div className="relative w-full max-w-4xl bg-[#111] border border-[#e0937a]/30 rounded-2xl shadow-[0_0_50px_rgba(224,147,122,0.15)] my-auto flex flex-col max-h-[90vh]">
@@ -2093,7 +1998,6 @@ export default function App() {
             >
               <X className="w-8 h-8" />
             </button>
-
             <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
               {!isSuccess ? (
                 <form onSubmit={handleSubmit} className="space-y-12">
@@ -2116,12 +2020,10 @@ export default function App() {
                       und detailliert aus.
                     </p>
                   </div>
-
                   <div className="space-y-8 bg-[#1a1a1a] p-8 rounded-xl border border-white/5">
                     <h4 className="text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-3">
                       I. Persönliches Profil
                     </h4>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -2167,12 +2069,10 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                   <div className="space-y-8 bg-[#1a1a1a] p-8 rounded-xl border border-white/5">
                     <h4 className="text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-3">
                       II. Die Finanzielle Basis
                     </h4>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -2253,12 +2153,10 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                   <div className="space-y-8 bg-[#1a1a1a] p-8 rounded-xl border border-white/5">
                     <h4 className="text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-3">
                       III. Investment & Setup
                     </h4>
-
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -2343,12 +2241,10 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                   <div className="space-y-8 bg-[#1a1a1a] p-8 rounded-xl border border-white/5">
                     <h4 className="text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-3">
                       IV. Psychologie, Umfeld & Mindset
                     </h4>
-
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -2417,12 +2313,10 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                   <div className="space-y-8 bg-[#1a1a1a] p-8 rounded-xl border border-white/5">
                     <h4 className="text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-3">
                       V. Erwartungen & Zukunftsvision
                     </h4>
-
                     <div className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
@@ -2499,7 +2393,6 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                   <div className="bg-[#1a1a1a] p-6 rounded-xl border border-white/5 mt-8">
                     <label className="flex items-start gap-4 cursor-pointer group">
                       <input
@@ -2524,7 +2417,6 @@ export default function App() {
                       </span>
                     </label>
                   </div>
-
                   <div className="pt-8 flex justify-center">
                     <button
                       type="submit"
