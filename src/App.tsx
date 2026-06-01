@@ -302,7 +302,8 @@ export default function App() {
     */
   }, []);
 
-  const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
+  const toggleFaq = (index: number) =>
+    setOpenFaq(openFaq === index ? null : index);
   const handleOpenModal = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
