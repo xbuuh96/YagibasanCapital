@@ -239,8 +239,8 @@ E-Mail: Office@yagibasan-capital.de</p>
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash);
-  const [openFaq, setOpenFaq] = useState(null);
-  const [hoveredAsset, setHoveredAsset] = useState(null);
+  const [openFaq, setOpenFaq] = useState<any>(null);
+  const [hoveredAsset, setHoveredAsset] = useState<any>(null);
   const [timeLeft, setTimeLeft] = useState({ Tage: 0, Std: 0, Min: 0, Sek: 0 });
   const [calcYears, setCalcYears] = useState(10);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -304,7 +304,7 @@ export default function App() {
 
   const toggleFaq = (index: number) =>
     setOpenFaq(openFaq === index ? null : index);
-  const handleOpenModal = (e) => {
+  const handleOpenModal = (e: any) => {
     e.preventDefault();
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
