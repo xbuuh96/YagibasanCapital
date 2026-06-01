@@ -2224,7 +2224,7 @@ export default function App() {
                           14. Wenn nicht investiert: Was blockiert dich?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="Angst, Technik, fehlendes Wissen..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2235,7 +2235,7 @@ export default function App() {
                           geht: Wie treffen Sie diese meistens?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="z.B. Bauchgefühl, Recherche, Berater..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2252,7 +2252,7 @@ export default function App() {
                           16. Was bedeutet Geld für dich persönlich?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="Sicherheit, Freiheit, Macht..."
                           required
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
@@ -2264,7 +2264,7 @@ export default function App() {
                           und Börse?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="z.B. Partner unterstützt mich, Freunde skeptisch..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2275,7 +2275,7 @@ export default function App() {
                           10.000 € geschenkt. Was tun Sie damit?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="Anteilige Aufteilung in Konsum, Sparen, Investment..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2286,7 +2286,7 @@ export default function App() {
                           Kindheit geprägt?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="z.B. 'Geld ist die Wurzel allen Übels', 'Geld muss man hart erarbeiten'..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2297,7 +2297,7 @@ export default function App() {
                           um 25% an Wert verliert?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="Verkaufen, nachkaufen, App ignorieren..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
@@ -2307,7 +2307,7 @@ export default function App() {
                           21. Dein bisher größter finanzieller Fehler?
                         </label>
                         <textarea
-                          rows="2"
+                          rows={2}
                           placeholder="Zu spät angefangen, unüberlegter Konsum..."
                           className="w-full bg-[#111] border border-white/10 rounded-sm px-4 py-3 text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                         ></textarea>
