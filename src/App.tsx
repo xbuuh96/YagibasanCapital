@@ -459,23 +459,37 @@ export default function App() {
             }`}
           />
         </a>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="#"
             onClick={handleOpenModal}
-            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block ${
-              isScrolled ? "text-xs px-4 py-2" : "text-sm px-6 py-3.5"
+            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${
+              isScrolled
+                ? "text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2"
+                : "text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5"
             }`}
           >
-            Kostenloses Erstgespräch
+            <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
+            <span className="sm:hidden">
+              Kostenloses
+              <br />
+              Erstgespräch
+            </span>
           </a>
           <a
             href="#premium"
-            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block ${
-              isScrolled ? "text-xs px-5 py-2" : "text-sm px-8 py-3.5"
+            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block text-center leading-tight ${
+              isScrolled
+                ? "text-[9px] sm:text-xs px-2 sm:px-5 py-1.5 sm:py-2"
+                : "text-[10px] sm:text-sm px-2.5 sm:px-8 py-2 sm:py-3.5"
             }`}
           >
-            Premium Mitglied werden
+            <span className="hidden sm:inline">Premium Mitglied werden</span>
+            <span className="sm:hidden">
+              Premium
+              <br />
+              Mitglied werden
+            </span>
           </a>
         </div>
       </nav>
