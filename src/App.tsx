@@ -30,14 +30,7 @@ import {
 
 function Impressum() {
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        html, body { overflow-x: hidden; }
-      `,
-        }}
-      />
+    <div className="min-h-screen overflow-x-hidden bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
       <nav className="flex items-center justify-between px-5 sm:px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a
           href="#"
@@ -195,30 +188,7 @@ E-Mail: Office@yagibasan-capital.de</p>
 <p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">https://www.e-recht24.de</a></p>`;
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          html, body { overflow-x: hidden; }
-          .datenschutz-content h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #e0937a; margin-bottom: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
-          @media (min-width: 768px) { .datenschutz-content h1 { font-size: 2.5rem; margin-bottom: 2.5rem; } }
-          .datenschutz-content h2 { font-size: 1.25rem; color: #efe7dd; margin-top: 2.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(224,147,122,0.2); padding-bottom: 0.5rem; font-weight: 600; }
-          @media (min-width: 768px) { .datenschutz-content h2 { font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; } }
-          .datenschutz-content h3 { font-size: 1.125rem; color: #e0937a; margin-top: 1.75rem; margin-bottom: 1rem; font-weight: 500; }
-          @media (min-width: 768px) { .datenschutz-content h3 { font-size: 1.25rem; margin-top: 2rem; } }
-          .datenschutz-content h4 { font-size: 1rem; color: #efe7dd; margin-top: 1.25rem; margin-bottom: 0.75rem; font-weight: 500; }
-          @media (min-width: 768px) { .datenschutz-content h4 { font-size: 1.125rem; margin-top: 1.5rem; } }
-          .datenschutz-content p { color: #d1d5db; font-weight: 300; line-height: 1.6; margin-bottom: 1.25rem; font-size: 0.875rem; }
-          @media (min-width: 768px) { .datenschutz-content p { line-height: 1.8; margin-bottom: 1.5rem; font-size: 1rem; } }
-          .datenschutz-content a { color: #e0937a; text-decoration: none; transition: all 0.3s ease; word-break: break-all; }
-          .datenschutz-content a:hover { text-decoration: underline; color: #efe7dd; }
-          .datenschutz-content ul { list-style-type: disc; padding-left: 1.25rem; color: #d1d5db; font-weight: 300; margin-bottom: 1.25rem; line-height: 1.6; font-size: 0.875rem; }
-          @media (min-width: 768px) { .datenschutz-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1rem; } }
-          .datenschutz-content li { margin-bottom: 0.5rem; }
-          .datenschutz-content strong { color: #efe7dd; font-weight: 500; }
-        `,
-        }}
-      />
+    <div className="min-h-screen overflow-x-hidden bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
       <nav className="flex items-center justify-between px-5 sm:px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a
           href="#"
@@ -241,6 +211,28 @@ E-Mail: Office@yagibasan-capital.de</p>
       </nav>
 
       <section className="py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative">
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          .datenschutz-content h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #e0937a; margin-bottom: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+          @media (min-width: 768px) { .datenschutz-content h1 { font-size: 2.5rem; margin-bottom: 2.5rem; } }
+          .datenschutz-content h2 { font-size: 1.25rem; color: #efe7dd; margin-top: 2.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(224,147,122,0.2); padding-bottom: 0.5rem; font-weight: 600; }
+          @media (min-width: 768px) { .datenschutz-content h2 { font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; } }
+          .datenschutz-content h3 { font-size: 1.125rem; color: #e0937a; margin-top: 1.75rem; margin-bottom: 1rem; font-weight: 500; }
+          @media (min-width: 768px) { .datenschutz-content h3 { font-size: 1.25rem; margin-top: 2rem; } }
+          .datenschutz-content h4 { font-size: 1rem; color: #efe7dd; margin-top: 1.25rem; margin-bottom: 0.75rem; font-weight: 500; }
+          @media (min-width: 768px) { .datenschutz-content h4 { font-size: 1.125rem; margin-top: 1.5rem; } }
+          .datenschutz-content p { color: #d1d5db; font-weight: 300; line-height: 1.6; margin-bottom: 1.25rem; font-size: 0.875rem; }
+          @media (min-width: 768px) { .datenschutz-content p { line-height: 1.8; margin-bottom: 1.5rem; font-size: 1rem; } }
+          .datenschutz-content a { color: #e0937a; text-decoration: none; transition: all 0.3s ease; word-break: break-all; }
+          .datenschutz-content a:hover { text-decoration: underline; color: #efe7dd; }
+          .datenschutz-content ul { list-style-type: disc; padding-left: 1.25rem; color: #d1d5db; font-weight: 300; margin-bottom: 1.25rem; line-height: 1.6; font-size: 0.875rem; }
+          @media (min-width: 768px) { .datenschutz-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1rem; } }
+          .datenschutz-content li { margin-bottom: 0.5rem; }
+          .datenschutz-content strong { color: #efe7dd; font-weight: 500; }
+        `,
+          }}
+        />
         <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#e0937a] rounded-full blur-[200px] sm:blur-[250px] opacity-10 pointer-events-none"></div>
         <div
           className="datenschutz-content relative z-10"
@@ -268,8 +260,8 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -440,11 +432,7 @@ export default function App() {
         }}
       />
 
-      <nav
-        className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${
-          isScrolled ? "py-2 md:py-3" : "py-4 md:py-5"
-        }`}
-      >
+      <nav className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
         <a
           href="#"
           className="flex items-center hover:scale-105 transition-transform"
@@ -452,44 +440,24 @@ export default function App() {
           <img
             src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
             alt="Yagibasan Capital Logo"
-            className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${
-              isScrolled
-                ? "w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16"
-                : "w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24"
-            }`}
+            className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`}
           />
         </a>
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="#"
             onClick={handleOpenModal}
-            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${
-              isScrolled
-                ? "text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2"
-                : "text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5"
-            }`}
+            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}
           >
             <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
-            <span className="sm:hidden">
-              Kostenloses
-              <br />
-              Erstgespräch
-            </span>
+            <span className="sm:hidden">Kostenloses<br/>Erstgespräch</span>
           </a>
           <a
             href="#premium"
-            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block text-center leading-tight ${
-              isScrolled
-                ? "text-[9px] sm:text-xs px-2 sm:px-5 py-1.5 sm:py-2"
-                : "text-[10px] sm:text-sm px-2.5 sm:px-8 py-2 sm:py-3.5"
-            }`}
+            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-5 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-8 py-2 sm:py-3.5'}`}
           >
             <span className="hidden sm:inline">Premium Mitglied werden</span>
-            <span className="sm:hidden">
-              Premium
-              <br />
-              Mitglied werden
-            </span>
+            <span className="sm:hidden">Premium<br/>Mitglied werden</span>
           </a>
         </div>
       </nav>
@@ -793,9 +761,7 @@ export default function App() {
             <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center">
               Altersklasse in DE
             </p>
-            <p className="text-[10px] sm:text-xs text-gray-500 font-light mt-1 text-center">
-              (ohne Erbe)
-            </p>
+            <p className="text-[10px] sm:text-xs text-gray-500 font-light mt-1 text-center">(ohne Erbe)</p>
           </div>
           <div className="px-4 flex flex-col justify-center items-center h-full">
             <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
@@ -1042,7 +1008,7 @@ export default function App() {
                   <p className="text-2xl font-serif-elegant text-[#efe7dd] mb-5">
                     12. Juni 2030
                   </p>
-
+                  
                   <div className="flex gap-4">
                     <div className="text-center">
                       <div className="text-2xl md:text-3xl font-bold bg-[#111] px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
@@ -1539,38 +1505,20 @@ export default function App() {
           </div>
 
           <div className="flex justify-center items-center gap-3 sm:gap-4 mb-12 sm:mb-16">
-            <span
-              className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${
-                !isYearly ? "text-[#efe7dd]" : "text-gray-500"
-              }`}
-            >
-              Monatlich
-            </span>
-            <button
+            <span className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${!isYearly ? 'text-[#efe7dd]' : 'text-gray-500'}`}>Monatlich</span>
+            <button 
               onClick={() => setIsYearly(!isYearly)}
               className="w-14 h-7 sm:w-16 sm:h-8 bg-[#1a1a1a] rounded-full p-1 border border-[#e0937a]/30 relative transition-colors duration-300 focus:outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] flex-shrink-0"
             >
-              <div
-                className={`w-5 h-5 sm:w-6 sm:h-6 bg-[#e0937a] rounded-full shadow-[0_0_10px_rgba(224,147,122,0.5)] transform transition-transform duration-300 ${
-                  isYearly ? "translate-x-7 sm:translate-x-8" : "translate-x-0"
-                }`}
-              ></div>
+              <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-[#e0937a] rounded-full shadow-[0_0_10px_rgba(224,147,122,0.5)] transform transition-transform duration-300 ${isYearly ? 'translate-x-7 sm:translate-x-8' : 'translate-x-0'}`}></div>
             </button>
             <div className="flex flex-col items-start">
-              <span
-                className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${
-                  isYearly
-                    ? "text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.3)]"
-                    : "text-gray-500"
-                }`}
-              >
-                Jährlich
-              </span>
+              <span className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${isYearly ? 'text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.3)]' : 'text-gray-500'}`}>Jährlich</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
+          <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300">
                 Starter
               </h4>
@@ -1586,24 +1534,23 @@ export default function App() {
                   Basis-Finanzwissen
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Der Excel-Budgetplaner
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Der
+                  Excel-Budgetplaner
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
                   Monatlicher Substack-Newsletter
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Einblick
-                  in Aktien-Käufe
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Einblick in
+                  Aktien-Käufe
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />{" "}
-                  Dividendenkalender & Analysen
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Dividendenkalender &
+                  Analysen
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1
-                  Betreuung
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1 Betreuung
                 </li>
               </ul>
               <a
@@ -1613,84 +1560,49 @@ export default function App() {
                 Kostenlos mitlesen
               </a>
             </div>
-
-            <div className="bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10">
+            
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e0937a] text-[#1a1a1a] text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 rounded-sm shadow-[0_5px_15px_rgba(224,147,122,0.5)] whitespace-nowrap">
                 Am Beliebtesten
               </div>
 
-              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] mt-2">
-                Premium
-              </h4>
-
+              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] mt-2">Premium</h4>
+              
               <div className="mb-5 sm:mb-6 min-h-[90px] sm:min-h-[110px] flex flex-col justify-end">
                 {!isYearly ? (
                   <div className="text-3xl sm:text-4xl font-bold text-[#efe7dd] transition-all duration-300">
-                    49 €{" "}
-                    <span className="text-xs sm:text-sm text-gray-400 font-light">
-                      / Monat
-                    </span>
+                    20 € <span className="text-xs sm:text-sm text-gray-400 font-light">/ Monat</span>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-1.5 sm:gap-2 transition-all duration-300 animate-in fade-in">
                     <div className="inline-flex w-fit bg-[#e0937a]/10 border border-[#e0937a]/30 text-[#e0937a] px-2 sm:px-3 py-0.5 sm:py-1 rounded text-[9px] sm:text-[10px] font-bold tracking-widest uppercase items-center shadow-[0_0_10px_rgba(224,147,122,0.1)]">
-                      🔥 Launch-Angebot: Limitiert auf 25 Plätze
+                       🔥 Launch-Angebot: Limitiert auf 25 Plätze
                     </div>
                     <div className="flex items-baseline gap-2 sm:gap-3">
-                      <span className="text-xl sm:text-2xl font-bold text-gray-500 line-through decoration-red-500/50">
-                        490 €
-                      </span>
-                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#efe7dd] drop-shadow-[0_0_15px_rgba(224,147,122,0.5)] leading-none">
-                        300 €
-                      </span>
+                      <span className="text-xl sm:text-2xl font-bold text-gray-500 line-through decoration-red-500/50">240 €</span>
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#efe7dd] drop-shadow-[0_0_15px_rgba(224,147,122,0.5)] leading-none">200 €</span>
                     </div>
-                    <span className="text-xs sm:text-sm text-[#e0937a] font-medium tracking-wide">
-                      / im ersten Jahr
-                    </span>
+                    <span className="text-xs sm:text-sm text-[#e0937a] font-medium tracking-wide">/ im ersten Jahr</span>
                   </div>
                 )}
               </div>
 
               <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10 flex-1 text-xs sm:text-sm text-gray-300">
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Alles aus dem Starter-Paket
-                </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Live-Einblicke in Einzelaktien-Käufe
-                </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Voller Dividendenkalender
-                </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Regelmäßige Strategie-Updates
-                </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Premium Q&A und Austausch
-                </li>
-                <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1
-                  Individuelles Coaching
-                </li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Alles aus dem Starter-Paket</li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Live-Einblicke in Einzelaktien-Käufe</li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Voller Dividendenkalender</li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Regelmäßige Strategie-Updates</li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Premium Q&A und Austausch</li>
+                <li className="flex items-center gap-2 sm:gap-3 text-gray-600"><X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1 Individuelles Coaching</li>
               </ul>
-
+              
               <div className="mt-auto flex flex-col gap-2 sm:gap-3">
                 {!isYearly ? (
-                  <a
-                    href="#"
-                    className="w-full text-center bg-[#e0937a] text-[#1a1a1a] font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)] transition-all duration-300 text-sm sm:text-base"
-                  >
+                  <a href="#" className="w-full text-center bg-[#e0937a] text-[#1a1a1a] font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)] transition-all duration-300 text-sm sm:text-base">
                     Premium sichern
                   </a>
                 ) : (
-                  <a
-                    href="#"
-                    className="w-full text-center bg-gradient-to-r from-[#c07a63] to-[#e0937a] text-[#1a1a1a] font-extrabold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:from-[#efe7dd] hover:to-[#efe7dd] hover:-translate-y-1 shadow-[0_0_25px_rgba(224,147,122,0.6)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.8)] transition-all duration-300 transform scale-[1.02] text-sm sm:text-base"
-                  >
+                  <a href="#" className="w-full text-center bg-gradient-to-r from-[#c07a63] to-[#e0937a] text-[#1a1a1a] font-extrabold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:from-[#efe7dd] hover:to-[#efe7dd] hover:-translate-y-1 shadow-[0_0_25px_rgba(224,147,122,0.6)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.8)] transition-all duration-300 transform scale-[1.02] text-sm sm:text-base">
                     Launch-Angebot sichern
                   </a>
                 )}
@@ -1698,15 +1610,13 @@ export default function App() {
                   {!isYearly ? (
                     <span className="text-gray-400">Jederzeit kündbar.</span>
                   ) : (
-                    <span className="text-[#e0937a] font-bold tracking-wider opacity-80">
-                      (Entspricht 25 € / Monat)
-                    </span>
+                    <span className="text-[#e0937a] font-bold tracking-wider opacity-80">(Entspricht 16,66 € / Monat)</span>
                   )}
                 </p>
               </div>
             </div>
-
-            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group">
+            
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group">
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300 group-hover:text-[#e0937a] transition-colors">
                 1:1 Mentoring
               </h4>
@@ -1719,8 +1629,8 @@ export default function App() {
                   Inklusive Premium Zugang
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
-                  Das komplette 16-Modul System
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Das
+                  komplette 16-Modul System
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
@@ -1751,14 +1661,128 @@ export default function App() {
         </div>
       </section>
 
+      <section className="relative py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
+            Die Basics
+          </h2>
+          <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-10 sm:mb-12">
+            Meine Empfehlungen
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-left">
+            <a
+              href="#"
+              className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ExternalLink className="w-4 h-4 text-[#e0937a]" />
+              </div>
+              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 sm:mb-3 text-[#efe7dd]">
+                Trade Republic
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                Sehr anfängerfreundlich und günstig. Perfekt, um deine ersten
+                ETF-Sparpläne ganz automatisch laufen zu lassen.
+              </p>
+            </a>
+            <a
+              href="#"
+              className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ExternalLink className="w-4 h-4 text-[#e0937a]" />
+              </div>
+              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 sm:mb-3 text-[#efe7dd]">
+                Scalable Capital
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                Eine tolle Alternative mit einer riesigen Auswahl an ETFs und
+                einer sehr aufgeräumten App.
+              </p>
+            </a>
+            <a
+              href="#"
+              className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ExternalLink className="w-4 h-4 text-[#e0937a]" />
+              </div>
+              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 sm:mb-3 text-[#efe7dd]">
+                ING
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                Für mich die beste Bank für das ganz normale Girokonto und um
+                den wichtigen Notgroschen sicher aufzubewahren.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="newsletter"
+        className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden border-y border-[#e0937a]/20"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.06)_0%,transparent_50%)] pointer-events-none"></div>
+        <div className="relative z-10 max-w-5xl mx-auto bg-gradient-to-r from-[#e0937a] to-[#c07a63] p-[2px] rounded-xl shadow-[0_0_35px_rgba(224,147,122,0.3)] hover:shadow-[0_0_50px_rgba(224,147,122,0.4)] transition-shadow duration-500">
+          <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 rounded-[10px]">
+            <div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-serif-elegant font-bold text-[#efe7dd] mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#e0937a]" />
+                Mein Newsletter
+              </h3>
+              <p className="text-gray-300 font-light text-sm sm:text-base max-w-xl leading-relaxed">
+                Auf Substack teile ich regelmäßig und kostenlos, was mich gerade
+                an der Börse beschäftigt, spannende Markt-Updates und allgemeine
+                Finanz-Tipps.
+              </p>
+            </div>
+            <div className="w-full md:w-auto flex flex-col gap-3 sm:gap-4 mt-2 md:mt-0">
+              <a
+                href="#"
+                className={`w-full text-center font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-sm transition-all duration-300 whitespace-nowrap text-sm sm:text-base ${
+                  !newsletterConsent
+                    ? "bg-gray-700 text-gray-400 cursor-not-allowed opacity-70 pointer-events-none"
+                    : "bg-[#e0937a] text-[#1a1a1a] hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)]"
+                }`}
+              >
+                Kostenlos mitlesen
+              </a>
+              <label className="flex items-start gap-2.5 sm:gap-3 cursor-pointer group max-w-sm mx-auto md:mx-0">
+                <input
+                  type="checkbox"
+                  required
+                  checked={newsletterConsent}
+                  onChange={(e) => setNewsletterConsent(e.target.checked)}
+                  className="mt-1 w-3.5 h-3.5 sm:w-4 sm:h-4 accent-[#e0937a] cursor-pointer flex-shrink-0"
+                />
+                <span className="text-[10px] sm:text-[11px] text-gray-400 font-light leading-relaxed text-left">
+                  Ich habe die{" "}
+                  <a
+                    href="#datenschutz"
+                    className="text-[#e0937a] hover:underline transition-all"
+                  >
+                    Datenschutzerklärung
+                  </a>{" "}
+                  zur Kenntnis genommen und stimme zu, dass meine Angaben zur
+                  Kontaktaufnahme und für Rückfragen dauerhaft gespeichert
+                  werden.
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative bg-[#1a1a1a] py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.08)_0%,transparent_50%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24">
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2">
-            <h2 className="text-[#e0937a] text-sm font-bold tracking-[0.2em] uppercase mb-2">
+            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Für deinen Start
             </h2>
-            <h3 className="text-3xl md:text-5xl font-bold uppercase mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-4 sm:mb-6">
               Der einfache Budgetplaner
             </h3>
             <div className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-3 sm:py-4 mb-6 sm:mb-8 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.3)]">
@@ -1832,6 +1856,16 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
+        <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
+          „Beherrsche deine Emotionen, oder sie werden dich beherrschen.“
+          <span className="block mt-4 text-xs sm:text-sm font-sans font-bold text-[#e0937a] tracking-widest uppercase not-italic">
+            — Stoisches Prinzip
+          </span>
+        </p>
+      </div>
 
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.05)_0%,transparent_70%)] pointer-events-none"></div>
@@ -1936,10 +1970,10 @@ export default function App() {
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <a
-                  href="mailto:office@yagibasancapital.de"
+                  href="mailto:office@yagibasan-capital.de"
                   className="text-gray-400 font-light group-hover:text-[#e0937a] transition-colors whitespace-nowrap text-sm sm:text-base"
                 >
-                  office@yagibasancapital.de
+                  office@yagibasan-capital.de
                 </a>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 group cursor-pointer mt-1 relative -ml-10 sm:-ml-12">
@@ -2010,10 +2044,7 @@ export default function App() {
             </button>
             <div className="p-5 sm:p-8 md:p-12 overflow-y-auto custom-scrollbar h-full">
               {!isSuccess ? (
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-8 sm:space-y-12 pb-10 sm:pb-0"
-                >
+                <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12 pb-10 sm:pb-0">
                   <div className="text-center border-b border-white/10 pb-8 sm:pb-10 pt-4 sm:pt-0">
                     <img
                       src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
@@ -2033,7 +2064,7 @@ export default function App() {
                       und detailliert aus.
                     </p>
                   </div>
-
+                  
                   <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
                     <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">
                       I. Persönliches Profil
@@ -2287,8 +2318,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          18. Stell dir vor, du erhältst unerwartet 10.000 €
-                          geschenkt. Was tust du damit?
+                          18. Stell dir vor, du erhältst unerwartet
+                          10.000 € geschenkt. Was tust du damit?
                         </label>
                         <textarea
                           rows={2}
@@ -2298,8 +2329,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          19. Welche Glaubenssätze über Geld haben dich in
-                          deiner Kindheit geprägt?
+                          19. Welche Glaubenssätze über Geld haben dich in deiner
+                          Kindheit geprägt?
                         </label>
                         <textarea
                           rows={2}
@@ -2309,8 +2340,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          20. Wie würdest du emotional reagieren, wenn dein
-                          Depot um 25% an Wert verliert?
+                          20. Wie würdest du emotional reagieren, wenn dein Depot
+                          um 25% an Wert verliert?
                         </label>
                         <textarea
                           rows={2}
@@ -2350,8 +2381,8 @@ export default function App() {
                         </div>
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                            23. Für welchen Zeitraum könntest du auf dein
-                            Kapital verzichten?
+                            23. Für welchen Zeitraum könntest du auf dein Kapital
+                            verzichten?
                           </label>
                           <input
                             type="text"
@@ -2436,7 +2467,7 @@ export default function App() {
                       </span>
                     </label>
                   </div>
-
+                  
                   <div className="pt-6 sm:pt-8 flex justify-center">
                     <button
                       type="submit"
@@ -2449,13 +2480,13 @@ export default function App() {
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />{" "}
-                          Audit wird übermittelt...
+                          <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" /> Audit
+                          wird übermittelt...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Audit
-                          absenden & Erstgespräch anfragen
+                          <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Audit absenden &
+                          Erstgespräch anfragen
                         </>
                       )}
                     </button>
