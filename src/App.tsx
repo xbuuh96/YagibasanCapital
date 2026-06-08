@@ -625,7 +625,7 @@ export default function App() {
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Wie wir vorgehen
             </h2>
@@ -638,8 +638,10 @@ export default function App() {
               Schritten basiert.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+
+          {/* Mobile Swipe Carousel / Desktop Grid */}
+          <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -652,7 +654,7 @@ export default function App() {
                 auf. Ohne Fundament stürzt das beste Haus ein.
               </p>
             </div>
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -665,7 +667,7 @@ export default function App() {
                 kannst – egal was im Alltag passiert.
               </p>
             </div>
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -678,6 +680,14 @@ export default function App() {
                 Einzelaktien bauen wir langfristig echtes Vermögen auf.
               </p>
             </div>
+          </div>
+
+          {/* Mobile Swipe Indicator */}
+          <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 animate-pulse">
+            <span className="text-[10px] uppercase tracking-widest font-bold">
+              Seitlich wischen
+            </span>
+            <ArrowRight className="w-4 h-4" />
           </div>
         </div>
       </section>
@@ -1236,7 +1246,7 @@ export default function App() {
           </div>
 
           {/* Mentoring Carousel für Mobile / Grid für Desktop */}
-          <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 text-left mb-4 md:mb-12 sm:mb-16 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-6 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 text-left mb-4 md:mb-12 sm:mb-16 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 01
