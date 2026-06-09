@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import {
   ChevronDown,
@@ -235,6 +235,39 @@ export default function App() {
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [auditConsent, setAuditConsent] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
+
+  // Pricing Mobile Slider Logic
+  const pricingScrollRef = useRef<HTMLDivElement>(null);
+  const [activeCardIndex, setActiveCardIndex] = useState(1); // 0=Starter, 1=Premium, 2=InnerCircle
+
+  useEffect(() => {
+    // Initialer lautloser Scroll zur Mitte (Premium-Karte) auf mobilen Geräten
+    const timer = setTimeout(() => {
+      if (pricingScrollRef.current && window.innerWidth < 768) {
+        const container = pricingScrollRef.current;
+        container.scrollLeft =
+          (container.scrollWidth - container.clientWidth) / 2;
+      }
+    }, 150);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handlePricingScroll = () => {
+    if (!pricingScrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = pricingScrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+
+    if (maxScroll <= 0) return; // Auf Desktop abbrechen
+
+    const scrollPercentage = scrollLeft / maxScroll;
+    if (scrollPercentage < 0.3) {
+      setActiveCardIndex(0); // Starter
+    } else if (scrollPercentage > 0.7) {
+      setActiveCardIndex(2); // Mentoring
+    } else {
+      setActiveCardIndex(1); // Premium (Mitte)
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -1379,7 +1412,7 @@ export default function App() {
                     Das Fundament & Der Neustart
                   </h4>
                   <p className="text-xs sm:text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">
-                    Wir räumen deine Finanzen ein für alle Mal gründlich auf.
+                    Wir räumen deine Finanzen ein für alle main gründlich auf.
                     Wir starten ganz am Anfang und klären einfach und logisch,
                     was Geld überhaupt ist, wie unser modernes Geldsystem
                     funktioniert und warum einfaches Sparen auf dem Sparbuch
@@ -1751,10 +1784,14 @@ export default function App() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div
+            ref={pricingScrollRef}
+            onScroll={handlePricingScroll}
+            className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-8 md:pb-0 pt-4 md:pt-0 scrollbar-hide scroll-smooth"
+          >
             <motion.div
               variants={fadeUpVariant}
-              className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity"
+              className="w-[85vw] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity"
             >
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300">
                 Starter
@@ -1801,7 +1838,7 @@ export default function App() {
 
             <motion.div
               variants={fadeUpVariant}
-              className="bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10"
+              className="w-[85vw] md:w-auto shrink-0 snap-center bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e0937a] text-[#1a1a1a] text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 rounded-sm shadow-[0_5px_15px_rgba(224,147,122,0.5)] whitespace-nowrap">
                 Am Beliebtesten
@@ -1892,7 +1929,7 @@ export default function App() {
 
             <motion.div
               variants={fadeUpVariant}
-              className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group"
+              className="w-[85vw] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group"
             >
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300 group-hover:text-[#e0937a] transition-colors">
                 1:1 Mentoring
@@ -1936,11 +1973,40 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="flex md:hidden justify-center mt-4 text-[#e0937a] animate-pulse items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-widest">
-              Seitlich wischen
-            </span>
-            <ChevronRight className="w-4 h-4" />
+          <div className="flex md:hidden justify-center mt-6 text-[#e0937a] items-center h-8 transition-all duration-300">
+            {activeCardIndex === 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex items-center gap-2 animate-pulse"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest">
+                  Wischen ➔
+                </span>
+              </motion.div>
+            )}
+            {activeCardIndex === 1 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex items-center gap-2 animate-pulse"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest">
+                  ⟵ Wischen ⟶
+                </span>
+              </motion.div>
+            )}
+            {activeCardIndex === 2 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex items-center gap-2 animate-pulse"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest">
+                  ⟵ Wischen
+                </span>
+              </motion.div>
+            )}
           </div>
         </motion.div>
       </section>
@@ -2315,10 +2381,10 @@ export default function App() {
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <a
-                  href="mailto:office@yagibasancapital.de"
+                  href="mailto:office@yagibasan-capital.de"
                   className="text-gray-400 font-light group-hover:text-[#e0937a] transition-colors whitespace-nowrap text-sm sm:text-base"
                 >
-                  office@yagibasancapital.de
+                  office@yagibasan-capital.de
                 </a>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 group cursor-pointer mt-1 relative -ml-10 sm:-ml-12">
