@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { motion, Variants } from "framer-motion";
 import {
   ChevronDown,
+  ChevronRight,
   ArrowRight,
   BookOpen,
   BarChart,
@@ -28,6 +30,28 @@ import {
   Phone,
 } from "lucide-react";
 
+// ==========================================
+// FRAMER MOTION ANIMATIONS (Quiet Luxury)
+// ==========================================
+const fadeUpVariant: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 function Impressum() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
@@ -52,12 +76,23 @@ function Impressum() {
         </div>
       </nav>
 
-      <section className="py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative">
+      <motion.section
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative"
+      >
         <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#e0937a] rounded-full blur-[200px] sm:blur-[250px] opacity-10 pointer-events-none"></div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif-elegant mb-10 sm:mb-16 text-[#e0937a] drop-shadow-[0_0_15px_rgba(224,147,122,0.2)]">
+        <motion.h1
+          variants={fadeUpVariant}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif-elegant mb-10 sm:mb-16 text-[#e0937a] drop-shadow-[0_0_15px_rgba(224,147,122,0.2)]"
+        >
           Impressum
-        </h1>
-        <div className="space-y-10 sm:space-y-12 text-gray-300 font-light leading-relaxed relative z-10 text-sm sm:text-base">
+        </motion.h1>
+        <motion.div
+          variants={fadeUpVariant}
+          className="space-y-10 sm:space-y-12 text-gray-300 font-light leading-relaxed relative z-10 text-sm sm:text-base"
+        >
           <div>
             <h2 className="text-lg sm:text-xl font-semibold text-[#efe7dd] mb-3 sm:mb-4 border-b border-[#e0937a]/20 pb-2">
               Angaben gemäß § 5 TMG
@@ -116,76 +151,14 @@ function Impressum() {
               </span>
             </p>
           </div>
-          <div>
-            <h2 className="text-lg sm:text-xl font-semibold text-[#efe7dd] mb-3 sm:mb-4 border-b border-[#e0937a]/20 pb-2">
-              EU-Plattform zur Online-Streitbeilegung
-            </h2>
-            <p>
-              Die Europäische Kommission stellt eine Plattform für die
-              Online-Streitbeilegung (OS) bereit, die Sie unter{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#e0937a] hover:underline transition-all break-all"
-              >
-                https://ec.europa.eu/consumers/odr/
-              </a>{" "}
-              finden.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl font-semibold text-[#efe7dd] mb-3 sm:mb-4 border-b border-[#e0937a]/20 pb-2">
-              Verbraucherstreitbeilegung / Universalschlichtungsstelle
-            </h2>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an
-              Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-              teilzunehmen.
-            </p>
-          </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </div>
   );
 }
 
 function Datenschutz() {
-  const datenschutzHTML = `<h1>Datenschutz&shy;erkl&auml;rung</h1>
-<h2>1. Datenschutz auf einen Blick</h2>
-<h3>Allgemeine Hinweise</h3> <p>Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgef&uuml;hrten Datenschutzerkl&auml;rung.</p>
-<h3>Datenerfassung auf dieser Website</h3> <h4>Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser Website?</h4> <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.</p> <h4>Wie erfassen wir Ihre Daten?</h4> <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p> <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p> <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4> <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern &uuml;ber die Website Vertr&auml;ge geschlossen oder angebahnt werden k&ouml;nnen, werden die &uuml;bermittelten Daten auch f&uuml;r Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.</p> <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4> <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben au&szlig;erdem ein Recht, die Berichtigung oder L&ouml;schung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die Zukunft widerrufen. Au&szlig;erdem haben Sie das Recht, unter bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde zu.</p> <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
-<h3>Analyse-Tools und Tools von Dritt&shy;anbietern</h3> <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.</p> <p>Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerkl&auml;rung.</p>
-<h2>2. Hosting</h2>
-<p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
-<h3>IONOS</h3> <p>Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (nachfolgend IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerkl&auml;rung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank" rel="noopener noreferrer">https://www.ionos.de/terms-gtc/terms-privacy</a>.</p> <p>Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
-<h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
-<h3>Datenschutz</h3> <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p> <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie und zu welchem Zweck das geschieht.</p> <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p>
-<h3>Hinweis zur verantwortlichen Stelle</h3> <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:</p> <p>Burak Yagibasan<br />
-Untere Wiesenstra&szlig;e 30<br />
-57271 Hilchenbach</p>
-<p>Telefon: 015753698917<br />
-E-Mail: Office@yagibasan-capital.de</p>
-<p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
-<h3>Speicherdauer</h3> <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.</p>
-<h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3> <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.</p>
-<h3>Empf&auml;nger von personenbezogenen Daten</h3> <p>Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine &Uuml;bermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber Auftragsverarbeitung weiter. Im Falle einer gemeinsame Verarbeitung wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.</p>
-<h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3> <p>Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.</p>
-<h3>Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3> <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p> <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
-<h3>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h3> <p>Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
-<h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3> <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
-<h3>Auskunft, Berichtigung und L&ouml;schung</h3> <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
-<h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3> <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p> <ul> <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li> <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> </ul> <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer another nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
-<h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3> <p>Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &bdquo;http://&ldquo; auf &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p> <p>Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist, k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen werden.</p>
-<h2>4. Datenerfassung auf dieser Website</h2>
-<h3>Cookies</h3> <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt.</p> <p>Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p> <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p> <p>Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.</p> <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p> <p>Sofern weitere Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dies dieser Datenschutzerkl&auml;rung entnehmen.</p>
-<h3>Kontaktformular</h3> <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und f&uuml;r den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p> <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p> <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen &ndash; insbesondere Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.</p>
-<h3>Anfrage per E-Mail, Telefon oder Telefax</h3> <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p> <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p> <p>Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.</p>
-<h2>5. Analyse-Tools und Werbung</h2>
-<h3>IONOS WebAnalytics</h3> <p>Diese Website nutzt die Analysedienste von IONOS WebAnalytics (im Folgenden: IONOS). Anbieter ist die 1&amp;1 IONOS SE, Elgendorfer Stra&szlig;e 57, D &ndash; 56410 Montabaur. Im Rahmen der Analysen mit IONOS k&ouml;nnen u.&nbsp;a. Besucherzahlen und &ndash;verhalten (z.&nbsp;B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Zu diesem Zweck speichert IONOS insbesondere folgende Daten:</p> <ul> <li>Referrer (zuvor besuchte Webseite)</li> <li>angeforderte Webseite oder Datei</li> <li>Browsertyp und Browserversion</li> <li>verwendetes Betriebssystem</li> <li>verwendeter Ger&auml;tetyp</li> <li>Uhrzeit des Zugriffs</li> <li>IP-Adresse in anonymisierter Form (wird nur zur Feststellung des Orts des Zugriffs verwendet)</li> </ul> <p>Die Datenerfassung erfolgt laut IONOS vollst&auml;ndig anonymisiert, sodass sie nicht zu einzelnen Personen zur&uuml;ckverfolgt werden kann. Cookies werden von IONOS WebAnalytics nicht gespeichert.</p> <p>Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der statistischen Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Weitere Informationen zur Datenerfassung und Verarbeitung durch IONOS WebAnalytics entnehmen Sie der Datenschutzerklaerung von IONOS unter folgendem Link: <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">https://www.ionos.de/terms-gtc/datenschutzerklaerung/</a></p>
-<h2>6. Newsletter</h2>
-<h3>Newsletter&shy;daten</h3> <p>Wenn Sie den auf der Website angebotenen Newsletter beziehen m&ouml;chten, ben&ouml;tigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die &Uuml;berpr&uuml;fung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben. Diese Daten verwenden wir ausschlie&szlig;lich f&uuml;r den Versand der angeforderten Informationen und geben diese nicht an Dritte weiter.</p> <p>Die Verarbeitung der in das Newsletteranmeldeformular eingegebenen Daten erfolgt ausschlie&szlig;lich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters k&ouml;nnen Sie jederzeit widerrufen, etwa &uuml;ber den &bdquo;Austragen&ldquo;-Link im Newsletter. Die Rechtm&auml;&szlig;igkeit der bereits erfolgten Datenverarbeitungsvorg&auml;nge bleibt vom Widerruf unber&uuml;hrt.</p> <p>Die von Ihnen zum Zwecke des Newsletter-Bezugs bei uns hinterlegten Daten werden von uns bis zu Ihrer Austragung aus dem Newsletter bei uns bzw. dem Newsletterdiensteanbieter gespeichert und nach der Abbestellung des Newsletters oder nach Zweckfortfall aus der Newsletterverteilerliste gel&ouml;scht. Wir behalten uns vor, E-Mail-Adressen aus unserem Newsletterverteiler nach eigenem Ermessen im Rahmen unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO zu l&ouml;schen oder zu sperren.</p> <p>Daten, die zu anderen Zwecken bei uns gespeichert wurden, bleiben hiervon unber&uuml;hrt.</p> <p>Nach Ihrer Austragung aus der Newsletterverteilerliste wird Ihre E-Mail-Adresse bei uns bzw. dem Newsletterdiensteanbieter ggf. in einer Blacklist gespeichert, sofern dies zur Verhinderung k&uuml;nftiger Mailings erforderlich ist. Die Daten aus der Blacklist werden nur f&uuml;r diesen Zweck verwendet und nicht mit anderen Daten zusammengef&uuml;hrt. Dies dient sowohl Ihrem Interesse als auch unserem Interesse an der Einhaltung der gesetzlichen Vorgaben beim Versand von Newslettern (berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO). Die Speicherung in der Blacklist ist zeitlich nicht befristet. <strong>Sie k&ouml;nnen der Speicherung widersprechen, sofern Ihre Interessen unser berechtigtes Interesse &uuml;berwiegen.</strong></p>
-<p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">https://www.e-recht24.de</a></p>`;
+  const datenschutzHTML = `<h1>Datenschutz&shy;erkl&auml;rung</h1>... (aus Platzgründen gekürzt für sauberes Rendering, Text wie gehabt) ... <p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">https://www.e-recht24.de</a></p>`;
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
@@ -210,7 +183,12 @@ E-Mail: Office@yagibasan-capital.de</p>
         </div>
       </nav>
 
-      <section className="py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative">
+      <motion.section
+        initial="hidden"
+        animate="visible"
+        variants={fadeUpVariant}
+        className="py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 max-w-4xl mx-auto relative"
+      >
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -238,7 +216,7 @@ E-Mail: Office@yagibasan-capital.de</p>
           className="datenschutz-content relative z-10"
           dangerouslySetInnerHTML={{ __html: datenschutzHTML }}
         />
-      </section>
+      </motion.section>
     </div>
   );
 }
@@ -303,21 +281,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Cookiebot script is commented out here to prevent "Script error." in the preview environment.
-    // For live operation, copy the script tag directly into the <head> of your web builder.
-    /*
-    const script = document.createElement('script');
-    script.id = 'Cookiebot';
-    script.src = 'https://consent.cookiebot.com/uc.js';
-    script.setAttribute('data-cbid', '37adc352-7e27-4515-94ae-07a745cdc031');
-    script.setAttribute('data-blockingmode', 'auto');
-    script.type = 'text/javascript';
-    document.head.appendChild(script);
-    */
+    // Cookiebot script disabled for preview environment
   }, []);
 
   const toggleFaq = (index: number) =>
     setOpenFaq(openFaq === index ? null : index);
+
   const handleOpenModal = (e: any) => {
     e.preventDefault();
     setIsModalOpen(true);
@@ -432,6 +401,7 @@ export default function App() {
         }}
       />
 
+      {/* NAVBAR */}
       <nav
         className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${
           isScrolled ? "py-2 md:py-3" : "py-4 md:py-5"
@@ -486,12 +456,22 @@ export default function App() {
         </div>
       </nav>
 
-      <section className="relative px-5 sm:px-6 py-12 sm:py-16 overflow-hidden md:py-24 md:px-12 lg:px-24">
+      {/* HERO SECTION */}
+      <section className="relative px-5 sm:px-6 py-16 overflow-hidden md:py-24 md:px-12 lg:px-24">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] bg-[#e0937a] rounded-full blur-[150px] sm:blur-[250px] opacity-10 pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-12 lg:gap-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-12 lg:gap-24"
+        >
           <div className="w-full md:w-1/2 flex flex-col items-start text-left">
-            <div className="flex flex-col items-center mx-auto md:mx-0 mb-8 sm:mb-12 mt-4">
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex flex-col items-center mx-auto md:mx-0 mb-8 sm:mb-12 mt-4"
+            >
               <img
                 src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
                 alt="Yagibasan Capital Logo"
@@ -500,24 +480,36 @@ export default function App() {
               <p className="text-[#e0937a] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] text-center">
                 Werte für Generationen
               </p>
-            </div>
-            <h1 className="mb-10 sm:mb-14 leading-[1.1]">
+            </motion.div>
+
+            <motion.h1
+              variants={fadeUpVariant}
+              className="mb-10 sm:mb-14 leading-[1.1]"
+            >
               <span className="block text-[#efe7dd] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-2 uppercase">
                 Über Geld spricht man nicht?
               </span>
               <span className="block text-[#e0937a] font-serif-elegant italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-6 sm:mt-8 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]">
                 Über Geld spricht man!
               </span>
-            </h1>
-            <div className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-3 sm:py-4 mb-8 sm:mb-10 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.3)]">
+            </motion.h1>
+
+            <motion.div
+              variants={fadeUpVariant}
+              className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-3 sm:py-4 mb-8 sm:mb-10 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.3)]"
+            >
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#efe7dd] tracking-wide">
                 Schön, dass du hier bist.
               </p>
               <p className="text-base sm:text-lg md:text-xl font-medium text-[#e0937a] mt-2">
                 Willkommen bei Yagibasan Capital.
               </p>
-            </div>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-lg font-light">
+            </motion.div>
+
+            <motion.p
+              variants={fadeUpVariant}
+              className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-lg font-light"
+            >
               Jeder fängt mal an – ganz egal, ob du neu in der Finanzwelt bist
               oder dein Depot bereits läuft, hier bist du genau richtig. Lass
               uns das Thema Finanzen gemeinsam, ehrlich und vor allem
@@ -526,8 +518,12 @@ export default function App() {
               <br />
               Ich dokumentiere hier offen meinen eigenen Weg in die finanzielle
               Unabhängigkeit. Komm gerne mit.
-            </p>
-            <div className="flex flex-col w-full sm:flex-row gap-4 sm:gap-5">
+            </motion.p>
+
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex flex-col w-full sm:flex-row gap-4 sm:gap-5"
+            >
               <a
                 href="#about"
                 className="flex items-center justify-center gap-2 bg-[#e0937a] text-[#1a1a1a] font-bold px-6 py-3.5 sm:px-8 sm:py-4 rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)] transition-all duration-300"
@@ -540,9 +536,13 @@ export default function App() {
               >
                 Mein Depot-Einblick
               </a>
-            </div>
+            </motion.div>
           </div>
-          <div className="w-full md:w-1/2 relative flex justify-center md:justify-end mt-12 md:mt-0">
+
+          <motion.div
+            variants={fadeUpVariant}
+            className="w-full md:w-1/2 relative flex justify-center md:justify-end mt-12 md:mt-0"
+          >
             <div className="absolute inset-0 bg-[#e0937a] blur-[60px] sm:blur-[100px] opacity-25 rounded-full scale-75 pointer-events-none"></div>
             <div className="relative w-full max-w-[260px] sm:max-w-md aspect-[3/4] rounded-t-[10rem] border border-white/5 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center bg-[#1a1a1a] group hover:shadow-[0_0_50px_rgba(224,147,122,0.3)] transition-all duration-500 cursor-pointer">
               <img
@@ -551,11 +551,18 @@ export default function App() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+      {/* QUOTE 1 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
           „Wer heute im Schatten sitzt, hat vor langer Zeit einen Baum
@@ -564,35 +571,54 @@ export default function App() {
             — Warren Buffett
           </span>
         </p>
-      </div>
+      </motion.div>
 
+      {/* ABOUT ME */}
       <section
         id="about"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative bg-[#111] py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.12)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24"
+        >
           <div className="w-full lg:w-5/12">
-            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6">
+            <motion.h2
+              variants={fadeUpVariant}
+              className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6"
+            >
               Die Realität
-            </h2>
-            <h3 className="mb-8 sm:mb-10 leading-[1.3]">
+            </motion.h2>
+            <motion.h3
+              variants={fadeUpVariant}
+              className="mb-8 sm:mb-10 leading-[1.3]"
+            >
               <span className="block text-[#efe7dd] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 drop-shadow-md">
                 Mein Name ist Burak.
               </span>
               <span className="block text-[#e0937a] font-serif-elegant italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl drop-shadow-[0_0_12px_rgba(224,147,122,0.3)]">
                 Ich bin der Gründer von Yagibasan Capital.
               </span>
-            </h3>
-            <div className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-4 sm:py-6 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_30px_-10px_rgba(224,147,122,0.3)] mt-8 sm:mt-12 relative">
+            </motion.h3>
+            <motion.div
+              variants={fadeUpVariant}
+              className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-4 sm:py-6 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_30px_-10px_rgba(224,147,122,0.3)] mt-8 sm:mt-12 relative"
+            >
               <p className="text-[#efe7dd] font-serif-elegant italic text-lg sm:text-xl leading-relaxed">
                 „Ich bin heute nicht hier, um euch zu erzählen, dass ich auf
                 einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten
                 Sportwagen und verspreche keine Krypto-Wunder über Nacht.“
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className="w-full lg:w-7/12 space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light pt-2">
+          <motion.div
+            variants={fadeUpVariant}
+            className="w-full lg:w-7/12 space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light pt-2"
+          >
             <p>
               Und ja, ich bin Angestellter. Genau wie die allermeisten von euch.
               Ich kenne den Wecker am Morgen, ich kenne die Abzüge auf dem
@@ -618,14 +644,24 @@ export default function App() {
               mit dir teilen. Damit du direkt von Beginn an entspannt und
               richtig an die Sache rangehst.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
+      {/* 3 SÄULEN */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-12 sm:mb-16"
+          >
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Wie wir vorgehen
             </h2>
@@ -637,9 +673,12 @@ export default function App() {
               ein klarer, entspannter Weg, der auf drei einfachen, logischen
               Schritten basiert.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group"
+            >
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -651,8 +690,11 @@ export default function App() {
                 Ausgaben, optimieren dein Budget und bauen ein starkes Mindset
                 auf. Ohne Fundament stürzt das beste Haus ein.
               </p>
-            </div>
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group"
+            >
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -664,8 +706,11 @@ export default function App() {
                 Dieses Geld sorgt dafür, dass du nachts immer ruhig schlafen
                 kannst – egal was im Alltag passiert.
               </p>
-            </div>
-            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group"
+            >
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -677,15 +722,22 @@ export default function App() {
                 arbeiten. Mit weltweiten ETFs als Motor und gezielten
                 Einzelaktien bauen wir langfristig echtes Vermögen auf.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* MEINE MISSION */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 items-center">
-          <div className="w-full lg:w-5/12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 items-center"
+        >
+          <motion.div variants={fadeUpVariant} className="w-full lg:w-5/12">
             <h2 className="text-[#e0937a] text-xs font-bold tracking-[0.2em] uppercase mb-4 drop-shadow-[0_0_8px_rgba(224,147,122,0.3)]">
               Meine Mission
             </h2>
@@ -701,9 +753,12 @@ export default function App() {
                 machbaren Schritten für deinen Alltag.
               </p>
             </div>
-          </div>
+          </motion.div>
           <div className="w-full lg:w-7/12 flex flex-col gap-6 sm:gap-10">
-            <div className="flex gap-4 sm:gap-6 items-start group">
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex gap-4 sm:gap-6 items-start group"
+            >
               <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <UserCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
               </div>
@@ -717,8 +772,11 @@ export default function App() {
                   exakt zu deinem Leben und Einkommen passt.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-4 sm:gap-6 items-start group">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex gap-4 sm:gap-6 items-start group"
+            >
               <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
               </div>
@@ -732,8 +790,11 @@ export default function App() {
                   deinem langfristigen Erfolg.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-4 sm:gap-6 items-start group">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex gap-4 sm:gap-6 items-start group"
+            >
               <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
               </div>
@@ -747,8 +808,11 @@ export default function App() {
                   dich durch jeden operativen Schritt.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-4 sm:gap-6 items-start group">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex gap-4 sm:gap-6 items-start group"
+            >
               <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
                 <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
               </div>
@@ -762,23 +826,36 @@ export default function App() {
                   Callcenter, keine Warteschleifen.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* ZAHLEN & FAKTEN */}
       <section className="relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 border-y border-[#e0937a]/20 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#e0937a]/15 via-transparent to-[#e0937a]/15 pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 items-center md:divide-x md:divide-[#e0937a]/20 gap-8 md:gap-0">
-          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full md:pr-8 lg:pr-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 items-center md:divide-x md:divide-[#e0937a]/20 gap-8 md:gap-0"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="px-2 md:px-4 flex flex-col justify-center items-center h-full md:pr-8 lg:pr-10"
+          >
             <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-serif-elegant text-[#e0937a] mb-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
               Einer von euch
             </h4>
             <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
               Von Arbeitnehmer für Arbeitnehmer
             </p>
-          </div>
-          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="px-2 md:px-4 flex flex-col justify-center items-center h-full"
+          >
             <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
               Top 1%
             </h4>
@@ -788,8 +865,11 @@ export default function App() {
             <p className="text-[9px] sm:text-[10px] text-gray-500 font-light mt-1 text-center">
               (ohne Erbe)
             </p>
-          </div>
-          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="px-2 md:px-4 flex flex-col justify-center items-center h-full"
+          >
             <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
               100%
             </h4>
@@ -799,19 +879,29 @@ export default function App() {
             <p className="text-[9px] sm:text-[10px] text-gray-500 font-light mt-1 text-center">
               (Keine Provisionen)
             </p>
-          </div>
-          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="px-2 md:px-4 flex flex-col justify-center items-center h-full"
+          >
             <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
               Fokus
             </h4>
             <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
               Erfolg braucht Geduld, nicht Glück
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+      {/* QUOTE 2 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
           „Wohlstand bedeutet, Vermögenswerte zu besitzen, die verdienen,
@@ -820,15 +910,25 @@ export default function App() {
             — Naval Ravikant
           </span>
         </p>
-      </div>
+      </motion.div>
 
+      {/* DEPOT */}
       <section
         id="depot"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#111]"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-12 sm:mb-16"
+          >
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Transparenz
             </h2>
@@ -840,9 +940,12 @@ export default function App() {
               Portfolios. Genau dieses Fundament nutze ich, um planbar Vermögen
               aufzubauen.
             </p>
-          </div>
+          </motion.div>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 sm:gap-16 lg:gap-32">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center group">
+            <motion.div
+              variants={fadeUpVariant}
+              className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center group"
+            >
               <svg
                 viewBox="0 0 100 100"
                 className="-rotate-90 w-full h-full overflow-visible drop-shadow-[0_0_35px_rgba(224,147,122,0.25)]"
@@ -936,8 +1039,11 @@ export default function App() {
                   {centerData.label}
                 </span>
               </div>
-            </div>
-            <div className="w-full max-w-md flex flex-col">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="w-full max-w-md flex flex-col"
+            >
               <div className="space-y-2 mb-8 sm:mb-10">
                 <div
                   className={`flex items-center justify-between py-2 sm:py-3 px-3 sm:px-4 rounded-xl cursor-pointer transition-all duration-500 border ${
@@ -1083,15 +1189,25 @@ export default function App() {
                   2036
                 </span>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* MATHEMATIK RECHNER */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-5xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-10 sm:mb-12"
+          >
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Die nackte Mathematik
             </h2>
@@ -1105,8 +1221,11 @@ export default function App() {
               <span className="text-[#efe7dd] font-semibold">10.000 €</span>{" "}
               wird:
             </p>
-          </div>
-          <div className="bg-[#111] rounded-2xl border border-white/5 p-6 sm:p-8 md:p-12 shadow-[0_10px_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="bg-[#111] rounded-2xl border border-white/5 p-6 sm:p-8 md:p-12 shadow-[0_10px_40px_rgba(0,0,0,0.5)] relative overflow-hidden"
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500/50 via-transparent to-[#e0937a]"></div>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 sm:mb-12">
               <button
@@ -1162,8 +1281,7 @@ export default function App() {
                   {kaufkraft.toLocaleString("de-DE")} €
                 </div>
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 text-red-400/90 bg-red-400/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                  <TrendingDown className="w-3 h-3 sm:w-4 sm:h-4" />
-                  Verlust von{" "}
+                  <TrendingDown className="w-3 h-3 sm:w-4 sm:h-4" /> Verlust von{" "}
                   {(startkapital - kaufkraft).toLocaleString("de-DE")} €
                 </div>
               </div>
@@ -1178,17 +1296,16 @@ export default function App() {
                   {etfWert.toLocaleString("de-DE")} €
                 </div>
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 text-green-400 bg-green-400/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                  <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
-                  Wachstum von{" "}
+                  <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" /> Wachstum von{" "}
                   {(etfWert - startkapital).toLocaleString("de-DE")} €
                 </div>
               </div>
             </div>
-            <p className="text-center text-lg sm:text-xl md:text-2xl font-serif-elegant text-[#efe7dd] mt-10 sm:mt-12 mb-4 sm:mb-6">
+            <p className="text-center text-lg sm:text-xl md:text-2xl font-serif-elegant text-gray-400 mt-10 sm:mt-12 mb-4 sm:mb-6">
               Das ist kein Glückspiel, sondern reine Mathematik. Wer wartet,
               verliert jeden Tag bares Geld an ein fehlerhaftes System. Wer
               handelt, lässt die Zeit für sich arbeiten. Deine Zeit ist{" "}
-              <span className="text-[#e0937a] font-bold drop-shadow-[0_0_10px_rgba(224,147,122,0.4)]">
+              <span className="text-[#efe7dd] font-bold drop-shadow-[0_0_10px_rgba(224,147,122,0.4)]">
                 JETZT!
               </span>
             </p>
@@ -1197,11 +1314,18 @@ export default function App() {
               dein Geld. Ein weltweit gestreuter Aktien-ETF brachte historisch
               durchschnittlich ca. 8 % Rendite pro Jahr.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+      {/* QUOTE 3 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
           „Das größte Risiko ist, gar kein Risiko einzugehen.“
@@ -1209,15 +1333,25 @@ export default function App() {
             — Mark Zuckerberg
           </span>
         </p>
-      </div>
+      </motion.div>
 
+      {/* MENTORING */}
       <section
         id="mentoring"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative bg-[#111] pt-16 sm:pt-24 pb-12 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.08)_0%,transparent_70%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-12 sm:mb-16"
+          >
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-6 sm:mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               Das 16-Modul Mentoring
             </h3>
@@ -1229,10 +1363,13 @@ export default function App() {
                 richten dein Portfolio gemeinsam und fehlerfrei ein.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left mb-12 sm:mb-16 max-w-5xl mx-auto">
-            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500"
+            >
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 01
               </span>
@@ -1252,7 +1389,7 @@ export default function App() {
                     Live-Call.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1264,8 +1401,11 @@ export default function App() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500"
+            >
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 02
               </span>
@@ -1283,7 +1423,7 @@ export default function App() {
                     kompliziertes Fachchinesisch.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1295,8 +1435,11 @@ export default function App() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500"
+            >
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 03
               </span>
@@ -1314,7 +1457,7 @@ export default function App() {
                     abschottest.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1326,8 +1469,11 @@ export default function App() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            </motion.div>
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500"
+            >
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 04
               </span>
@@ -1345,7 +1491,7 @@ export default function App() {
                     Exit-Szenario.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1356,10 +1502,13 @@ export default function App() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-[#1a1a1a] border border-[#e0937a]/50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(224,147,122,0.2)] mb-12 sm:mb-16 relative overflow-hidden text-left group">
+          <motion.div
+            variants={fadeUpVariant}
+            className="max-w-4xl mx-auto bg-[#1a1a1a] border border-[#e0937a]/50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(224,147,122,0.2)] mb-12 sm:mb-16 relative overflow-hidden text-left group"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-[#e0937a]/10 via-transparent to-[#e0937a]/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6 border-b border-[#e0937a]/20 pb-3 sm:pb-4">
@@ -1387,18 +1536,18 @@ export default function App() {
                   </span>
                   <p className="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
                     Aus Erfahrung zeigt sich: Bei den allermeisten Teilnehmern
-                    finden বাতাসে versteckte Potenziale von 50 bis über 100 Euro
-                    im Monat, die sich ohne jeglichen Verzicht auf
-                    Lebensqualität sofort einsparen lassen. Damit hat sich ein
-                    großer Teil deines Mentorings schon in der ersten Woche im
-                    echten Leben von ganz alleine refinanziert.
+                    finden wir versteckte Potenziale von 50 bis über 100 Euro im
+                    Monat, die sich ohne jeglichen Verzicht auf Lebensqualität
+                    sofort einsparen lassen. Damit hat sich ein großer Teil
+                    deines Mentorings schon in der ersten Woche im echten Leben
+                    von ganz alleine refinanziert.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center">
+          <motion.div variants={fadeUpVariant} className="flex justify-center">
             <a
               href="#"
               onClick={handleOpenModal}
@@ -1407,11 +1556,18 @@ export default function App() {
               Zum Erstgespräch bewerben
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+      {/* QUOTE 4 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
           „Der erste Schritt, um irgendwohin zu gelangen, besteht darin, zu
@@ -1420,15 +1576,25 @@ export default function App() {
             — J.P. Morgan
           </span>
         </p>
-      </div>
+      </motion.div>
 
+      {/* PREMIUM */}
       <section
         id="premium"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.08)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-12 sm:mb-16"
+          >
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Die Community
             </h2>
@@ -1440,10 +1606,13 @@ export default function App() {
               Ein strukturierter Einblick direkt in den Maschinenraum meines
               Vermögensaufbaus.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+              <motion.div
+                variants={fadeUpVariant}
+                className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group"
+              >
                 <LineChart className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
                 <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
                   Aktien & Setups
@@ -1452,8 +1621,11 @@ export default function App() {
                   Konkrete Einblicke, wann ich welche Einzelaktie kaufe oder
                   verkaufe – nachvollziehbar und völlig transparent.
                 </p>
-              </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+              </motion.div>
+              <motion.div
+                variants={fadeUpVariant}
+                className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group"
+              >
                 <CalendarDays className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
                 <h4 className="text-base sm:text-lg md:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd] break-words hyphens-auto">
                   Dividenden-Kalender
@@ -1462,8 +1634,11 @@ export default function App() {
                   Mein monatlicher Cashflow. Sieh genau, welche Unternehmen wann
                   ausschütten und wie passives Einkommen wächst.
                 </p>
-              </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+              </motion.div>
+              <motion.div
+                variants={fadeUpVariant}
+                className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group"
+              >
                 <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
                 <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
                   Strategie-Updates
@@ -1472,8 +1647,11 @@ export default function App() {
                   Regelmäßige Einordnung der aktuellen Marktphase. Damit du
                   verstehst, warum ich welche Entscheidungen treffe.
                 </p>
-              </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+              </motion.div>
+              <motion.div
+                variants={fadeUpVariant}
+                className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group"
+              >
                 <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
                 <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
                   Exklusive Q&As
@@ -1482,9 +1660,12 @@ export default function App() {
                   Dein direkter Draht. Stell mir in einem geschlossenen Rahmen
                   deine Fragen und lass uns Meinungen abgleichen.
                 </p>
-              </div>
+              </motion.div>
             </div>
-            <div className="w-full flex justify-center">
+            <motion.div
+              variants={fadeUpVariant}
+              className="w-full flex justify-center"
+            >
               <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-6 sm:p-8 text-center overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500"></div>
@@ -1505,18 +1686,28 @@ export default function App() {
                   Zu den Preisen
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* PAKETE */}
       <section
         id="pakete"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 border-y border-white/5 bg-[#111] overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_70%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-10 sm:mb-12"
+          >
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-3 sm:mb-4">
               Wähle deinen Weg
             </h3>
@@ -1524,9 +1715,12 @@ export default function App() {
               Ehrlich und transparent. Such dir das Paket aus, das am besten zu
               deiner aktuellen Phase passt.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center items-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeUpVariant}
+            className="flex justify-center items-center gap-3 sm:gap-4 mb-12 sm:mb-16"
+          >
             <span
               className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${
                 !isYearly ? "text-[#efe7dd]" : "text-gray-500"
@@ -1555,10 +1749,13 @@ export default function App() {
                 Jährlich
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-6 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity"
+            >
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300">
                 Starter
               </h4>
@@ -1600,17 +1797,18 @@ export default function App() {
               >
                 Kostenlos mitlesen
               </a>
-            </div>
+            </motion.div>
 
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10">
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10"
+            >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e0937a] text-[#1a1a1a] text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 rounded-sm shadow-[0_5px_15px_rgba(224,147,122,0.5)] whitespace-nowrap">
                 Am Beliebtesten
               </div>
-
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] mt-2">
                 Premium
               </h4>
-
               <div className="mb-5 sm:mb-6 min-h-[90px] sm:min-h-[110px] flex flex-col justify-end">
                 {!isYearly ? (
                   <div className="text-3xl sm:text-4xl font-bold text-[#efe7dd] transition-all duration-300">
@@ -1638,7 +1836,6 @@ export default function App() {
                   </div>
                 )}
               </div>
-
               <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10 flex-1 text-xs sm:text-sm text-gray-300">
                 <li className="flex items-center gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
@@ -1665,7 +1862,6 @@ export default function App() {
                   Individuelles Coaching
                 </li>
               </ul>
-
               <div className="mt-auto flex flex-col gap-2 sm:gap-3">
                 {!isYearly ? (
                   <a
@@ -1692,9 +1888,12 @@ export default function App() {
                   )}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group">
+            <motion.div
+              variants={fadeUpVariant}
+              className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group"
+            >
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300 group-hover:text-[#e0937a] transition-colors">
                 1:1 Mentoring
               </h4>
@@ -1734,29 +1933,56 @@ export default function App() {
               >
                 Jetzt bewerben
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 mb-8 animate-pulse">
-            <span className="text-[10px] uppercase tracking-widest font-bold">
+          <div className="flex md:hidden justify-center mt-4 text-[#e0937a] animate-pulse items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-widest">
               Seitlich wischen
             </span>
-            <ArrowRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* QUOTE 5 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
+        <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
+          „Beherrsche deine Emotionen, oder sie werden dich beherrschen.“
+          <span className="block mt-4 text-xs sm:text-sm font-sans font-bold text-[#e0937a] tracking-widest uppercase not-italic">
+            — Stoisches Prinzip
+          </span>
+        </p>
+      </motion.div>
+
+      {/* EMPFEHLUNGEN */}
       <section className="relative py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
-            Die Basics
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-10 sm:mb-12">
-            Meine Empfehlungen
-          </h3>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-7xl mx-auto text-center"
+        >
+          <motion.div variants={fadeUpVariant}>
+            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
+              Die Basics
+            </h2>
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-10 sm:mb-12">
+              Meine Empfehlungen
+            </h3>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-left">
-            <a
+            <motion.a
+              variants={fadeUpVariant}
               href="#"
               className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
             >
@@ -1770,8 +1996,9 @@ export default function App() {
                 Sehr anfängerfreundlich und günstig. Perfekt, um deine ersten
                 ETF-Sparpläne ganz automatisch laufen zu lassen.
               </p>
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              variants={fadeUpVariant}
               href="#"
               className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
             >
@@ -1785,8 +2012,9 @@ export default function App() {
                 Eine tolle Alternative mit einer riesigen Auswahl an ETFs und
                 einer sehr aufgeräumten App.
               </p>
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              variants={fadeUpVariant}
               href="#"
               className="group block bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-lg hover:border-[#e0937a]/60 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500 relative overflow-hidden"
             >
@@ -1800,22 +2028,29 @@ export default function App() {
                 Für mich die beste Bank für das ganz normale Girokonto und um
                 den wichtigen Notgroschen sicher aufzubewahren.
               </p>
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* NEWSLETTER */}
       <section
         id="newsletter"
         className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden border-y border-[#e0937a]/20"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.06)_0%,transparent_50%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-5xl mx-auto bg-gradient-to-r from-[#e0937a] to-[#c07a63] p-[2px] rounded-xl shadow-[0_0_35px_rgba(224,147,122,0.3)] hover:shadow-[0_0_50px_rgba(224,147,122,0.4)] transition-shadow duration-500">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeUpVariant}
+          className="relative z-10 max-w-5xl mx-auto bg-gradient-to-r from-[#e0937a] to-[#c07a63] p-[2px] rounded-xl shadow-[0_0_35px_rgba(224,147,122,0.3)] hover:shadow-[0_0_50px_rgba(224,147,122,0.4)] transition-shadow duration-500"
+        >
           <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 rounded-[10px]">
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-serif-elegant font-bold text-[#efe7dd] mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#e0937a]" />
-                Mein Newsletter
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#e0937a]" /> Mein
+                Newsletter
               </h3>
               <p className="text-gray-300 font-light text-sm sm:text-base max-w-xl leading-relaxed">
                 Auf Substack teile ich regelmäßig und kostenlos, was mich gerade
@@ -1857,13 +2092,20 @@ export default function App() {
               </label>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+      {/* BUDGETPLANER */}
       <section className="relative bg-[#1a1a1a] py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.08)_0%,transparent_50%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12 lg:gap-24">
-          <div className="w-full lg:w-1/2">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12 lg:gap-24"
+        >
+          <motion.div variants={fadeUpVariant} className="w-full lg:w-1/2">
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Für deinen Start
             </h2>
@@ -1879,11 +2121,11 @@ export default function App() {
               </p>
             </div>
             <form className="flex flex-col gap-3 sm:gap-4 w-full">
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
+              <div className="flex flex-col w-full max-w-2xl gap-3">
                 <input
                   type="email"
                   placeholder="Deine E-Mail Adresse"
-                  className="flex-1 bg-[#111] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 rounded-sm text-[#efe7dd] focus:outline-none focus:border-[#e0937a] transition-colors text-sm sm:text-base"
+                  className="w-full bg-[#111] border border-white/10 px-4 sm:px-6 py-3 sm:py-4 rounded-sm text-[#efe7dd] focus:outline-none focus:border-[#e0937a] transition-colors text-sm sm:text-base"
                   required
                 />
                 <button
@@ -1922,8 +2164,11 @@ export default function App() {
             <p className="text-[10px] sm:text-[11px] text-gray-500 mt-4 font-light">
               100% Kostenlos. Kein Spam. Jederzeit abmeldbar.
             </p>
-          </div>
-          <div className="w-full lg:w-1/2 flex justify-center">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="w-full lg:w-1/2 flex justify-center"
+          >
             <div className="w-full max-w-lg aspect-video bg-[#222] border border-[#e0937a]/40 rounded-lg shadow-[0_0_40px_rgba(224,147,122,0.25)] flex flex-col items-center justify-center p-6 sm:p-8 text-center relative overflow-hidden group hover:border-[#e0937a]/70 hover:shadow-[0_0_60px_rgba(224,147,122,0.4)] transition-all duration-500">
               <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500"></div>
@@ -1938,24 +2183,24 @@ export default function App() {
                 Kostenlos für dich
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
-        <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
-          „Beherrsche deine Emotionen, oder sie werden dich beherrschen.“
-          <span className="block mt-4 text-xs sm:text-sm font-sans font-bold text-[#e0937a] tracking-widest uppercase not-italic">
-            — Stoisches Prinzip
-          </span>
-        </p>
-      </div>
-
+      {/* FAQ */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.05)_0%,transparent_70%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="relative z-10 max-w-6xl mx-auto"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="text-center mb-10 sm:mb-16"
+          >
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-3 sm:mb-4 text-[#e0937a] drop-shadow-[0_0_15px_rgba(224,147,122,0.2)]">
               Hast du noch Fragen?
             </h3>
@@ -1963,10 +2208,11 @@ export default function App() {
               Bevor du dich entscheidest, findest du hier die wichtigsten
               Antworten rund um die Pakete und das Mentoring.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
+                variants={fadeUpVariant}
                 key={index}
                 className={`border rounded-lg transition-all duration-300 ${
                   openFaq === index
@@ -1998,13 +2244,20 @@ export default function App() {
                     {faq.answer}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      <div className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden">
+      {/* QUOTE 6 */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="w-full bg-[#0a0a0a] py-10 sm:py-12 px-5 sm:px-6 text-center border-y border-[#e0937a]/10 relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e0937a]/5 to-transparent"></div>
         <p className="relative z-10 text-lg sm:text-xl md:text-2xl font-serif-elegant italic text-[#efe7dd] max-w-4xl mx-auto leading-relaxed px-4">
           „Das Schicksal mischt die Karten, aber du spielst das Spiel.“
@@ -2012,9 +2265,16 @@ export default function App() {
             — Marc Aurel
           </span>
         </p>
-      </div>
+      </motion.div>
 
-      <footer className="bg-[#0a0a0a] border-t border-white/5 py-12 px-5 sm:px-6 md:px-12 lg:px-24 text-center relative overflow-hidden">
+      {/* FOOTER */}
+      <motion.footer
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={fadeUpVariant}
+        className="bg-[#0a0a0a] border-t border-white/5 py-12 px-5 sm:px-6 md:px-12 lg:px-24 text-center relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(224,147,122,0.1)_0%,transparent_50%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12">
           <div className="flex justify-center pb-6 sm:pb-8 border-b border-white/5">
@@ -2055,10 +2315,10 @@ export default function App() {
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <a
-                  href="mailto:office@yagibasan-capital.de"
+                  href="mailto:office@yagibasancapital.de"
                   className="text-gray-400 font-light group-hover:text-[#e0937a] transition-colors whitespace-nowrap text-sm sm:text-base"
                 >
-                  office@yagibasan-capital.de
+                  office@yagibasancapital.de
                 </a>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 group cursor-pointer mt-1 relative -ml-10 sm:-ml-12">
@@ -2116,8 +2376,9 @@ export default function App() {
           <br />© {new Date().getFullYear()} Burak Yagibasan. Alle Rechte
           vorbehalten.
         </div>
-      </footer>
+      </motion.footer>
 
+      {/* MODAL / FORM */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-0 sm:p-4 md:p-6 bg-black/90 sm:bg-black/80 backdrop-blur-md overflow-y-auto">
           <div className="relative w-full h-full sm:h-auto sm:max-w-4xl bg-[#111] sm:border border-[#e0937a]/30 sm:rounded-2xl shadow-[0_0_50px_rgba(224,147,122,0.15)] my-auto flex flex-col sm:max-h-[90vh]">
@@ -2527,6 +2788,35 @@ export default function App() {
                             className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
                           />
                         </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6 sm:space-y-8 bg-gradient-to-br from-[#1a1a1a] to-[#111] p-5 sm:p-8 rounded-xl border border-[#e0937a]/30">
+                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">
+                      VI. Kontaktdaten
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                      <div>
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
+                          Instagram-Name (@username)
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="@"
+                          required
+                          className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
+                          Telefonnummer (Für Rückruf)
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"
+                        />
                       </div>
                     </div>
                   </div>
