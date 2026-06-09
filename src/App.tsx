@@ -625,7 +625,7 @@ export default function App() {
       <section className="relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">
               Wie wir vorgehen
             </h2>
@@ -1035,46 +1035,45 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-[#e0937a]/15 to-transparent p-6 rounded-lg border border-[#e0937a]/30 shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.4)] relative overflow-hidden group hover:border-[#e0937a]/60 transition-colors">
-                <Clock className="absolute -right-4 -top-4 w-24 h-24 text-[#e0937a] opacity-10 group-hover:scale-110 transition-transform duration-700" />
+              <div className="bg-gradient-to-r from-[#e0937a]/15 to-transparent p-5 sm:p-6 rounded-xl border border-[#e0937a]/30 shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.4)] relative overflow-hidden group hover:border-[#e0937a]/60 transition-colors">
+                <Clock className="absolute -right-4 -top-4 w-20 h-20 sm:w-24 sm:h-24 text-[#e0937a] opacity-10 group-hover:scale-110 transition-transform duration-700" />
                 <div className="relative z-10">
-                  <h4 className="font-bold text-[#e0937a] tracking-wider uppercase text-sm mb-1 drop-shadow-[0_0_5px_rgba(224,147,122,0.3)]">
+                  <h4 className="font-bold text-[#e0937a] tracking-wider uppercase text-xs sm:text-sm mb-1 drop-shadow-[0_0_5px_rgba(224,147,122,0.3)]">
                     Mein Ziel: Coast FIRE
                   </h4>
-                  <p className="text-2xl font-serif-elegant text-[#efe7dd] mb-5">
+                  <p className="text-xl sm:text-2xl font-serif-elegant text-[#efe7dd] mb-4 sm:mb-5">
                     12. Juni 2030
                   </p>
-
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold bg-[#111] px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-[#111] px-2 sm:px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         {timeLeft.Tage}
                       </div>
-                      <div className="text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
+                      <div className="text-[9px] sm:text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
                         Tage
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold bg-[#111] px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-[#111] px-2 sm:px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         {timeLeft.Std}
                       </div>
-                      <div className="text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
+                      <div className="text-[9px] sm:text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
                         Std
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold bg-[#111] px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-[#111] px-2 sm:px-3 py-1 rounded border border-white/10 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         {timeLeft.Min}
                       </div>
-                      <div className="text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
+                      <div className="text-[9px] sm:text-[10px] text-gray-400 uppercase mt-1 tracking-widest">
                         Min
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold bg-[#e0937a]/20 text-[#e0937a] px-3 py-1 rounded border border-[#e0937a]/30 animate-pulse shadow-[0_0_20px_rgba(224,147,122,0.4)]">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-[#e0937a]/20 text-[#e0937a] px-2 sm:px-3 py-1 rounded border border-[#e0937a]/30 animate-pulse shadow-[0_0_20px_rgba(224,147,122,0.4)]">
                         {timeLeft.Sek}
                       </div>
-                      <div className="text-[10px] text-[#e0937a] uppercase mt-1 tracking-widest">
+                      <div className="text-[9px] sm:text-[10px] text-[#e0937a] uppercase mt-1 tracking-widest">
                         Sek
                       </div>
                     </div>
@@ -1082,7 +1081,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="mt-8 sm:mt-12 p-5 sm:p-6 border border-[#e0937a]/30 rounded-xl bg-gradient-to-r from-[#e0937a]/15 via-[#1a1a1a] to-[#111] flex justify-between items-center shadow-[0_10px_30px_rgba(224,147,122,0.2)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.35)] hover:border-[#e0937a]/60 transition-all duration-500 relative overflow-hidden group">
+              <div className="mt-6 sm:mt-8 p-5 sm:p-6 border border-[#e0937a]/30 rounded-xl bg-gradient-to-r from-[#e0937a]/15 via-[#1a1a1a] to-[#111] flex justify-between items-center shadow-[0_10px_30px_rgba(224,147,122,0.2)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.35)] hover:border-[#e0937a]/60 transition-all duration-500 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#e0937a] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <span className="block text-[10px] text-[#e0937a] font-bold uppercase tracking-widest mb-1 drop-shadow-[0_0_5px_rgba(224,147,122,0.4)]">
@@ -1245,8 +1244,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Mentoring Carousel für Mobile / Grid für Desktop */}
-          <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 text-left mb-4 md:mb-12 sm:mb-16 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 text-left mb-12 sm:mb-16 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 01
@@ -1374,7 +1372,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Mobile Swipe Indicator (Mentoring) */}
           <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mb-12 sm:mb-16 animate-pulse">
             <span className="text-[10px] uppercase tracking-widest font-bold">
               Seitlich wischen
@@ -1464,61 +1461,72 @@ export default function App() {
               Vermögensaufbaus.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                <LineChart className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
-                  Aktien & Setups
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                  Konkrete Einblicke, wann ich welche Einzelaktie kaufe oder
-                  verkaufe – nachvollziehbar und völlig transparent.
-                </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="flex flex-col w-full">
+              <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pt-4 pb-8 sm:pt-0 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                  <LineChart className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
+                    Aktien & Setups
+                  </h4>
+                  <p className="text-sm text-gray-400 font-light leading-relaxed">
+                    Konkrete Einblicke, wann ich welche Einzelaktie kaufe oder
+                    verkaufe – nachvollziehbar und völlig transparent.
+                  </p>
+                </div>
+                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                  <CalendarDays className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                  <h4 className="text-lg md:text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd] break-words hyphens-auto">
+                    Dividenden-Kalender
+                  </h4>
+                  <p className="text-sm text-gray-400 font-light leading-relaxed">
+                    Mein monatlicher Cashflow. Sieh genau, welche Unternehmen
+                    wann ausschütten und wie passives Einkommen wächst.
+                  </p>
+                </div>
+                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                  <TrendingUp className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
+                    Strategie-Updates
+                  </h4>
+                  <p className="text-sm text-gray-400 font-light leading-relaxed">
+                    Regelmäßige Einordnung der aktuellen Marktphase. Damit du
+                    verstehst, warum ich welche Entscheidungen treffe.
+                  </p>
+                </div>
+                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                  <MessageCircle className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
+                    Exklusive Q&As
+                  </h4>
+                  <p className="text-sm text-gray-400 font-light leading-relaxed">
+                    Dein direkter Draht. Stell mir in einem geschlossenen Rahmen
+                    deine Fragen und lass uns Meinungen abgleichen.
+                  </p>
+                </div>
               </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                <CalendarDays className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                <h4 className="text-base sm:text-lg md:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd] break-words hyphens-auto">
-                  Dividenden-Kalender
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                  Mein monatlicher Cashflow. Sieh genau, welche Unternehmen wann
-                  ausschütten und wie passives Einkommen wächst.
-                </p>
-              </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
-                  Strategie-Updates
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                  Regelmäßige Einordnung der aktuellen Marktphase. Damit du
-                  verstehst, warum ich welche Entscheidungen treffe.
-                </p>
-              </div>
-              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
-                  Exklusive Q&As
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                  Dein direkter Draht. Stell mir in einem geschlossenen Rahmen
-                  deine Fragen und lass uns Meinungen abgleichen.
-                </p>
+
+              <div className="flex sm:hidden justify-center items-center gap-2 text-[#e0937a]/70 mb-8 animate-pulse">
+                <span className="text-[10px] uppercase tracking-widest font-bold">
+                  Seitlich wischen
+                </span>
+                <ArrowRight className="w-4 h-4" />
               </div>
             </div>
+
             <div className="w-full flex justify-center">
-              <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-6 sm:p-8 text-center overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500"></div>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-500"></div>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500"></div>
+              <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-8 bg-[#333] flex items-center px-4 gap-2 border-b border-black/50">
+                  <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 </div>
-                <Lock className="w-12 h-12 sm:w-16 sm:h-16 text-[#e0937a] mb-3 sm:mb-4 mt-4 sm:mt-6 drop-shadow-[0_0_10px_rgba(224,147,122,0.5)]" />
-                <h4 className="font-bold text-xl sm:text-2xl mb-1 sm:mb-2 font-serif-elegant text-[#efe7dd]">
+                <Lock className="w-16 h-16 text-[#e0937a] mb-4 mt-6 drop-shadow-[0_0_10px_rgba(224,147,122,0.5)]" />
+                <h4 className="font-bold text-2xl mb-2 font-serif-elegant text-[#efe7dd]">
                   Premium Zugang
                 </h4>
-                <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest mb-6 sm:mb-8">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-8">
                   Bald verfügbar
                 </p>
                 <a
@@ -1580,7 +1588,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Pricing Carousel für Mobile / Grid für Desktop */}
           <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-6 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300">
@@ -1761,7 +1768,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Mobile Swipe Indicator (Pakete) */}
           <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 mb-8 animate-pulse">
             <span className="text-[10px] uppercase tracking-widest font-bold">
               Seitlich wischen
@@ -2342,7 +2348,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          12. Investierst du aktuell bereits aktiv Geld an den
+                          12. Investieren Sie aktuell bereits aktiv Geld an den
                           Finanzmärkten?
                         </label>
                         <div className="flex flex-wrap gap-4 sm:gap-6 mt-2">
@@ -2391,7 +2397,7 @@ export default function App() {
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                           15. Wenn es um wichtige finanzielle Entscheidungen
-                          geht: Wie triffst du diese meistens?
+                          geht: Wie treffen Sie diese meistens?
                         </label>
                         <textarea
                           rows={2}
@@ -2420,7 +2426,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          17. Wie spricht dein engstes soziales Umfeld über Geld
+                          17. Wie spricht Ihr engstes soziales Umfeld über Geld
                           und Börse?
                         </label>
                         <textarea
@@ -2431,8 +2437,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          18. Stell dir vor, du erhältst unerwartet 10.000 €
-                          geschenkt. Was tust du damit?
+                          18. Stellen Sie sich vor, Sie erhalten unerwartet
+                          10.000 € geschenkt. Was tun Sie damit?
                         </label>
                         <textarea
                           rows={2}
@@ -2442,8 +2448,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          19. Welche Glaubenssätze über Geld haben dich in
-                          deiner Kindheit geprägt?
+                          19. Welche Glaubenssätze über Geld haben Sie in Ihrer
+                          Kindheit geprägt?
                         </label>
                         <textarea
                           rows={2}
@@ -2453,8 +2459,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          20. Wie würdest du emotional reagieren, wenn dein
-                          Depot um 25% an Wert verliert?
+                          20. Wie würden Sie emotional reagieren, wenn Ihr Depot
+                          um 25% an Wert verliert?
                         </label>
                         <textarea
                           rows={2}
@@ -2483,7 +2489,7 @@ export default function App() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                            22. Welche jährliche Rendite (%) erwartest du
+                            22. Welche jährliche Rendite (%) erwarten Sie
                             realistisch?
                           </label>
                           <input
@@ -2494,8 +2500,8 @@ export default function App() {
                         </div>
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                            23. Für welchen Zeitraum könntest du auf dein
-                            Kapital verzichten?
+                            23. Für welchen Zeitraum könnten Sie auf Ihr Kapital
+                            verzichten?
                           </label>
                           <input
                             type="text"
@@ -2506,7 +2512,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          24. Wie sehr bist du bereit, alte Konsumgewohnheiten
+                          24. Wie sehr sind Sie bereit, alte Konsumgewohnheiten
                           radikal zu ändern? (1 = Nicht bereit, 10 = Sehr
                           bereit)
                         </label>
