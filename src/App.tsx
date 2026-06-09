@@ -260,8 +260,8 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -432,7 +432,11 @@ export default function App() {
         }}
       />
 
-      <nav className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
+      <nav
+        className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${
+          isScrolled ? "py-2 md:py-3" : "py-4 md:py-5"
+        }`}
+      >
         <a
           href="#"
           className="flex items-center hover:scale-105 transition-transform"
@@ -440,24 +444,44 @@ export default function App() {
           <img
             src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
             alt="Yagibasan Capital Logo"
-            className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`}
+            className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${
+              isScrolled
+                ? "w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16"
+                : "w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24"
+            }`}
           />
         </a>
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="#"
             onClick={handleOpenModal}
-            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}
+            className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${
+              isScrolled
+                ? "text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2"
+                : "text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5"
+            }`}
           >
             <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
-            <span className="sm:hidden">Kostenloses<br/>Erstgespräch</span>
+            <span className="sm:hidden">
+              Kostenloses
+              <br />
+              Erstgespräch
+            </span>
           </a>
           <a
             href="#premium"
-            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-5 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-8 py-2 sm:py-3.5'}`}
+            className={`font-bold text-[#1a1a1a] bg-[#e0937a] rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.6)] transition-all duration-300 inline-block text-center leading-tight ${
+              isScrolled
+                ? "text-[9px] sm:text-xs px-2 sm:px-5 py-1.5 sm:py-2"
+                : "text-[10px] sm:text-sm px-2.5 sm:px-8 py-2 sm:py-3.5"
+            }`}
           >
             <span className="hidden sm:inline">Premium Mitglied werden</span>
-            <span className="sm:hidden">Premium<br/>Mitglied werden</span>
+            <span className="sm:hidden">
+              Premium
+              <br />
+              Mitglied werden
+            </span>
           </a>
         </div>
       </nav>
@@ -614,10 +638,8 @@ export default function App() {
               Schritten basiert.
             </p>
           </div>
-          
-          {/* Mobile Swipe Carousel / Desktop Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -630,7 +652,7 @@ export default function App() {
                 auf. Ohne Fundament stürzt das beste Haus ein.
               </p>
             </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -643,7 +665,7 @@ export default function App() {
                 kannst – egal was im Alltag passiert.
               </p>
             </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
+            <div className="bg-[#111] border border-white/5 p-6 sm:p-8 md:p-10 rounded-2xl hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.4)] transition-all duration-500 group">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0937a]/10 rounded-full flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(224,147,122,0.5)] transition-all">
                 <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0937a]" />
               </div>
@@ -657,13 +679,6 @@ export default function App() {
               </p>
             </div>
           </div>
-          
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 animate-pulse">
-            <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
-            <ArrowRight className="w-4 h-4" />
-          </div>
-
         </div>
       </section>
 
@@ -687,73 +702,66 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="w-full lg:w-7/12 flex flex-col">
-            <div className="flex sm:flex-col gap-6 sm:gap-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pt-4 pb-8 sm:pt-0 sm:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-              <div className="w-[85vw] sm:w-auto shrink-0 snap-center flex gap-4 sm:gap-6 items-start group transition-transform duration-300 hover:-translate-y-1 sm:hover:translate-y-0">
-                <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-                  <UserCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
-                    Individuelle Strategie
-                  </h4>
-                  <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
-                    Wünsche, Ziele und Sicherheitsbedürfnisse sind verschieden.
-                    Wir bauen keine Standard-Portfolios, sondern ein Setup, das
-                    exakt zu deinem Leben und Einkommen passt.
-                  </p>
-                </div>
+          <div className="w-full lg:w-7/12 flex flex-col gap-6 sm:gap-10">
+            <div className="flex gap-4 sm:gap-6 items-start group">
+              <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                <UserCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
               </div>
-              <div className="w-[85vw] sm:w-auto shrink-0 snap-center flex gap-4 sm:gap-6 items-start group transition-transform duration-300 hover:-translate-y-1 sm:hover:translate-y-0">
-                <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-                  <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
-                    100% Unabhängigkeit
-                  </h4>
-                  <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
-                    Keine Provisionen, keine versteckten Gebühren, keine Banken im
-                    Hintergrund. Meine Loyalität gilt ausschließlich dir und
-                    deinem langfristigen Erfolg.
-                  </p>
-                </div>
-              </div>
-              <div className="w-[85vw] sm:w-auto shrink-0 snap-center flex gap-4 sm:gap-6 items-start group transition-transform duration-300 hover:-translate-y-1 sm:hover:translate-y-0">
-                <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-                  <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
-                    Der Komplett-Umbau
-                  </h4>
-                  <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
-                    Wir reden nicht nur, wir setzen um. Von der Budget-Optimierung
-                    bis zur finalen, fehlerfreien Depot-Einrichtung begleite ich
-                    dich durch jeden operativen Schritt.
-                  </p>
-                </div>
-              </div>
-              <div className="w-[85vw] sm:w-auto shrink-0 snap-center flex gap-4 sm:gap-6 items-start group transition-transform duration-300 hover:-translate-y-1 sm:hover:translate-y-0">
-                <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-                  <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
-                    Direkter Draht
-                  </h4>
-                  <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
-                    Bei Fragen oder Unsicherheiten im Markt stehe ich dir zur
-                    Seite. Schnelle, ehrliche Antworten – kein anonymes
-                    Callcenter, keine Warteschleifen.
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
+                  Individuelle Strategie
+                </h4>
+                <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
+                  Wünsche, Ziele und Sicherheitsbedürfnisse sind verschieden.
+                  Wir bauen keine Standard-Portfolios, sondern ein Setup, das
+                  exakt zu deinem Leben und Einkommen passt.
+                </p>
               </div>
             </div>
-            
-            <div className="flex sm:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 mb-8 animate-pulse">
-              <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
-              <ArrowRight className="w-4 h-4" />
+            <div className="flex gap-4 sm:gap-6 items-start group">
+              <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+              </div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
+                  100% Unabhängigkeit
+                </h4>
+                <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
+                  Keine Provisionen, keine versteckten Gebühren, keine Banken im
+                  Hintergrund. Meine Loyalität gilt ausschließlich dir und
+                  deinem langfristigen Erfolg.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4 sm:gap-6 items-start group">
+              <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+              </div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
+                  Der Komplett-Umbau
+                </h4>
+                <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
+                  Wir reden nicht nur, wir setzen um. Von der Budget-Optimierung
+                  bis zur finalen, fehlerfreien Depot-Einrichtung begleite ich
+                  dich durch jeden operativen Schritt.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4 sm:gap-6 items-start group">
+              <div className="mt-1 bg-[#1a1a1a] p-3 sm:p-4 rounded-xl border border-white/5 group-hover:border-[#e0937a]/50 transition-colors shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+              </div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-[#efe7dd] mb-1 sm:mb-2 group-hover:text-[#e0937a] transition-colors">
+                  Direkter Draht
+                </h4>
+                <p className="text-gray-400 font-light text-sm sm:text-base leading-relaxed">
+                  Bei Fragen oder Unsicherheiten im Markt stehe ich dir zur
+                  Seite. Schnelle, ehrliche Antworten – kein anonymes
+                  Callcenter, keine Warteschleifen.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -761,52 +769,45 @@ export default function App() {
 
       <section className="relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 border-y border-[#e0937a]/20 bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#e0937a]/15 via-transparent to-[#e0937a]/15 pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          
-          <div className="flex md:grid md:grid-cols-4 items-center gap-4 sm:gap-6 md:gap-0 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] md:bg-transparent border border-white/5 md:border-none p-6 sm:p-8 md:p-0 rounded-2xl md:rounded-none flex flex-col justify-center items-center h-full md:pr-8 lg:pr-10 shadow-[0_10px_30px_rgba(0,0,0,0.4)] md:shadow-none hover:-translate-y-2 md:hover:translate-y-0 transition-transform">
-              <h4 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-serif-elegant text-[#e0937a] mb-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-                Einer von euch
-              </h4>
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center">
-                Von Arbeitnehmer für Arbeitnehmer
-              </p>
-            </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] md:bg-transparent border border-white/5 md:border-none p-6 sm:p-8 md:p-0 rounded-2xl md:rounded-none px-4 flex flex-col justify-center items-center h-full shadow-[0_10px_30px_rgba(0,0,0,0.4)] md:shadow-none hover:-translate-y-2 md:hover:translate-y-0 transition-transform">
-              <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-                Top 1%
-              </h4>
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center">
-                Altersklasse in DE
-              </p>
-              <p className="text-[10px] sm:text-xs text-gray-500 font-light mt-1 text-center">(ohne Erbe)</p>
-            </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] md:bg-transparent border border-white/5 md:border-none p-6 sm:p-8 md:p-0 rounded-2xl md:rounded-none px-4 flex flex-col justify-center items-center h-full shadow-[0_10px_30px_rgba(0,0,0,0.4)] md:shadow-none hover:-translate-y-2 md:hover:translate-y-0 transition-transform">
-              <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-                100%
-              </h4>
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center">
-                Unabhängig
-              </p>
-              <p className="text-[10px] sm:text-xs text-gray-500 font-light mt-1 text-center">
-                (Keine Provisionen)
-              </p>
-            </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#111] md:bg-transparent border border-white/5 md:border-none p-6 sm:p-8 md:p-0 rounded-2xl md:rounded-none px-4 flex flex-col justify-center items-center h-full shadow-[0_10px_30px_rgba(0,0,0,0.4)] md:shadow-none hover:-translate-y-2 md:hover:translate-y-0 transition-transform">
-              <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)]">
-                Fokus
-              </h4>
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center">
-                Erfolg braucht Geduld, nicht Glück
-              </p>
-            </div>
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 items-center md:divide-x md:divide-[#e0937a]/20 gap-8 md:gap-0">
+          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full md:pr-8 lg:pr-10">
+            <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-serif-elegant text-[#e0937a] mb-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
+              Einer von euch
+            </h4>
+            <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
+              Von Arbeitnehmer für Arbeitnehmer
+            </p>
           </div>
-          
-          <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 animate-pulse">
-            <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
-            <ArrowRight className="w-4 h-4" />
+          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
+              Top 1%
+            </h4>
+            <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
+              Altersklasse in DE
+            </p>
+            <p className="text-[9px] sm:text-[10px] text-gray-500 font-light mt-1 text-center">
+              (ohne Erbe)
+            </p>
           </div>
-
+          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
+              100%
+            </h4>
+            <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
+              Unabhängig
+            </p>
+            <p className="text-[9px] sm:text-[10px] text-gray-500 font-light mt-1 text-center">
+              (Keine Provisionen)
+            </p>
+          </div>
+          <div className="px-2 md:px-4 flex flex-col justify-center items-center h-full">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif-elegant text-[#e0937a] mb-2 drop-shadow-[0_0_15px_rgba(224,147,122,0.4)] text-center">
+              Fokus
+            </h4>
+            <p className="text-[9px] sm:text-[10px] md:text-sm text-gray-400 uppercase tracking-widest text-center">
+              Erfolg braucht Geduld, nicht Glück
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1023,7 +1024,6 @@ export default function App() {
                   </span>
                 </div>
               </div>
-
               <div className="bg-gradient-to-r from-[#e0937a]/15 to-transparent p-5 sm:p-6 rounded-xl border border-[#e0937a]/30 shadow-[inset_10px_0_20px_-10px_rgba(224,147,122,0.4)] relative overflow-hidden group hover:border-[#e0937a]/60 transition-colors">
                 <Clock className="absolute -right-4 -top-4 w-20 h-20 sm:w-24 sm:h-24 text-[#e0937a] opacity-10 group-hover:scale-110 transition-transform duration-700" />
                 <div className="relative z-10">
@@ -1069,7 +1069,6 @@ export default function App() {
                   </div>
                 </div>
               </div>
-
               <div className="mt-6 sm:mt-8 p-5 sm:p-6 border border-[#e0937a]/30 rounded-xl bg-gradient-to-r from-[#e0937a]/15 via-[#1a1a1a] to-[#111] flex justify-between items-center shadow-[0_10px_30px_rgba(224,147,122,0.2)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.35)] hover:border-[#e0937a]/60 transition-all duration-500 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#e0937a] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="relative z-10">
@@ -1083,7 +1082,6 @@ export default function App() {
                 <span className="font-serif-elegant text-[#efe7dd] font-bold text-3xl sm:text-4xl drop-shadow-[0_0_15px_rgba(224,147,122,0.6)] relative z-10">
                   2036
                 </span>
-                <Clock className="absolute -right-4 -top-4 w-20 h-20 sm:w-24 sm:h-24 text-[#e0937a] opacity-10 group-hover:scale-110 transition-transform duration-700" />
               </div>
             </div>
           </div>
@@ -1233,8 +1231,8 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-8 text-left mb-12 sm:mb-16 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-8 md:pt-0 md:pb-0 -mx-5 px-5 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left mb-12 sm:mb-16 max-w-5xl mx-auto">
+            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 01
               </span>
@@ -1254,7 +1252,7 @@ export default function App() {
                     Live-Call.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1267,7 +1265,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 02
               </span>
@@ -1285,7 +1283,7 @@ export default function App() {
                     kompliziertes Fachchinesisch.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1298,7 +1296,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 03
               </span>
@@ -1316,7 +1314,7 @@ export default function App() {
                     abschottest.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1329,7 +1327,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
+            <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-10 rounded-xl border border-white/5 relative overflow-hidden group flex flex-col h-full hover:-translate-y-2 hover:border-[#e0937a]/40 hover:bg-gradient-to-br hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_15px_40px_-10px_rgba(224,147,122,0.35)] transition-all duration-500">
               <span className="absolute top-4 right-5 sm:right-6 text-[80px] sm:text-[100px] font-bold text-white/[0.03] group-hover:text-[#e0937a]/[0.08] group-hover:scale-110 origin-top-right transition-all duration-500 leading-none pointer-events-none font-serif-elegant">
                 04
               </span>
@@ -1347,7 +1345,7 @@ export default function App() {
                     Exit-Szenario.
                   </p>
                 </div>
-                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
+                <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">
                     Dein Ergebnis:
                   </span>
@@ -1359,11 +1357,6 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mb-12 sm:mb-16 animate-pulse">
-            <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
-            <ArrowRight className="w-4 h-4" />
           </div>
 
           <div className="max-w-4xl mx-auto bg-[#1a1a1a] border border-[#e0937a]/50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(224,147,122,0.2)] mb-12 sm:mb-16 relative overflow-hidden text-left group">
@@ -1394,11 +1387,11 @@ export default function App() {
                   </span>
                   <p className="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
                     Aus Erfahrung zeigt sich: Bei den allermeisten Teilnehmern
-                    finden wir versteckte Potenziale von 50 bis über 100 Euro im
-                    Monat, die sich ohne jeglichen Verzicht auf Lebensqualität
-                    sofort einsparen lassen. Damit hat sich ein großer Teil
-                    deines Mentorings schon in der ersten Woche im echten Leben
-                    von ganz alleine refinanziert.
+                    finden বাতাসে versteckte Potenziale von 50 bis über 100 Euro
+                    im Monat, die sich ohne jeglichen Verzicht auf
+                    Lebensqualität sofort einsparen lassen. Damit hat sich ein
+                    großer Teil deines Mentorings schon in der ersten Woche im
+                    echten Leben von ganz alleine refinanziert.
                   </p>
                 </div>
               </div>
@@ -1448,71 +1441,61 @@ export default function App() {
               Vermögensaufbaus.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            <div className="flex flex-col w-full">
-              <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pt-4 pb-8 sm:pt-0 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                  <LineChart className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
-                    Aktien & Setups
-                  </h4>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">
-                    Konkrete Einblicke, wann ich welche Einzelaktie kaufe oder
-                    verkaufe – nachvollziehbar und völlig transparent.
-                  </p>
-                </div>
-                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                  <CalendarDays className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                  <h4 className="text-lg md:text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd] break-words hyphens-auto">
-                    Dividenden-Kalender
-                  </h4>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">
-                    Mein monatlicher Cashflow. Sieh genau, welche Unternehmen wann
-                    ausschütten und wie passives Einkommen wächst.
-                  </p>
-                </div>
-                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                  <TrendingUp className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
-                    Strategie-Updates
-                  </h4>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">
-                    Regelmäßige Einordnung der aktuellen Marktphase. Damit du
-                    verstehst, warum ich welche Entscheidungen treffe.
-                  </p>
-                </div>
-                <div className="w-[85vw] sm:w-auto shrink-0 snap-center bg-[#111] border border-[#e0937a]/20 p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
-                  <MessageCircle className="w-8 h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-                  <h4 className="text-xl font-serif-elegant mb-3 font-semibold text-[#efe7dd]">
-                    Exklusive Q&As
-                  </h4>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">
-                    Dein direkter Draht. Stell mir in einem geschlossenen Rahmen
-                    deine Fragen und lass uns Meinungen abgleichen.
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                <LineChart className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
+                  Aktien & Setups
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                  Konkrete Einblicke, wann ich welche Einzelaktie kaufe oder
+                  verkaufe – nachvollziehbar und völlig transparent.
+                </p>
               </div>
-
-              <div className="flex sm:hidden justify-center items-center gap-2 text-[#e0937a]/70 mb-8 animate-pulse">
-                <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
-                <ArrowRight className="w-4 h-4" />
+              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                <CalendarDays className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                <h4 className="text-base sm:text-lg md:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd] break-words hyphens-auto">
+                  Dividenden-Kalender
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                  Mein monatlicher Cashflow. Sieh genau, welche Unternehmen wann
+                  ausschütten und wie passives Einkommen wächst.
+                </p>
+              </div>
+              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
+                  Strategie-Updates
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                  Regelmäßige Einordnung der aktuellen Marktphase. Damit du
+                  verstehst, warum ich welche Entscheidungen treffe.
+                </p>
+              </div>
+              <div className="bg-[#111] border border-[#e0937a]/20 p-6 sm:p-8 rounded-xl hover:border-[#e0937a]/50 hover:bg-gradient-to-br hover:from-[#111] hover:to-[#e0937a]/15 hover:-translate-y-1 transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(224,147,122,0.3)] group">
+                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#e0937a] mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
+                <h4 className="text-lg sm:text-xl font-serif-elegant mb-2 sm:mb-3 font-semibold text-[#efe7dd]">
+                  Exklusive Q&As
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                  Dein direkter Draht. Stell mir in einem geschlossenen Rahmen
+                  deine Fragen und lass uns Meinungen abgleichen.
+                </p>
               </div>
             </div>
-
             <div className="w-full flex justify-center">
-              <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-8 bg-[#333] flex items-center px-4 gap-2 border-b border-black/50">
-                  <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+              <div className="relative w-full max-w-lg aspect-[4/3] bg-[#222] border border-[#e0937a]/30 rounded-xl shadow-[0_0_50px_rgba(224,147,122,0.15)] hover:shadow-[0_0_80px_rgba(224,147,122,0.4)] transition-shadow duration-500 flex flex-col items-center justify-center p-6 sm:p-8 text-center overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-500"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500"></div>
                 </div>
-                <Lock className="w-16 h-16 text-[#e0937a] mb-4 mt-6 drop-shadow-[0_0_10px_rgba(224,147,122,0.5)]" />
-                <h4 className="font-bold text-2xl mb-2 font-serif-elegant text-[#efe7dd]">
+                <Lock className="w-12 h-12 sm:w-16 sm:h-16 text-[#e0937a] mb-3 sm:mb-4 mt-4 sm:mt-6 drop-shadow-[0_0_10px_rgba(224,147,122,0.5)]" />
+                <h4 className="font-bold text-xl sm:text-2xl mb-1 sm:mb-2 font-serif-elegant text-[#efe7dd]">
                   Premium Zugang
                 </h4>
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-8">
+                <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest mb-6 sm:mb-8">
                   Bald verfügbar
                 </p>
                 <a
@@ -1544,15 +1527,33 @@ export default function App() {
           </div>
 
           <div className="flex justify-center items-center gap-3 sm:gap-4 mb-12 sm:mb-16">
-            <span className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${!isYearly ? 'text-[#efe7dd]' : 'text-gray-500'}`}>Monatlich</span>
-            <button 
+            <span
+              className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${
+                !isYearly ? "text-[#efe7dd]" : "text-gray-500"
+              }`}
+            >
+              Monatlich
+            </span>
+            <button
               onClick={() => setIsYearly(!isYearly)}
               className="w-14 h-7 sm:w-16 sm:h-8 bg-[#1a1a1a] rounded-full p-1 border border-[#e0937a]/30 relative transition-colors duration-300 focus:outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] flex-shrink-0"
             >
-              <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-[#e0937a] rounded-full shadow-[0_0_10px_rgba(224,147,122,0.5)] transform transition-transform duration-300 ${isYearly ? 'translate-x-7 sm:translate-x-8' : 'translate-x-0'}`}></div>
+              <div
+                className={`w-5 h-5 sm:w-6 sm:h-6 bg-[#e0937a] rounded-full shadow-[0_0_10px_rgba(224,147,122,0.5)] transform transition-transform duration-300 ${
+                  isYearly ? "translate-x-7 sm:translate-x-8" : "translate-x-0"
+                }`}
+              ></div>
             </button>
             <div className="flex flex-col items-start">
-              <span className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${isYearly ? 'text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.3)]' : 'text-gray-500'}`}>Jährlich</span>
+              <span
+                className={`text-xs sm:text-sm font-bold uppercase tracking-widest transition-colors ${
+                  isYearly
+                    ? "text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.3)]"
+                    : "text-gray-500"
+                }`}
+              >
+                Jährlich
+              </span>
             </div>
           </div>
 
@@ -1573,23 +1574,24 @@ export default function App() {
                   Basis-Finanzwissen
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Der
-                  Excel-Budgetplaner
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Der Excel-Budgetplaner
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
                   Monatlicher Substack-Newsletter
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Einblick in
-                  Aktien-Käufe
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Einblick
+                  in Aktien-Käufe
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Dividendenkalender &
-                  Analysen
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />{" "}
+                  Dividendenkalender & Analysen
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1 Betreuung
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1
+                  Betreuung
                 </li>
               </ul>
               <a
@@ -1599,49 +1601,84 @@ export default function App() {
                 Kostenlos mitlesen
               </a>
             </div>
-            
+
             <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-gradient-to-b from-[#1a1a1a] to-[#e0937a]/15 border-2 border-[#e0937a] rounded-xl p-6 sm:p-8 flex flex-col transform md:-translate-y-4 shadow-[0_0_40px_rgba(224,147,122,0.3)] hover:shadow-[0_0_70px_rgba(224,147,122,0.5)] transition-all duration-500 relative z-10">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e0937a] text-[#1a1a1a] text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 rounded-sm shadow-[0_5px_15px_rgba(224,147,122,0.5)] whitespace-nowrap">
                 Am Beliebtesten
               </div>
 
-              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] mt-2">Premium</h4>
-              
+              <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-[#e0937a] drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] mt-2">
+                Premium
+              </h4>
+
               <div className="mb-5 sm:mb-6 min-h-[90px] sm:min-h-[110px] flex flex-col justify-end">
                 {!isYearly ? (
                   <div className="text-3xl sm:text-4xl font-bold text-[#efe7dd] transition-all duration-300">
-                    20 € <span className="text-xs sm:text-sm text-gray-400 font-light">/ Monat</span>
+                    20 €{" "}
+                    <span className="text-xs sm:text-sm text-gray-400 font-light">
+                      / Monat
+                    </span>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-1.5 sm:gap-2 transition-all duration-300 animate-in fade-in">
                     <div className="inline-flex w-fit bg-[#e0937a]/10 border border-[#e0937a]/30 text-[#e0937a] px-2 sm:px-3 py-0.5 sm:py-1 rounded text-[9px] sm:text-[10px] font-bold tracking-widest uppercase items-center shadow-[0_0_10px_rgba(224,147,122,0.1)]">
-                       🔥 Launch-Angebot: Limitiert auf 25 Plätze
+                      🔥 Launch-Angebot: Limitiert auf 25 Plätze
                     </div>
                     <div className="flex items-baseline gap-2 sm:gap-3">
-                      <span className="text-xl sm:text-2xl font-bold text-gray-500 line-through decoration-red-500/50">240 €</span>
-                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#efe7dd] drop-shadow-[0_0_15px_rgba(224,147,122,0.5)] leading-none">200 €</span>
+                      <span className="text-xl sm:text-2xl font-bold text-gray-500 line-through decoration-red-500/50">
+                        240 €
+                      </span>
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#efe7dd] drop-shadow-[0_0_15px_rgba(224,147,122,0.5)] leading-none">
+                        200 €
+                      </span>
                     </div>
-                    <span className="text-xs sm:text-sm text-[#e0937a] font-medium tracking-wide">/ im ersten Jahr</span>
+                    <span className="text-xs sm:text-sm text-[#e0937a] font-medium tracking-wide">
+                      / im ersten Jahr
+                    </span>
                   </div>
                 )}
               </div>
 
               <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10 flex-1 text-xs sm:text-sm text-gray-300">
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Alles aus dem Starter-Paket</li>
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Live-Einblicke in Einzelaktien-Käufe</li>
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Voller Dividendenkalender</li>
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Regelmäßige Strategie-Updates</li>
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Premium Q&A und Austausch</li>
-                <li className="flex items-center gap-2 sm:gap-3 text-gray-600"><X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1 Individuelles Coaching</li>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Alles aus dem Starter-Paket
+                </li>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Live-Einblicke in Einzelaktien-Käufe
+                </li>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Voller Dividendenkalender
+                </li>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Regelmäßige Strategie-Updates
+                </li>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Premium Q&A und Austausch
+                </li>
+                <li className="flex items-center gap-2 sm:gap-3 text-gray-600">
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1
+                  Individuelles Coaching
+                </li>
               </ul>
-              
+
               <div className="mt-auto flex flex-col gap-2 sm:gap-3">
                 {!isYearly ? (
-                  <a href="#" className="w-full text-center bg-[#e0937a] text-[#1a1a1a] font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)] transition-all duration-300 text-sm sm:text-base">
+                  <a
+                    href="#"
+                    className="w-full text-center bg-[#e0937a] text-[#1a1a1a] font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:bg-[#efe7dd] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(224,147,122,0.6)] transition-all duration-300 text-sm sm:text-base"
+                  >
                     Premium sichern
                   </a>
                 ) : (
-                  <a href="#" className="w-full text-center bg-gradient-to-r from-[#c07a63] to-[#e0937a] text-[#1a1a1a] font-extrabold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:from-[#efe7dd] hover:to-[#efe7dd] hover:-translate-y-1 shadow-[0_0_25px_rgba(224,147,122,0.6)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.8)] transition-all duration-300 transform scale-[1.02] text-sm sm:text-base">
+                  <a
+                    href="#"
+                    className="w-full text-center bg-gradient-to-r from-[#c07a63] to-[#e0937a] text-[#1a1a1a] font-extrabold px-4 sm:px-6 py-3 sm:py-4 rounded-sm hover:from-[#efe7dd] hover:to-[#efe7dd] hover:-translate-y-1 shadow-[0_0_25px_rgba(224,147,122,0.6)] hover:shadow-[0_15px_40px_rgba(224,147,122,0.8)] transition-all duration-300 transform scale-[1.02] text-sm sm:text-base"
+                  >
                     Launch-Angebot sichern
                   </a>
                 )}
@@ -1649,12 +1686,14 @@ export default function App() {
                   {!isYearly ? (
                     <span className="text-gray-400">Jederzeit kündbar.</span>
                   ) : (
-                    <span className="text-[#e0937a] font-bold tracking-wider opacity-80">(Entspricht 16,66 € / Monat)</span>
+                    <span className="text-[#e0937a] font-bold tracking-wider opacity-80">
+                      (Entspricht 16,66 € / Monat)
+                    </span>
                   )}
                 </p>
               </div>
             </div>
-            
+
             <div className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center bg-[#1a1a1a] border border-white/10 rounded-xl p-6 sm:p-8 flex flex-col hover:border-[#e0937a]/40 hover:bg-gradient-to-b hover:from-[#1a1a1a] hover:to-[#e0937a]/10 hover:shadow-[0_0_35px_rgba(224,147,122,0.25)] transition-all duration-500 group">
               <h4 className="text-xl sm:text-2xl font-serif-elegant mb-2 text-gray-300 group-hover:text-[#e0937a] transition-colors">
                 1:1 Mentoring
@@ -1668,8 +1707,8 @@ export default function App() {
                   Inklusive Premium Zugang
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Das
-                  komplette 16-Modul System
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
+                  Das komplette 16-Modul System
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" />{" "}
@@ -1699,7 +1738,9 @@ export default function App() {
           </div>
 
           <div className="flex md:hidden justify-center items-center gap-2 text-[#e0937a]/70 mt-2 mb-8 animate-pulse">
-            <span className="text-[10px] uppercase tracking-widest font-bold">Seitlich wischen</span>
+            <span className="text-[10px] uppercase tracking-widest font-bold">
+              Seitlich wischen
+            </span>
             <ArrowRight className="w-4 h-4" />
           </div>
         </div>
@@ -2088,7 +2129,10 @@ export default function App() {
             </button>
             <div className="p-5 sm:p-8 md:p-12 overflow-y-auto custom-scrollbar h-full">
               {!isSuccess ? (
-                <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12 pb-10 sm:pb-0">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-8 sm:space-y-12 pb-10 sm:pb-0"
+                >
                   <div className="text-center border-b border-white/10 pb-8 sm:pb-10 pt-4 sm:pt-0">
                     <img
                       src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
@@ -2108,7 +2152,7 @@ export default function App() {
                       und detailliert aus.
                     </p>
                   </div>
-                  
+
                   <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
                     <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">
                       I. Persönliches Profil
@@ -2273,7 +2317,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          12. Investieren Sie aktuell bereits aktiv Geld an den
+                          12. Investierst du aktuell bereits aktiv Geld an den
                           Finanzmärkten?
                         </label>
                         <div className="flex flex-wrap gap-4 sm:gap-6 mt-2">
@@ -2322,7 +2366,7 @@ export default function App() {
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                           15. Wenn es um wichtige finanzielle Entscheidungen
-                          geht: Wie treffen Sie diese meistens?
+                          geht: Wie triffst du diese meistens?
                         </label>
                         <textarea
                           rows={2}
@@ -2351,7 +2395,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          17. Wie spricht Ihr engstes soziales Umfeld über Geld
+                          17. Wie spricht dein engstes soziales Umfeld über Geld
                           und Börse?
                         </label>
                         <textarea
@@ -2362,8 +2406,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          18. Stellen Sie sich vor, Sie erhalten unerwartet
-                          10.000 € geschenkt. Was tun Sie damit?
+                          18. Stell dir vor, du erhältst unerwartet 10.000 €
+                          geschenkt. Was tust du damit?
                         </label>
                         <textarea
                           rows={2}
@@ -2373,8 +2417,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          19. Welche Glaubenssätze über Geld haben Sie in Ihrer
-                          Kindheit geprägt?
+                          19. Welche Glaubenssätze über Geld haben dich in
+                          deiner Kindheit geprägt?
                         </label>
                         <textarea
                           rows={2}
@@ -2384,8 +2428,8 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          20. Wie würden Sie emotional reagieren, wenn Ihr Depot
-                          um 25% an Wert verliert?
+                          20. Wie würdest du emotional reagieren, wenn dein
+                          Depot um 25% an Wert verliert?
                         </label>
                         <textarea
                           rows={2}
@@ -2414,7 +2458,7 @@ export default function App() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                            22. Welche jährliche Rendite (%) erwarten Sie
+                            22. Welche jährliche Rendite (%) erwartest du
                             realistisch?
                           </label>
                           <input
@@ -2425,8 +2469,8 @@ export default function App() {
                         </div>
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                            23. Für welchen Zeitraum könnten Sie auf Ihr Kapital
-                            verzichten?
+                            23. Für welchen Zeitraum könntest du auf dein
+                            Kapital verzichten?
                           </label>
                           <input
                             type="text"
@@ -2437,7 +2481,7 @@ export default function App() {
                       </div>
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
-                          24. Wie sehr sind Sie bereit, alte Konsumgewohnheiten
+                          24. Wie sehr bist du bereit, alte Konsumgewohnheiten
                           radikal zu ändern? (1 = Nicht bereit, 10 = Sehr
                           bereit)
                         </label>
@@ -2511,7 +2555,7 @@ export default function App() {
                       </span>
                     </label>
                   </div>
-                  
+
                   <div className="pt-6 sm:pt-8 flex justify-center">
                     <button
                       type="submit"
@@ -2524,13 +2568,13 @@ export default function App() {
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" /> Audit
-                          wird übermittelt...
+                          <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />{" "}
+                          Audit wird übermittelt...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Audit absenden &
-                          Erstgespräch anfragen
+                          <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Audit
+                          absenden & Erstgespräch anfragen
                         </>
                       )}
                     </button>
