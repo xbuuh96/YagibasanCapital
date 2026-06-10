@@ -1981,7 +1981,7 @@ export default function App() {
                 className="flex items-center gap-2 animate-pulse"
               >
                 <span className="text-xs font-bold uppercase tracking-widest">
-                  Wischen ➔
+                  Wischen ⟶
                 </span>
               </motion.div>
             )}
