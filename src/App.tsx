@@ -1981,7 +1981,7 @@ export default function App() {
                 className="flex items-center gap-2 animate-pulse"
               >
                 <span className="text-xs font-bold uppercase tracking-widest">
-                  Wischen ⟶
+                  Wischen ➔
                 </span>
               </motion.div>
             )}
@@ -2235,19 +2235,28 @@ export default function App() {
             variants={fadeUpVariant}
             className="w-full lg:w-1/2 flex justify-center"
           >
-            <div className="w-full max-w-lg aspect-video bg-[#222] border border-[#e0937a]/40 rounded-lg shadow-[0_0_40px_rgba(224,147,122,0.25)] flex flex-col items-center justify-center p-6 sm:p-8 text-center relative overflow-hidden group hover:border-[#e0937a]/70 hover:shadow-[0_0_60px_rgba(224,147,122,0.4)] transition-all duration-500">
-              <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50">
+            <div className="w-full max-w-lg aspect-video bg-[#222] border border-[#e0937a]/40 rounded-lg shadow-[0_0_40px_rgba(224,147,122,0.25)] flex flex-col relative overflow-hidden group hover:border-[#e0937a]/70 hover:shadow-[0_0_60px_rgba(224,147,122,0.4)] transition-all duration-500">
+              <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#333] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-black/50 z-20">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500"></div>
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-500"></div>
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500"></div>
               </div>
-              <BarChart className="w-12 h-12 sm:w-16 sm:h-16 text-[#e0937a] mb-3 sm:mb-4 mt-3 sm:mt-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(224,147,122,0.4)]" />
-              <h4 className="font-serif-elegant text-lg sm:text-xl mb-1 sm:mb-2 text-[#efe7dd]">
-                Budgetplaner Vorlage
-              </h4>
-              <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest">
-                Kostenlos für dich
-              </p>
+              <div className="w-full h-full pt-6 sm:pt-8 relative overflow-hidden bg-[#111]">
+                <img
+                  src="https://lh3.googleusercontent.com/d/1AQ9e9IxERzt5eluBhvXhUc1FJR5JNYsx"
+                  alt="Budgetplaner Vorschau"
+                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/40 to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-full flex flex-col items-center justify-end z-10 text-center pb-4 sm:pb-6">
+                  <h4 className="font-serif-elegant text-lg sm:text-xl mb-1.5 sm:mb-2 text-[#efe7dd] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    Budgetplaner Vorlage
+                  </h4>
+                  <p className="text-[10px] sm:text-xs text-[#e0937a] uppercase tracking-widest font-bold bg-black/60 px-3 py-1 rounded-full backdrop-blur-sm border border-[#e0937a]/30 shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                    Kostenlos für dich
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
