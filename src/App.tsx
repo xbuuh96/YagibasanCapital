@@ -35,7 +35,7 @@ function Impressum() {
       <nav className="flex items-center justify-between px-5 sm:px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a href="#" className="flex items-center hover:scale-105 transition-transform">
           <img
-            src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol"
+            src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png"
             alt="Yagibasan Capital Logo"
             className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)]"
           />
@@ -154,7 +154,7 @@ E-Mail: office@yagibasan-capital.de
     <div className="min-h-screen overflow-x-hidden bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a]">
       <nav className="flex items-center justify-between px-5 sm:px-6 py-4 md:px-12 lg:px-24 bg-[#1a1a1a]/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)]">
         <a href="#" className="flex items-center hover:scale-105 transition-transform">
-          <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)]" />
+          <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)]" />
         </a>
         <div>
           <a href="#" className="text-xs sm:text-sm font-bold text-[#1a1a1a] bg-[#e0937a] px-4 py-2.5 sm:px-6 sm:py-3 rounded-sm hover:bg-[#efe7dd] hover:shadow-[0_0_20px_rgba(224,147,122,0.4)] transition-all duration-300">
@@ -441,7 +441,7 @@ export default function App() {
       {/* NAVBAR */}
       <nav className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
         <a href="#" className="flex items-center hover:scale-105 transition-transform">
-          <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`} />
+          <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`} />
         </a>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" onClick={handleOpenModal} className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}>
@@ -462,7 +462,7 @@ export default function App() {
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-12 lg:gap-24">
           <div className="w-full md:w-1/2 flex flex-col items-start text-left">
             <div className="flex flex-col items-center mx-auto md:mx-0 mb-8 sm:mb-12 mt-4">
-              <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className="w-48 sm:w-64 md:w-72 h-auto mb-4 sm:mb-6 object-contain drop-shadow-[0_10px_20px_rgba(224,147,122,0.15)]" />
+              <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className="w-48 sm:w-64 md:w-72 h-auto mb-4 sm:mb-6 object-contain drop-shadow-[0_10px_20px_rgba(224,147,122,0.15)]" />
               <p className="text-[#e0937a] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase drop-shadow-[0_0_8px_rgba(224,147,122,0.4)] text-center">
                 Werte für Generationen
               </p>
@@ -492,7 +492,7 @@ export default function App() {
           <div className="w-full md:w-1/2 relative flex justify-center md:justify-end mt-12 md:mt-0">
             <div className="absolute inset-0 bg-[#e0937a] blur-[60px] sm:blur-[100px] opacity-25 rounded-full scale-75 pointer-events-none"></div>
             <div className="relative w-full max-w-[260px] sm:max-w-md aspect-[3/4] rounded-t-[10rem] border border-white/5 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center bg-[#1a1a1a] group hover:shadow-[0_0_50px_rgba(224,147,122,0.3)] transition-all duration-500 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1d7-sVkz0D0Zr3GtHTwnUo49n2rEkbaaV" alt="Burak Yagibasan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/IMG-20260516-WA0035.jpg" alt="Burak Yagibasan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -1225,7 +1225,7 @@ export default function App() {
               </div>
               <div className="w-full flex-1 pt-6 sm:pt-8 relative overflow-hidden bg-[#111]">
                 <img 
-                  src="https://lh3.googleusercontent.com/d/1AQ9e9IxERzt5eluBhvXhUc1FJR5JNYsx" 
+                  src="/Budgetplaner.png" 
                   alt="Budgetplaner Vorschau" 
                   className="w-full h-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
@@ -1284,7 +1284,7 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.8fr_1.2fr_1fr_1.2fr] gap-10 sm:gap-12 text-left">
             <div className="flex justify-center lg:justify-start">
-              <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain drop-shadow-[0_0_20px_rgba(224,147,122,0.15)] hover:scale-105 transition-transform cursor-pointer opacity-80 hover:opacity-100" />
+              <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain drop-shadow-[0_0_20px_rgba(224,147,122,0.15)] hover:scale-105 transition-transform cursor-pointer opacity-80 hover:opacity-100" />
             </div>
             <div className="flex flex-col gap-4 sm:gap-5 pl-8 sm:pl-12 lg:pl-8 mx-auto md:mx-0 w-fit md:w-auto">
               <h4 className="text-[#efe7dd] font-semibold text-base sm:text-lg mb-1 sm:mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-full max-w-[200px]">Kontakt</h4>
@@ -1341,7 +1341,7 @@ export default function App() {
               {!isSuccess ? (
                 <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12 pb-10 sm:pb-0">
                   <div className="text-center border-b border-white/10 pb-8 sm:pb-10 pt-4 sm:pt-0">
-                    <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto object-contain mb-4 sm:mb-6 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]" />
+                    <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto object-contain mb-4 sm:mb-6 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]" />
                     <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">Mentoring-Audit</h2>
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif-elegant text-[#efe7dd] mb-3 sm:mb-4">Der Status Quo</h3>
                     <p className="text-gray-400 font-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
@@ -1589,7 +1589,7 @@ export default function App() {
             </button>
             <div className="p-5 sm:p-8 md:p-12 overflow-y-auto custom-scrollbar h-full">
               <div className="text-center border-b border-white/10 pb-8 sm:pb-10 pt-4 sm:pt-0">
-                <img src="https://lh3.googleusercontent.com/d/1dj4_0mNEvkggbx4UsJRX0-BE25gBR-ol" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto object-contain mb-4 sm:mb-6 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]" />
+                <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto object-contain mb-4 sm:mb-6 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]" />
                 <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">Yagibasan Capital Premium</h2>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif-elegant text-[#efe7dd] mb-3 sm:mb-4">Werte für Generationen</h3>
                 <p className="text-gray-400 font-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
