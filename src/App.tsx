@@ -143,8 +143,8 @@ E-Mail: office@yagibasan-capital.de
 <h3>Budgetplaner (Web3Forms)</h3>
 <p>Die Anfragen für den kostenlosen Budgetplaner verarbeiten wir über Web3Forms. Die von Ihnen eingegebene E-Mail-Adresse wird ausschließlich genutzt, um Ihnen das angeforderte Dokument zuzusenden (Art. 6 Abs. 1 lit. a DSGVO).</p>
 
-<h3>Newsletter (Substack)</h3>
-<p>Für den Versand unseres Newsletters nutzen wir Substack (Substack Inc., 111 Sutter Street, San Francisco, CA 94104, USA). Wenn Sie sich eintragen, wird Ihre E-Mail-Adresse auf den Servern von Substack in den USA gespeichert. Wir nutzen Substack für die Analyse unserer Newsletter-Kampagnen. Die Datenverarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen, indem Sie den Newsletter abbestellen.</p>
+<h3>Newsletter (Brevo)</h3>
+<p>Für den Versand und die Verwaltung unseres Newsletters nutzen wir den Dienst Brevo (Sendinblue GmbH, Köpenicker Straße 126, 10179 Berlin, Deutschland). Wenn Sie sich für unseren Newsletter eintragen, wird Ihre E-Mail-Adresse auf den Servern von Brevo innerhalb der Europäischen Union gespeichert. Die Anmeldung erfolgt im Double-Opt-In-Verfahren, um sicherzustellen, dass Sie tatsächlich der Inhaber der angegebenen E-Mail-Adresse sind. Die Datenverarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen, indem Sie den Newsletter über den Abmeldelink in jeder E-Mail abbestellen.</p>
 
 <h2>5. eCommerce und Zahlungsanbieter</h2>
 <h3>Stripe</h3>
@@ -812,7 +812,7 @@ export default function App() {
               <div className="relative z-10 flex flex-col flex-1 h-full">
                 <div className="flex-1 flex flex-col">
                   <h4 className="text-lg sm:text-xl font-serif-elegant font-bold text-[#efe7dd] border-b border-[#e0937a]/20 pb-2 sm:pb-3 mb-4 pr-12 group-hover:border-[#e0937a]/50 transition-colors">Das Fundament & Der Neustart</h4>
-                  <p className="text-xs sm:text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">Wir räumen deine Finanzen ein für alle main gründlich auf. Wir starten ganz am Anfang und klären einfach und logisch, was Geld überhaupt ist, wie unser modernes Geldsystem funktioniert und warum einfaches Sparen auf dem Sparbuch dich durch die Inflation garantiert ärmer macht. Danach decken wir versteckte Kostenfresser auf, stoppen unüberlegte Spontankäufe und kündigen überflüssige Abos direkt im Live-Call.</p>
+                  <p className="text-xs sm:text-[13px] md:text-[15px] text-gray-400 font-light leading-relaxed mb-6">Wir räumen deine Finanzen ein für alle Mal gründlich auf. Wir starten ganz am Anfang und klären einfach und logisch, was Geld überhaupt ist, wie unser modernes Geldsystem funktioniert und warum einfaches Sparen auf dem Sparbuch dich durch die Inflation garantiert ärmer macht. Danach decken wir versteckte Kostenfresser auf, stoppen unüberlegte Spontankäufe und kündigen überflüssige Abos direkt im Live-Call.</p>
                 </div>
                 <div className="pt-5 sm:pt-6 border-t border-white/10 mt-auto min-h-0 sm:min-h-[180px] md:min-h-[180px] flex flex-col justify-start">
                   <span className="text-[#e0937a] font-bold uppercase tracking-widest text-[10px] mb-2 block">Dein Ergebnis:</span>
@@ -978,7 +978,7 @@ export default function App() {
               <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10 flex-1 text-xs sm:text-sm text-gray-400">
                 <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Basis-Finanzwissen</li>
                 <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Der Excel-Budgetplaner</li>
-                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Monatlicher Substack-Newsletter</li>
+                <li className="flex items-center gap-2 sm:gap-3"><Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#e0937a] flex-shrink-0" /> Regelmäßiger E-Mail-Newsletter</li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600"><X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Einblick in Aktien-Käufe</li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600"><X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Dividendenkalender & Analysen</li>
                 <li className="flex items-center gap-2 sm:gap-3 text-gray-600"><X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 1:1 Betreuung</li>
@@ -1302,7 +1302,7 @@ export default function App() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full border border-[#e0937a]/30 bg-[#e0937a]/10 flex items-center justify-center text-[#e0937a] group-hover:bg-[#e0937a] group-hover:text-[#1a1a1a] group-hover:shadow-[0_0_15px_rgba(224,147,122,0.5)] transition-all duration-300">
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <a href="mailto:office@yagibasancapital.de" className="text-gray-400 font-light group-hover:text-[#e0937a] transition-colors whitespace-nowrap text-sm sm:text-base">office@yagibasancapital.de</a>
+                <a href="mailto:office@yagibasan-capital.de" className="text-gray-400 font-light group-hover:text-[#e0937a] transition-colors whitespace-nowrap text-sm sm:text-base">office@yagibasan-capital.de</a>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 group cursor-pointer mt-1 relative -ml-10 sm:-ml-12">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full border border-[#e0937a]/30 bg-[#e0937a]/10 flex items-center justify-center text-[#e0937a] group-hover:bg-[#e0937a] group-hover:text-[#1a1a1a] group-hover:shadow-[0_0_15px_rgba(224,147,122,0.5)] transition-all duration-300">
