@@ -9,6 +9,7 @@
   ],
   "main": "src/index.tsx",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.40.0",
     "loader-utils": "3.2.1",
     "lucide-react": "1.16.0",
