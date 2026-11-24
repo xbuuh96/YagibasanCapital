@@ -726,6 +726,63 @@ export default function App() {
           />
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
+          <a href="#" className="flex items-center hover:scale-105 transition-transform">
+            <img
+              src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png"
+              alt="Yagibasan Capital Logo"
+              className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24'}`}
+            />
+          </a>
+          <div ref={menuRef} className="relative">
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-expanded={isMenuOpen}
+              aria-haspopup="true"
+              aria-label="Navigationsmenü öffnen"
+              className={`flex items-center gap-1.5 sm:gap-2 font-semibold text-[#efe7dd] bg-[#111111]/70 border border-[#e0937a]/40 rounded-sm hover:border-[#e0937a] hover:text-[#e0937a] hover:bg-[#e0937a]/10 transition-all duration-300 cursor-pointer ${isScrolled ? 'text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 sm:py-2' : 'text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5'}`}
+            >
+              {isMenuOpen ? (
+                <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e0937a]" />
+              ) : (
+                <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e0937a]" />
+              )}
+              <span>Menü</span>
+            </button>
+
+            {isMenuOpen && (
+              <div
+                role="menu"
+                className="absolute left-0 mt-2.5 w-60 sm:w-64 bg-[#111111]/95 backdrop-blur-xl border border-[#e0937a]/40 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(224,147,122,0.15)] py-2 z-[120] overflow-hidden"
+              >
+                {menuItems.map((item) => {
+                  const isActive = activeSection === item.href;
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      role="menuitem"
+                      onClick={(e) => handleMenuAnchorClick(e, item.href)}
+                      className={`flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm transition-colors duration-200 ${
+                        isActive
+                          ? "text-[#e0937a] bg-[#e0937a]/10 border-l-2 border-[#e0937a] font-semibold"
+                          : "text-[#efe7dd] border-l-2 border-transparent hover:text-[#e0937a] hover:bg-[#e0937a]/10 font-medium"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronRight
+                        className={`w-3.5 h-3.5 transition-colors duration-200 ${
+                          isActive ? "text-[#e0937a]" : "text-gray-500"
+                        }`}
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" onClick={handleOpenModal} className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}>
             <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
             <span className="sm:hidden">Kostenloses<br/>Erstgespräch</span>
