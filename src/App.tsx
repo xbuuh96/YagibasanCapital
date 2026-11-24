@@ -1358,160 +1358,80 @@ export default function App() {
                   </div>
                   
                   <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">I. Persönliches Profil</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">I. Dein Status Quo</h4>
+                    <div className="space-y-6">
                       <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">1. Vor- und Nachname</label>
-                        <input type="text" name="1_vor_und_nachname" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">1. Alter & aktuelle berufliche Situation</label>
+                        <input type="text" name="1_alter_beruf" placeholder="z. B. 30, Industriemechaniker / Angestellter" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
                       </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">2. Alter & Beruf/Branche</label>
-                        <input type="text" name="2_alter_beruf" placeholder="z.B. 34 Jahre, IT-Projektleiter" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">3. Familienstand & Kinder</label>
-                        <input type="text" name="3_familienstand" placeholder="z.B. Verheiratet, 2 Kinder" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">4. Zeit für Mentoring (Std/Woche)</label>
-                        <input type="text" name="4_zeit_mentoring" placeholder="z.B. 2-3 Stunden" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">II. Die Finanzielle Basis</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                       <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">5. Monatliches Nettoeinkommen (€)</label>
-                        <input type="number" name="5_nettoeinkommen" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">6. Lebenshaltungskosten (€)</label>
-                        <input type="number" name="6_lebenshaltungskosten" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">7. Aktuelle Barreserven (€)</label>
-                        <input type="number" name="7_barreserven" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">8. Bestehende Verbindlichkeiten</label>
-                        <input type="text" name="8_verbindlichkeiten" placeholder="Restschuld / monatliche Rate" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div className="md:col-span-2">
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3">9. Wie sparst du aktuell?</label>
-                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-1">
-                          <label className="flex items-center gap-2 cursor-pointer group"><input type="radio" name="9_sparen" value="Automatisiert" className="accent-[#e0937a] w-4 h-4 sm:w-4 sm:h-4" /><span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Automatisiert</span></label>
-                          <label className="flex items-center gap-2 cursor-pointer group"><input type="radio" name="9_sparen" value="Was übrig bleibt" className="accent-[#e0937a] w-4 h-4 sm:w-4 sm:h-4" /><span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Was übrig bleibt</span></label>
-                          <label className="flex items-center gap-2 cursor-pointer group"><input type="radio" name="9_sparen" value="Unregelmäßig" className="accent-[#e0937a] w-4 h-4 sm:w-4 sm:h-4" /><span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Unregelmäßig</span></label>
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3">2. Wo stehst du beim Thema Investieren gerade?</label>
+                        <div className="flex flex-col gap-3 mt-1">
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="2_stand_investieren" value="Noch komplett am Anfang (kein Depot)" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Noch komplett am Anfang (kein Depot)</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="2_stand_investieren" value="Erste ETFs oder Aktien laufen, aber ohne klares System" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Erste ETFs oder Aktien laufen, aber ohne klares System</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="2_stand_investieren" value="Depot vorhanden, ich möchte Struktur & Strategie optimieren" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Depot vorhanden, ich möchte Struktur & Strategie optimieren</span>
+                          </label>
                         </div>
                       </div>
-                    </div>
-                  </div>
 
-                  <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">III. Investment & Setup</h4>
-                    <div className="space-y-5 sm:space-y-6">
                       <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">10. Vorwissen (1 = Anfänger, 10 = Experte)</label>
-                        <select name="10_vorwissen" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all cursor-pointer">
-                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (<option key={num} value={num}>{num}</option>))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">11. Hast du bereits ein Depot? Wo?</label>
-                        <input type="text" name="11_depot_vorhanden" placeholder="z.B. Trade Republic, keines" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">12. Investierst du aktuell bereits aktiv Geld an den Finanzmärkten?</label>
-                        <div className="flex flex-wrap gap-4 sm:gap-6 mt-2">
-                          <label className="flex items-center gap-2 cursor-pointer group"><input type="radio" name="12_aktiv_investiert" value="Ja" className="accent-[#e0937a] w-4 h-4 sm:w-4 sm:h-4" /><span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Ja</span></label>
-                          <label className="flex items-center gap-2 cursor-pointer group"><input type="radio" name="12_aktiv_investiert" value="Nein" className="accent-[#e0937a] w-4 h-4 sm:w-4 sm:h-4" /><span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Nein</span></label>
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3">3. Welche monatliche Sparrate ist für dich aktuell realistisch?</label>
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 mt-1">
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="3_sparrate" value="Unter 200 €" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Unter 200 €</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="3_sparrate" value="200 – 500 €" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">200 – 500 €</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="3_sparrate" value="500 – 1.000 €" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">500 – 1.000 €</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="3_sparrate" value="Über 1.000 €" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Über 1.000 €</span>
+                          </label>
                         </div>
                       </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">13. Wenn investiert: Worin & Gesamtwert?</label>
-                        <input type="text" name="13_investment_details" placeholder="z.B. ETFs, 5.000€" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">14. Wenn nicht investiert: Was blockiert dich?</label>
-                        <textarea name="14_blockaden" rows={2} placeholder="Angst, Technik, fehlendes Wissen..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">15. Wenn es um wichtige finanzielle Entscheidungen geht: Wie triffst du diese meistens?</label>
-                        <textarea name="15_entscheidungen" rows={2} placeholder="z.B. Bauchgefühl, Recherche, Berater..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">IV. Psychologie, Umfeld & Mindset</h4>
-                    <div className="space-y-5 sm:space-y-6">
                       <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">16. Was bedeutet Geld für dich persönlich?</label>
-                        <textarea name="16_bedeutung_geld" rows={2} placeholder="Sicherheit, Freiheit, Macht..." required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">4. Was ist gerade deine größte Hürde oder dein wichtigstes Ziel?</label>
+                        <textarea name="4_huerde_oder_ziel" rows={3} placeholder="Kurz in 2–3 Sätzen: Was bremst dich aktuell oder wo willst du hin?" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
                       </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">17. Wie spricht dein engstes soziales Umfeld über Geld und Börse?</label>
-                        <textarea name="17_umfeld" rows={2} placeholder="z.B. Partner unterstützt mich, Freunde skeptisch..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">18. Stell dir vor, du erhältst unerwartet 10.000 € geschenkt. Was tust du damit?</label>
-                        <textarea name="18_10000_geschenkt" rows={2} placeholder="Anteilige Aufteilung in Konsum, Sparen, Investment..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">19. Welche Glaubenssätze über Geld haben dich in deiner Kindheit geprägt?</label>
-                        <textarea name="19_glaubenssaetze" rows={2} placeholder="z.B. 'Geld ist die Wurzel allen Übels', 'Geld muss man hart erarbeiten'..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">20. Wie würdest du emotional reagieren, wenn dein Depot um 25% an Wert verliert?</label>
-                        <textarea name="20_reaktion_verlust" rows={2} placeholder="Verkaufen, nachkaufen, App ignorieren..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">21. Dein bisher größter finanzieller Fehler?</label>
-                        <textarea name="21_groesster_fehler" rows={2} placeholder="Zu spät angefangen, unüberlegter Konsum..." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all"></textarea>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="space-y-6 sm:space-y-8 bg-[#1a1a1a] p-5 sm:p-8 rounded-xl border border-white/5">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">V. Erwartungen & Zukunftsvision</h4>
-                    <div className="space-y-5 sm:space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                        <div>
-                          <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">22. Welche jährliche Rendite (%) erwartest du realistisch?</label>
-                          <input type="text" name="22_erwartete_rendite" placeholder="z.B. 7% p.a." className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                        </div>
-                        <div>
-                          <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">23. Für welchen Zeitraum könntest du auf dein Kapital verzichten?</label>
-                          <input type="text" name="23_anlagehorizont" placeholder="z.B. 10 Jahre, 20+ Jahre" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                        </div>
-                      </div>
                       <div>
-                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">24. Wie sehr bist du bereit, alte Konsumgewohnheiten radikal zu ändern? (1 = Nicht bereit, 10 = Sehr bereit)</label>
-                        <select name="24_konsumbereitschaft" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all cursor-pointer">
-                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (<option key={num} value={num}>{num}</option>))}
-                        </select>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                        <div className="md:col-span-2">
-                          <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">25. Wichtigstes Ziel (10 Jahre)?</label>
-                          <input type="text" name="25_ziel_10_jahre" placeholder="z.B. entspannte Altersvorsorge, Sicherheit für die Kinder" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                        </div>
-                        <div>
-                          <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">26. Welches monatliche Netto-Budget wäre "völlig sorgenfrei"?</label>
-                          <input type="text" name="26_wunschbudget" placeholder="z.B. 4.000 € netto" className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
-                        </div>
-                        <div>
-                          <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">27. Alter für finanzielle Unabhängigkeit?</label>
-                          <input type="number" name="27_alter_fire" placeholder="z.B. 50" required className="w-full bg-[#111] border border-white/10 rounded-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-[#efe7dd] focus:outline-none focus:border-[#e0937a] focus:shadow-[inset_0_0_10px_rgba(224,147,122,0.1)] transition-all" />
+                        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3">5. Wann möchtest du das Thema aktiv angehen?</label>
+                        <div className="flex flex-col gap-3 mt-1">
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="5_zeitrahmen" value="Sofort / in den nächsten 4 Wochen" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Sofort / in den nächsten 4 Wochen</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="5_zeitrahmen" value="In den nächsten 2–3 Monaten" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">In den nächsten 2–3 Monaten</span>
+                          </label>
+                          <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="radio" name="5_zeitrahmen" value="Ich informiere mich erst mal unverbindlich" required className="accent-[#e0937a] w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-gray-400 group-hover:text-[#efe7dd]">Ich informiere mich erst mal unverbindlich</span>
+                          </label>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-6 sm:space-y-8 bg-gradient-to-br from-[#1a1a1a] to-[#111] p-5 sm:p-8 rounded-xl border border-[#e0937a]/30">
-                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">VI. Kontaktdaten</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-[#e0937a] border-b border-[#e0937a]/20 pb-2 sm:pb-3">II. Kontaktdaten</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                       <div className="md:col-span-2">
                         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">Vor- und Nachname</label>
