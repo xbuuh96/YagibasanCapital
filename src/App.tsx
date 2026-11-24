@@ -284,7 +284,27 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Cookiebot script disabled for preview environment
+    const hostname = window.location.hostname;
+    const isExcludedHost =
+      !hostname ||
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname.includes("usercontent.goog") ||
+      hostname.includes("webcontainer") ||
+      hostname.includes("scf.usercontent.goog");
+
+    if (isExcludedHost || document.getElementById("Cookiebot")) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = "Cookiebot";
+    script.src = "https://consent.cookiebot.com/uc.js";
+    script.setAttribute("data-cbid", "37adc352-7e27-4515-94ae-07a745cdc031");
+    script.setAttribute("data-blockingmode", "manual");
+    script.type = "text/javascript";
+    script.async = true;
+    document.head.appendChild(script);
   }, []);
 
   const toggleFaq = (index: number) => setOpenFaq(openFaq === index ? null : index);
