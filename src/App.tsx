@@ -440,7 +440,88 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-[#efe7dd] font-['Montserrat',sans-serif] selection:bg-[#e0937a] selection:text-[#1a1a1a] flex flex-col">
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+        /* montserrat-300 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 300;
+          src: url('/fonts/montserrat-v31-latin-300.woff2') format('woff2');
+        }
+        /* montserrat-regular - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          src: url('/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+        }
+        /* montserrat-500 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 500;
+          src: url('/fonts/montserrat-v31-latin-500.woff2') format('woff2');
+        }
+        /* montserrat-600 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          src: url('/fonts/montserrat-v31-latin-600.woff2') format('woff2');
+        }
+        /* montserrat-700 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 700;
+          src: url('/fonts/montserrat-v31-latin-700.woff2') format('woff2');
+        }
+        /* montserrat-800 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 800;
+          src: url('/fonts/montserrat-v31-latin-800.woff2') format('woff2');
+        }
+
+        /* playfair-display-regular - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Playfair Display';
+          font-style: normal;
+          font-weight: 400;
+          src: url('/fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        }
+        /* playfair-display-italic - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Playfair Display';
+          font-style: italic;
+          font-weight: 400;
+          src: url('/fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        }
+        /* playfair-display-600 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Playfair Display';
+          font-style: normal;
+          font-weight: 600;
+          src: url('/fonts/playfair-display-v40-latin-600.woff2') format('woff2');
+        }
+        /* playfair-display-700 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Playfair Display';
+          font-style: normal;
+          font-weight: 700;
+          src: url('/fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        }
+
         html { scroll-behavior: smooth; }
         body { overflow-x: clip; }
         .font-serif-elegant { font-family: 'Playfair Display', serif; }
