@@ -227,8 +227,8 @@ export default function App() {
     { label: "Inflation vs. Investieren", href: "#rechner" },
     { label: "1:1 Mentoring", href: "#mentoring" },
     { label: "Pakete & Preise", href: "#pakete" },
-    { label: "Newsletter", href: "#newsletter" },
     { label: "Budgetplaner", href: "#budgetplaner" },
+    { label: "Newsletter", href: "#newsletter" },
     { label: "FAQ", href: "#faq" },
   ];
 
@@ -1106,7 +1106,6 @@ export default function App() {
                   </button>
                 ))}
               </div>
-              <div className="hidden lg:block w-px h-7 bg-white/10" aria-hidden="true"></div>
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3" role="group" aria-label="Anlagehorizont wählen">
                 <button type="button" onClick={() => setCalcYears(5)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 5 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 5 Jahren</button>
                 <button type="button" onClick={() => setCalcYears(10)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 10 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 10 Jahren</button>
