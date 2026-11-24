@@ -227,8 +227,8 @@ export default function App() {
     { label: "Inflation vs. Investieren", href: "#rechner" },
     { label: "1:1 Mentoring", href: "#mentoring" },
     { label: "Pakete & Preise", href: "#pakete" },
-    { label: "Budgetplaner", href: "#budgetplaner" },
     { label: "Newsletter", href: "#newsletter" },
+    { label: "Budgetplaner", href: "#budgetplaner" },
     { label: "FAQ", href: "#faq" },
   ];
 
