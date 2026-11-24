@@ -55,11 +55,11 @@ function Impressum() {
         <div className="space-y-10 sm:space-y-12 text-gray-300 font-light leading-relaxed relative z-10 text-sm sm:text-base">
           <div>
             <h2 className="text-lg sm:text-xl font-semibold text-[#efe7dd] mb-3 sm:mb-4 border-b border-[#e0937a]/20 pb-2">
-              Angaben gemäß § 5 TMG
+              Angaben gemäß § 5 DDG
             </h2>
             <p>
               Burak Yagibasan<br />
-              Untere Wiesenstr. 30<br />
+              Untere Wiesenstraße 30<br />
               57271 Hilchenbach
             </p>
           </div>
@@ -74,11 +74,11 @@ function Impressum() {
           </div>
           <div>
             <h2 className="text-lg sm:text-xl font-semibold text-[#efe7dd] mb-3 sm:mb-4 border-b border-[#e0937a]/20 pb-2">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h2>
             <p>
               Burak Yagibasan<br />
-              Untere Wiesenstr. 30<br />
+              Untere Wiesenstraße 30<br />
               57271 Hilchenbach
             </p>
           </div>
