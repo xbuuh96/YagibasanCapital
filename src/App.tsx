@@ -197,6 +197,7 @@ export default function App() {
   const [hoveredAsset, setHoveredAsset] = useState<any>(null);
   const [timeLeft, setTimeLeft] = useState({ Tage: 0, Std: 0, Min: 0, Sek: 0 });
   const [calcYears, setCalcYears] = useState(10);
+  const [startkapital, setStartkapital] = useState(10000);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -215,6 +216,7 @@ export default function App() {
   const [isYearly, setIsYearly] = useState(false);
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
   const menuRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
@@ -275,6 +277,47 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sectionIds = menuItems.map((item) => item.href.replace(/^#/, ""));
+    const updateActiveSection = () => {
+      if (currentPath === "#impressum" || currentPath === "#datenschutz") return;
+      const navHeight = navRef.current ? navRef.current.getBoundingClientRect().height : 0;
+      const triggerY = navHeight + 24;
+      let currentActive = "";
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerY && rect.bottom > triggerY) {
+          currentActive = `#${id}`;
+          break;
+        }
+      }
+
+      if (!currentActive) {
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerY) {
+            currentActive = `#${id}`;
+          }
+        }
+      }
+
+      setActiveSection(currentActive);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [currentPath]);
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -389,6 +432,7 @@ export default function App() {
   const handleMenuAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    setActiveSection(href);
     const targetId = href.replace(/^#/, "");
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
@@ -536,7 +580,6 @@ export default function App() {
   const aktienOffset = -((depotWerte.krypto / 100) * circumference);
   const etfOffset = -(((depotWerte.krypto + depotWerte.aktien) / 100) * circumference);
 
-  const startkapital = 10000;
   const inflationRate = 0.03;
   const etfRate = 0.08;
   const kaufkraft = Math.round(startkapital * Math.pow(1 - inflationRate, calcYears));
@@ -675,18 +718,32 @@ export default function App() {
                 aria-label="Seitennavigation"
                 className="absolute left-0 mt-3 w-64 sm:w-72 bg-[#111111]/95 backdrop-blur-xl border border-[#e0937a]/40 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(224,147,122,0.15)] py-2 z-[120]"
               >
-                {menuItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    onClick={(e) => handleMenuAnchorClick(e, item.href)}
-                    className="flex items-center justify-between px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-[#efe7dd] hover:text-[#e0937a] hover:bg-[#e0937a]/10 transition-all duration-200 group"
-                  >
-                    <span>{item.label}</span>
-                    <ChevronRight className="w-4 h-4 text-[#e0937a]/60 group-hover:text-[#e0937a] group-hover:translate-x-0.5 transition-all" />
-                  </a>
-                ))}
+                {menuItems.map((item) => {
+                  const isActive = activeSection === item.href;
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      role="menuitem"
+                      aria-current={isActive ? "location" : undefined}
+                      onClick={(e) => handleMenuAnchorClick(e, item.href)}
+                      className={`flex items-center justify-between px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium transition-colors duration-200 group border-l-2 ${
+                        isActive
+                          ? "border-[#e0937a] bg-[#e0937a]/10 text-[#e0937a]"
+                          : "border-transparent text-[#efe7dd] hover:text-[#e0937a] hover:bg-[#e0937a]/10"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronRight
+                        className={`w-4 h-4 transition-all ${
+                          isActive
+                            ? "text-[#e0937a]"
+                            : "text-[#e0937a]/60 group-hover:text-[#e0937a] group-hover:translate-x-0.5"
+                        }`}
+                      />
+                    </a>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -993,16 +1050,35 @@ export default function App() {
             <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-2">Die nackte Mathematik</h2>
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase mb-4 sm:mb-6">Das kostet dich das Warten</h3>
             <p className="text-gray-400 font-light text-sm sm:text-base max-w-2xl mx-auto">
-              Jeden Tag, den dein Geld unverzinst auf dem Girokonto liegt, frisst die Inflation still und heimlich deine Kaufkraft auf. Lass uns ansehen, was aus <span className="text-[#efe7dd] font-semibold">10.000 €</span> wird:
+              Jeden Tag, den dein Geld unverzinst auf dem Girokonto liegt, frisst die Inflation still und heimlich deine Kaufkraft auf. Lass uns ansehen, was aus <span className="text-[#efe7dd] font-semibold">{startkapital.toLocaleString("de-DE")} €</span> wird:
             </p>
           </div>
           <div className="bg-[#111] rounded-2xl border border-white/5 p-6 sm:p-8 md:p-12 shadow-[0_10px_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500/50 via-transparent to-[#e0937a]"></div>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 sm:mb-12">
-              <button onClick={() => setCalcYears(5)} className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 ${calcYears === 5 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 5 Jahren</button>
-              <button onClick={() => setCalcYears(10)} className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 ${calcYears === 10 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 10 Jahren</button>
-              <button onClick={() => setCalcYears(20)} className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 ${calcYears === 20 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 20 Jahren</button>
-              <button onClick={() => setCalcYears(30)} className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 ${calcYears === 30 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 30 Jahren</button>
+            <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-4 lg:gap-5 mb-10 sm:mb-12">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" role="group" aria-label="Startbetrag wählen">
+                {[5000, 10000, 25000].map((betrag) => (
+                  <button
+                    key={betrag}
+                    type="button"
+                    onClick={() => setStartkapital(betrag)}
+                    className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${
+                      startkapital === betrag
+                        ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105"
+                        : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"
+                    }`}
+                  >
+                    {betrag.toLocaleString("de-DE")} €
+                  </button>
+                ))}
+              </div>
+              <div className="hidden lg:block w-px h-7 bg-white/10" aria-hidden="true"></div>
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3" role="group" aria-label="Anlagehorizont wählen">
+                <button type="button" onClick={() => setCalcYears(5)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 5 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 5 Jahren</button>
+                <button type="button" onClick={() => setCalcYears(10)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 10 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 10 Jahren</button>
+                <button type="button" onClick={() => setCalcYears(20)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 20 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 20 Jahren</button>
+                <button type="button" onClick={() => setCalcYears(30)} className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${calcYears === 30 ? "bg-[#e0937a] text-[#1a1a1a] shadow-[0_0_20px_rgba(224,147,122,0.5)] scale-105" : "bg-[#222] text-gray-400 hover:text-[#efe7dd] hover:bg-[#333]"}`}>Nach 30 Jahren</button>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-16 items-center">
               <div className="text-center p-6 sm:p-8 rounded-xl border border-red-900/30 bg-red-900/10 relative overflow-hidden group hover:border-red-900/50 transition-colors">
