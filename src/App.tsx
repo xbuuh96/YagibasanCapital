@@ -192,6 +192,7 @@ E-Mail: office@yagibasan-capital.de
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [currentPath, setCurrentPath] = useState(window.location.hash);
   const [openFaq, setOpenFaq] = useState<any>(null);
   const [hoveredAsset, setHoveredAsset] = useState<any>(null);
@@ -277,6 +278,30 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      if (currentPath === "#impressum" || currentPath === "#datenschutz") {
+        setScrollProgress(0);
+        return;
+      }
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) {
+        setScrollProgress(0);
+        return;
+      }
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      setScrollProgress(progress);
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", updateScrollProgress);
+      window.removeEventListener("resize", updateScrollProgress);
+    };
+  }, [currentPath]);
 
   useEffect(() => {
     const sectionIds = menuItems.map((item) => item.href.replace(/^#/, ""));
@@ -691,62 +716,14 @@ export default function App() {
 
       {/* NAVBAR */}
       <nav ref={navRef} className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
-        <div className="flex items-center gap-2 sm:gap-4">
-          <a href="#" className="flex items-center hover:scale-105 transition-transform">
-            <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`} />
-          </a>
-          <div ref={menuRef} className="relative">
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-              aria-expanded={isMenuOpen}
-              aria-haspopup="true"
-              aria-label="Menü öffnen"
-              className={`inline-flex items-center justify-center gap-1.5 font-semibold text-[#efe7dd] bg-[#111111]/80 border border-[#e0937a]/40 rounded-sm hover:border-[#e0937a] hover:text-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer whitespace-nowrap leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-3.5 py-2 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-4 py-2.5 sm:py-3.5'}`}
-            >
-              {isMenuOpen ? (
-                <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e0937a]" />
-              ) : (
-                <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e0937a]" />
-              )}
-              <span>Menü</span>
-            </button>
-
-            {isMenuOpen && (
-              <div
-                role="menu"
-                aria-label="Seitennavigation"
-                className="absolute left-0 mt-3 w-64 sm:w-72 bg-[#111111]/95 backdrop-blur-xl border border-[#e0937a]/40 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(224,147,122,0.15)] py-2 z-[120]"
-              >
-                {menuItems.map((item) => {
-                  const isActive = activeSection === item.href;
-                  return (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      role="menuitem"
-                      aria-current={isActive ? "location" : undefined}
-                      onClick={(e) => handleMenuAnchorClick(e, item.href)}
-                      className={`flex items-center justify-between px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium transition-colors duration-200 group border-l-2 ${
-                        isActive
-                          ? "border-[#e0937a] bg-[#e0937a]/10 text-[#e0937a]"
-                          : "border-transparent text-[#efe7dd] hover:text-[#e0937a] hover:bg-[#e0937a]/10"
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight
-                        className={`w-4 h-4 transition-all ${
-                          isActive
-                            ? "text-[#e0937a]"
-                            : "text-[#e0937a]/60 group-hover:text-[#e0937a] group-hover:translate-x-0.5"
-                        }`}
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-            )}
-          </div>
+        <div
+          aria-hidden="true"
+          className="absolute top-0 left-0 w-full h-[2px] bg-white/5 pointer-events-none"
+        >
+          <div
+            className="h-full w-full bg-gradient-to-r from-[#c07a63] via-[#e0937a] to-[#efe7dd] shadow-[0_0_8px_rgba(224,147,122,0.45)] will-change-transform"
+            style={{ transform: `scaleX(${scrollProgress})`, transformOrigin: "left" }}
+          />
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" onClick={handleOpenModal} className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}>
