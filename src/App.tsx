@@ -216,6 +216,7 @@ export default function App() {
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   const menuItems = [
     { label: "Meine Geschichte", href: "#about" },
@@ -382,6 +383,26 @@ export default function App() {
     e.preventDefault();
     setShowCookieSettings(true);
     setShowCookieBanner(true);
+  };
+
+  const handleMenuAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const targetId = href.replace(/^#/, "");
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    const navHeight = navRef.current ? navRef.current.getBoundingClientRect().height : 0;
+    const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navHeight + 1;
+
+    window.scrollTo({
+      top: Math.max(0, Math.round(targetTop)),
+      behavior: "smooth",
+    });
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", href);
+    }
   };
 
   const toggleFaq = (index: number) => setOpenFaq(openFaq === index ? null : index);
@@ -625,7 +646,7 @@ export default function App() {
       `}} />
 
       {/* NAVBAR */}
-      <nav className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
+      <nav ref={navRef} className={`sticky top-0 z-[100] flex items-center justify-between px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-5'}`}>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" className="flex items-center hover:scale-105 transition-transform">
             <img src="/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" alt="Yagibasan Capital Logo" className={`object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)] transition-all duration-500 ${isScrolled ? 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16' : 'w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24'}`} />
@@ -658,7 +679,7 @@ export default function App() {
                     key={item.href}
                     href={item.href}
                     role="menuitem"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => handleMenuAnchorClick(e, item.href)}
                     className="flex items-center justify-between px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-[#efe7dd] hover:text-[#e0937a] hover:bg-[#e0937a]/10 transition-all duration-200 group"
                   >
                     <span>{item.label}</span>
@@ -734,7 +755,7 @@ export default function App() {
       </div>
 
       {/* ABOUT ME */}
-      <section id="about" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative bg-[#111] py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+      <section id="about" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative bg-[#111] py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.12)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
           <div className="w-full lg:w-5/12">
@@ -880,7 +901,7 @@ export default function App() {
       </div>
 
       {/* DEPOT */}
-      <section id="depot" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#111]">
+      <section id="depot" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#111]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.1)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
@@ -964,7 +985,7 @@ export default function App() {
       </section>
 
       {}
-      <section id="rechner" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] border-t border-white/5 overflow-hidden">
+      <section id="rechner" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#1a1a1a] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-10 sm:mb-12">
@@ -1020,7 +1041,7 @@ export default function App() {
       </div>
 
       {}
-      <section id="mentoring" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative bg-[#111] pt-16 sm:pt-24 pb-12 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+      <section id="mentoring" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative bg-[#111] pt-16 sm:pt-24 pb-12 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.08)_0%,transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
@@ -1126,7 +1147,7 @@ export default function App() {
       </div>
 
       {}
-      <section id="premium" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]">
+      <section id="premium" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden bg-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.08)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
@@ -1175,7 +1196,7 @@ export default function App() {
       </section>
 
       {}
-      <section id="pakete" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 border-y border-white/5 bg-[#111] overflow-hidden">
+      <section id="pakete" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 border-y border-white/5 bg-[#111] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.06)_0%,transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-10 sm:mb-12">
@@ -1326,7 +1347,7 @@ export default function App() {
       </section>
 
       {/* NEWSLETTER */}
-      <section id="newsletter" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden border-y border-[#e0937a]/20">
+      <section id="newsletter" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-10 sm:py-12 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden border-y border-[#e0937a]/20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.06)_0%,transparent_50%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-5xl mx-auto bg-gradient-to-r from-[#e0937a] to-[#c07a63] p-[2px] rounded-xl shadow-[0_0_35px_rgba(224,147,122,0.3)] hover:shadow-[0_0_50px_rgba(224,147,122,0.4)] transition-shadow duration-500">
           <div className="bg-[#1a1a1a] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 rounded-[10px]">
@@ -1388,7 +1409,7 @@ export default function App() {
       </section>
 
       {}
-      <section id="budgetplaner" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative bg-[#1a1a1a] py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+      <section id="budgetplaner" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative bg-[#1a1a1a] py-16 sm:py-20 px-5 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(224,147,122,0.08)_0%,transparent_50%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2">
@@ -1467,7 +1488,7 @@ export default function App() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="scroll-mt-24 sm:scroll-mt-32 md:scroll-mt-40 relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden">
+      <section id="faq" className="scroll-mt-14 sm:scroll-mt-16 md:scroll-mt-[88px] relative py-16 sm:py-24 px-5 sm:px-6 md:px-12 lg:px-24 bg-[#111] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(224,147,122,0.05)_0%,transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-10 sm:mb-16">
