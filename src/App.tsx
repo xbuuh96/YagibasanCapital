@@ -344,20 +344,28 @@ export default function App() {
 
   const handleBudgetSubmit = async (e: any) => {
     e.preventDefault();
+    const rawFormData = new FormData(e.target);
+    const budgetEmail = String(rawFormData.get("email") || "").trim();
+    if (!budgetConsent || !budgetEmail) return;
     setIsBudgetSubmitting(true);
-    
-    const formData = new FormData(e.target);
-    formData.append("access_key", "b2618995-1e7e-4ae7-a7f5-b845be422aa0");
-    
+
+    const formData = new FormData();
+    formData.append("EMAIL", budgetEmail);
+    formData.append("email_address_check", "");
+    formData.append("locale", "de");
+    formData.append("html_type", "simple");
+
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-      
-      if (response.ok) {
-        setIsBudgetSuccess(true);
-      }
+      await fetch(
+        "https://d3a0dc41.sibforms.com/serve/MUIFAPnTiCh-201uOQLH-8vcenwI9L9caOaoJKC3DCP7uRTXO3Kdq40_RhiEXjxAQQ8yCNpbao01yFKvCArpFT3RGD1KYSIdu9-g8XtFby4WbcKWtsMhQBvGEpAGV0quCb5nImS12wFFmZn_D7rWVi2jLXoT6pjxgn0W4HIvMBuRV5MC8ymXYxDQRFkgQpW2tbKM8zM_98PboT7PjQ==",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        }
+      );
+      setIsBudgetSuccess(true);
+      e.target.reset();
     } catch (error) {
       console.error("Fehler beim Formular-Versand", error);
     } finally {
