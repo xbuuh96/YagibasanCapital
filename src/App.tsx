@@ -133,8 +133,8 @@ E-Mail: office@yagibasan-capital.de
 <h3>Hosting (Vercel)</h3>
 <p>Wir hosten unsere Website bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Vercel ist ein Cloud-Plattform-Anbieter. Wenn Sie unsere Website besuchen, erfasst Vercel verschiedene Logfiles inklusive Ihrer IP-Adressen. Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website.</p>
 
-<h3>Cookies & Cookiebot</h3>
-<p>Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Wir nutzen "Cookiebot" (Usercentrics A/S, Havnegade 39, 1058 Kopenhagen, Dänemark), um Ihre Einwilligung zur Speicherung bestimmter Cookies einzuholen und datenschutzkonform zu dokumentieren. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. c DSGVO.</p>
+<h3>Cookies & Einwilligungsverwaltung</h3>
+<p>Unsere Website verwendet Cookies sowie lokale Speicherfunktionen Ihres Browsers (insbesondere localStorage), um grundlegende Funktionen bereitzustellen und Ihre Datenschutzeinstellungen zu sichern. Technisch notwendige Cookies und Speicherungen (wie die Speicherung Ihrer gewählten Cookie-Präferenzen) sind für den sicheren und fehlerfreien Betrieb der Website erforderlich und erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Optionale Kategorien (funktionale Komfortfunktionen sowie Marketing- oder externe Inhalte) werden ausschließlich nach Ihrer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO aktiviert. Sie können Ihre Auswahl jederzeit über den Punkt „Cookie-Einstellungen“ im Footer unserer Website anpassen oder eine erteilte Einwilligung mit Wirkung für die Zukunft widerrufen.</p>
 
 <h2>4. Formulare und Newsletter</h2>
 <h3>Mentoring-Audit (Formspree)</h3>
@@ -214,6 +214,15 @@ export default function App() {
   const [isYearly, setIsYearly] = useState(false);
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false);
 
+  const COOKIE_CONSENT_KEY = "yc_cookie_consent_v1";
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+  const [showCookieSettings, setShowCookieSettings] = useState(false);
+  const [cookiePreferences, setCookiePreferences] = useState({
+    necessary: true,
+    functional: false,
+    marketing: false,
+  });
+
   // Pricing Mobile Slider Logic
   const pricingScrollRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState(1); // 0=Starter, 1=Premium, 2=InnerCircle
@@ -284,28 +293,63 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const hostname = window.location.hostname;
-    const isExcludedHost =
-      !hostname ||
-      hostname === "localhost" ||
-      hostname === "127.0.0.1" ||
-      hostname.includes("usercontent.goog") ||
-      hostname.includes("webcontainer") ||
-      hostname.includes("scf.usercontent.goog");
-
-    if (isExcludedHost || document.getElementById("Cookiebot")) {
-      return;
+    try {
+      const savedConsent = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (savedConsent) {
+        const parsed = JSON.parse(savedConsent);
+        setCookiePreferences({
+          necessary: true,
+          functional: Boolean(parsed?.functional),
+          marketing: Boolean(parsed?.marketing),
+        });
+        setShowCookieBanner(false);
+      } else {
+        setShowCookieBanner(true);
+      }
+    } catch (error) {
+      console.error("Fehler beim Laden der Cookie-Einstellungen", error);
+      setShowCookieBanner(true);
     }
-
-    const script = document.createElement("script");
-    script.id = "Cookiebot";
-    script.src = "https://consent.cookiebot.com/uc.js";
-    script.setAttribute("data-cbid", "37adc352-7e27-4515-94ae-07a745cdc031");
-    script.setAttribute("data-blockingmode", "manual");
-    script.type = "text/javascript";
-    script.async = true;
-    document.head.appendChild(script);
   }, []);
+
+  const saveCookieConsent = (nextPreferences: { necessary: boolean; functional: boolean; marketing: boolean }) => {
+    const normalized = {
+      necessary: true,
+      functional: Boolean(nextPreferences.functional),
+      marketing: Boolean(nextPreferences.marketing),
+      updatedAt: new Date().toISOString(),
+    };
+    setCookiePreferences({
+      necessary: true,
+      functional: normalized.functional,
+      marketing: normalized.marketing,
+    });
+    try {
+      window.localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(normalized));
+    } catch (error) {
+      console.error("Fehler beim Speichern der Cookie-Einstellungen", error);
+    }
+    setShowCookieBanner(false);
+    setShowCookieSettings(false);
+  };
+
+  const handleAcceptNecessaryCookies = () => {
+    saveCookieConsent({ necessary: true, functional: false, marketing: false });
+  };
+
+  const handleAcceptAllCookies = () => {
+    saveCookieConsent({ necessary: true, functional: true, marketing: true });
+  };
+
+  const handleSaveCustomCookies = () => {
+    saveCookieConsent(cookiePreferences);
+  };
+
+  const handleOpenCookieSettings = (e: any) => {
+    e.preventDefault();
+    setShowCookieSettings(true);
+    setShowCookieBanner(true);
+  };
 
   const toggleFaq = (index: number) => setOpenFaq(openFaq === index ? null : index);
   
@@ -1424,6 +1468,7 @@ export default function App() {
               <h4 className="text-[#efe7dd] font-semibold text-base sm:text-lg mb-1 sm:mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-fit">Rechtliches</h4>
               <a href="#impressum" className="text-gray-400 text-sm sm:text-base font-light hover:text-[#e0937a] md:hover:translate-x-1 transition-all">Impressum</a>
               <a href="#datenschutz" className="text-gray-400 text-sm sm:text-base font-light hover:text-[#e0937a] md:hover:translate-x-1 transition-all">Datenschutzerklärung</a>
+              <button type="button" onClick={handleOpenCookieSettings} className="text-gray-400 text-sm sm:text-base font-light hover:text-[#e0937a] md:hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 p-0 text-center md:text-left">Cookie-Einstellungen</button>
             </div>
             <div className="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
               <h4 className="text-[#efe7dd] font-semibold text-base sm:text-lg mb-1 sm:mb-2 border-b border-[#e0937a]/30 pb-2 inline-block w-fit">Hinweis</h4>
@@ -1676,6 +1721,173 @@ export default function App() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* YAGIBASAN COOKIE-BANNER */}
+      {showCookieBanner && (
+        <div
+          role="dialog"
+          aria-modal="false"
+          aria-label="Cookie-Einstellungen"
+          className="fixed bottom-3 left-3 right-3 sm:bottom-6 sm:right-6 sm:left-auto z-[190] w-auto sm:w-full sm:max-w-lg max-h-[85vh] overflow-y-auto bg-[#111111]/95 backdrop-blur-xl border border-[#e0937a]/40 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_30px_rgba(224,147,122,0.15)] p-5 sm:p-6 text-[#efe7dd]"
+        >
+          <div className="flex items-start gap-3 mb-3">
+            <div className="w-9 h-9 rounded-lg bg-[#e0937a]/10 border border-[#e0937a]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <ShieldCheck className="w-5 h-5 text-[#e0937a]" />
+            </div>
+            <div>
+              <h3 className="font-serif-elegant text-lg sm:text-xl font-bold text-[#efe7dd] leading-snug">
+                Privatsphäre & Cookie-Einstellungen
+              </h3>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-[#e0937a] font-semibold mt-0.5">
+                Yagibasan Capital
+              </p>
+            </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed mb-4">
+            Wir nutzen technisch notwendige Speicherungen für den sicheren Betrieb dieser Website. Optionale Komfort- oder Marketing-Funktionen aktivieren wir nur mit deiner ausdrücklichen Einwilligung. Mehr dazu findest du in unserer{" "}
+            <a href="#datenschutz" className="text-[#e0937a] hover:underline transition-all">
+              Datenschutzerklärung
+            </a>
+            {" "}und im{" "}
+            <a href="#impressum" className="text-[#e0937a] hover:underline transition-all">
+              Impressum
+            </a>
+            .
+          </p>
+
+          {showCookieSettings && (
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-lg p-4 mb-4 space-y-4">
+              {/* Technisch notwendig */}
+              <div className="flex items-start justify-between gap-4 pb-3 border-b border-white/5">
+                <div>
+                  <p className="text-xs sm:text-sm font-semibold text-[#efe7dd]">Technisch notwendig</p>
+                  <p className="text-[11px] sm:text-xs text-gray-400 font-light leading-relaxed mt-0.5">
+                    Erforderlich für Grundfunktionen und die lokale Speicherung deiner Cookie-Auswahl.
+                  </p>
+                </div>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#e0937a] bg-[#e0937a]/10 border border-[#e0937a]/30 px-2.5 py-1 rounded-sm whitespace-nowrap flex-shrink-0">
+                  Immer aktiv
+                </span>
+              </div>
+
+              {/* Funktional */}
+              <div className="flex items-start justify-between gap-4 pb-3 border-b border-white/5">
+                <div>
+                  <p className="text-xs sm:text-sm font-semibold text-[#efe7dd]">Funktional & Komfort</p>
+                  <p className="text-[11px] sm:text-xs text-gray-400 font-light leading-relaxed mt-0.5">
+                    Ermöglicht optionale Komfort- und lokale Speicherfunktionen für eine angenehmere Nutzung.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={cookiePreferences.functional}
+                  aria-label="Funktionale Cookies umschalten"
+                  onClick={() =>
+                    setCookiePreferences((prev) => ({
+                      ...prev,
+                      functional: !prev.functional,
+                    }))
+                  }
+                  className={`w-11 h-6 rounded-full p-0.5 border transition-colors duration-300 flex-shrink-0 cursor-pointer ${
+                    cookiePreferences.functional
+                      ? "bg-[#e0937a]/25 border-[#e0937a]"
+                      : "bg-[#111111] border-white/20"
+                  }`}
+                >
+                  <span
+                    className={`block w-4 h-4 rounded-full transition-transform duration-300 ${
+                      cookiePreferences.functional
+                        ? "translate-x-5 bg-[#e0937a]"
+                        : "translate-x-0 bg-gray-500"
+                    }`}
+                  />
+                </button>
+              </div>
+
+              {/* Marketing & Externe Inhalte */}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs sm:text-sm font-semibold text-[#efe7dd]">Marketing & Externe Inhalte</p>
+                  <p className="text-[11px] sm:text-xs text-gray-400 font-light leading-relaxed mt-0.5">
+                    Optionale Einbindung externer Inhalte und Reichweiten- bzw. Marketingfunktionen.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={cookiePreferences.marketing}
+                  aria-label="Marketing und externe Inhalte umschalten"
+                  onClick={() =>
+                    setCookiePreferences((prev) => ({
+                      ...prev,
+                      marketing: !prev.marketing,
+                    }))
+                  }
+                  className={`w-11 h-6 rounded-full p-0.5 border transition-colors duration-300 flex-shrink-0 cursor-pointer ${
+                    cookiePreferences.marketing
+                      ? "bg-[#e0937a]/25 border-[#e0937a]"
+                      : "bg-[#111111] border-white/20"
+                  }`}
+                >
+                  <span
+                    className={`block w-4 h-4 rounded-full transition-transform duration-300 ${
+                      cookiePreferences.marketing
+                        ? "translate-x-5 bg-[#e0937a]"
+                        : "translate-x-0 bg-gray-500"
+                    }`}
+                  />
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Gleichwertige Haupt-Buttons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={handleAcceptNecessaryCookies}
+              className="w-full px-4 py-3 rounded-sm bg-[#1a1a1a] border border-[#e0937a] text-[#efe7dd] font-semibold text-xs sm:text-sm hover:bg-[#e0937a] hover:text-[#1a1a1a] transition-all duration-300 cursor-pointer"
+            >
+              Nur notwendige
+            </button>
+            <button
+              type="button"
+              onClick={handleAcceptAllCookies}
+              className="w-full px-4 py-3 rounded-sm bg-[#1a1a1a] border border-[#e0937a] text-[#efe7dd] font-semibold text-xs sm:text-sm hover:bg-[#e0937a] hover:text-[#1a1a1a] transition-all duration-300 cursor-pointer"
+            >
+              Alle akzeptieren
+            </button>
+          </div>
+
+          <div className="mt-3 flex flex-col sm:flex-row items-center justify-between gap-2.5 pt-3 border-t border-white/10">
+            <button
+              type="button"
+              onClick={() => setShowCookieSettings((prev) => !prev)}
+              className="inline-flex items-center gap-1.5 text-xs text-gray-300 hover:text-[#e0937a] transition-colors cursor-pointer bg-transparent border-0 p-1"
+            >
+              <Settings className="w-3.5 h-3.5 text-[#e0937a]" />
+              <span>{showCookieSettings ? "Einstellungen ausblenden" : "Einstellungen anpassen"}</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                  showCookieSettings ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {showCookieSettings && (
+              <button
+                type="button"
+                onClick={handleSaveCustomCookies}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-sm bg-[#e0937a] text-[#1a1a1a] font-bold text-xs sm:text-sm hover:bg-[#efe7dd] transition-all duration-300 cursor-pointer"
+              >
+                Auswahl speichern
+              </button>
+            )}
           </div>
         </div>
       )}
