@@ -225,6 +225,7 @@ export default function App() {
     { label: "1:1 Mentoring", href: "#mentoring" },
     { label: "Pakete & Preise", href: "#pakete" },
     { label: "Budgetplaner", href: "#budgetplaner" },
+    { label: "Newsletter", href: "#newsletter" },
     { label: "FAQ", href: "#faq" },
   ];
 
