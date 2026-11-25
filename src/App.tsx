@@ -809,6 +809,7 @@ export default function App() {
             </div>
             
             <h1 className="mb-10 sm:mb-14 leading-[1.1]">
+              <span className="sr-only">Yagibasan Capital – Finanzielle Bildung &amp; 1:1 Mentoring: </span>
               <span className="block text-[#efe7dd] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-2 uppercase">Über Geld spricht man nicht?</span>
               <span className="block text-[#e0937a] font-serif-elegant italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-6 sm:mt-8 drop-shadow-[0_0_15px_rgba(224,147,122,0.3)]">Über Geld spricht man!</span>
             </h1>
