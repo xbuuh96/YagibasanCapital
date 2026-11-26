@@ -516,14 +516,14 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
             WERTE FÜR GENERATIONEN
           </p>
 
-          <div className="mt-3 flex w-full items-center justify-center gap-3 sm:gap-5">
-            <span className="h-px w-8 sm:w-16 shrink-0 bg-[#e0937a]/55" />
+          <div className="mt-2.5 flex w-full items-center justify-center gap-3 sm:gap-5">
+            <span className="h-px w-7 sm:w-12 shrink-0 bg-[#e0937a]/55" />
             {!wordmarkError ? (
               <img
                 src={WORDMARK_LOGO_SRC}
                 alt="Yagibasan Capital"
                 onError={() => setWordmarkError(true)}
-                className="h-20 sm:h-24 w-auto max-w-[260px] sm:max-w-[340px] object-contain drop-shadow-[0_0_12px_rgba(224,147,122,0.25)]"
+                className="h-14 sm:h-16 w-auto max-w-[210px] sm:max-w-[250px] object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]"
               />
             ) : (
               <div className="flex flex-col items-center leading-tight">
