@@ -825,8 +825,7 @@ export default function App() {
               </div>
             )}
           </div>
-        </div>
-        <button
+          <button
             type="button"
             onClick={handleOpenWealthRank}
             className={`hidden lg:inline-flex items-center gap-2 font-semibold text-[#efe7dd] bg-[#111111]/70 border border-[#e0937a]/40 rounded-sm hover:border-[#e0937a] hover:text-[#e0937a] hover:bg-[#e0937a]/10 transition-all duration-300 cursor-pointer ${isScrolled ? 'text-xs px-3.5 py-2' : 'text-sm px-4 py-2.5'}`}
@@ -834,6 +833,7 @@ export default function App() {
             <BarChart className="w-4 h-4 text-[#e0937a]" />
             <span>Vermögens-Check</span>
           </button>
+        </div>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" onClick={handleOpenModal} className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}>
             <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
