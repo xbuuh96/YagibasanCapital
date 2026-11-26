@@ -55,7 +55,6 @@ interface WealthResultCardProps {
 }
 
 const LOGO_SRC = '/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png';
-const WORDMARK_LOGO_SRC = '/YAGIBASAN_CAPITAL_Verlauf_HighRes.png';
 
 const QUICK_WEALTH_CHIPS: readonly number[] = [2500, 15000, 50000, 150000];
 
@@ -325,7 +324,6 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
   isScreenshotMode = false,
 }) => {
   const [logoError, setLogoError] = useState<boolean>(false);
-  const [wordmarkError, setWordmarkError] = useState<boolean>(false);
 
   // Indikator-Punkt leicht begrenzen, damit er an den Track-Enden nicht abschneidet
   const indicatorLeft = Math.min(98.5, Math.max(1.5, standing.barProgress));
@@ -510,36 +508,18 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
           </div>
         </div>
 
-        {/* Footer-Branding unten in der Karte */}
-        <div className="flex flex-col items-center border-t border-white/10 pt-4 text-center">
-          <p className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.3em] text-[#efe7dd]/85">
+        {/* Schlichter, typografischer Karten-Footer */}
+        <div
+          className={`flex flex-col items-center border-t border-white/10 text-center ${
+            isScreenshotMode ? 'pt-5' : 'pt-4'
+          }`}
+        >
+          <p className="font-serif-elegant text-[11px] sm:text-xs font-medium uppercase tracking-[0.32em] text-[#efe7dd]/90">
             WERTE FÜR GENERATIONEN
           </p>
-
-          <div className="mt-2.5 flex w-full items-center justify-center gap-3 sm:gap-5">
-            <span className="h-px w-7 sm:w-12 shrink-0 bg-[#e0937a]/55" />
-            {!wordmarkError ? (
-              <img
-                src={WORDMARK_LOGO_SRC}
-                alt="Yagibasan Capital"
-                onError={() => setWordmarkError(true)}
-                className="h-14 sm:h-16 w-auto max-w-[210px] sm:max-w-[250px] object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]"
-              />
-            ) : (
-              <div className="flex flex-col items-center leading-tight">
-                <span className="text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-[#e0937a]">
-                  YAGIBASAN
-                </span>
-                <span className="mt-0.5 text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-[#e0937a]">
-                  CAPITAL
-                </span>
-                <span className="mt-1.5 text-[7px] sm:text-[8px] font-medium uppercase tracking-[0.22em] text-[#e0937a]/80">
-                  STRATEGIC FINANCIAL MENTORING
-                </span>
-              </div>
-            )}
-            <span className="h-px w-8 sm:w-16 shrink-0 bg-[#e0937a]/55" />
-          </div>
+          <p className="mt-1.5 text-[10px] font-medium tracking-[0.22em] text-[#e0937a]/80">
+            yagibasan-capital.de
+          </p>
         </div>
       </div>
     </div>
@@ -1105,7 +1085,7 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
               </div>
 
               {/* Sekundäre Aktionen: Screenshot-Ansicht (nur mobil) & Ergebnis kopieren */}
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2">
                 <button
                   type="button"
                   onClick={() => setIsScreenshotMode(true)}
