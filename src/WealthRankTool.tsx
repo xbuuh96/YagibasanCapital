@@ -55,6 +55,7 @@ interface WealthResultCardProps {
 }
 
 const LOGO_SRC = '/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png';
+const WORDMARK_LOGO_SRC = '/YAGIBASAN_CAPITAL_Verlauf_HighRes.png';
 
 const QUICK_WEALTH_CHIPS: readonly number[] = [2500, 15000, 50000, 150000];
 
@@ -324,6 +325,7 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
   isScreenshotMode = false,
 }) => {
   const [logoError, setLogoError] = useState<boolean>(false);
+  const [wordmarkError, setWordmarkError] = useState<boolean>(false);
 
   // Indikator-Punkt leicht begrenzen, damit er an den Track-Enden nicht abschneidet
   const indicatorLeft = Math.min(98.5, Math.max(1.5, standing.barProgress));
@@ -345,24 +347,30 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
         }`}
       >
         {/* Karten-Kopf: Yagibasan Capital Logo mit Kupfer-Glow + Ranking-Badge */}
-        <div className="flex flex-col gap-3 border-b border-white/10 pb-4 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className={`flex flex-col gap-3 border-b border-white/10 pb-4 ${
+            isScreenshotMode
+              ? 'items-start'
+              : 'sm:flex-row sm:items-center sm:justify-between'
+          }`}
+        >
           <div className="flex items-center">
             {!logoError ? (
               <img
                 src={LOGO_SRC}
                 alt="Yagibasan Capital Logo"
                 onError={() => setLogoError(true)}
-                className="h-7 w-auto max-w-[190px] object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)] sm:h-8"
+                className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)] sm:h-12"
               />
             ) : (
-              <span className="font-serif-elegant text-base font-semibold tracking-wider text-[#efe7dd] drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]">
+              <span className="font-serif-elegant text-xl sm:text-2xl font-semibold tracking-wider text-[#efe7dd] drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]">
                 YAGIBASAN <span className="text-[#e0937a]">CAPITAL</span>
               </span>
             )}
           </div>
 
           <span className="inline-flex w-fit items-center rounded-full border border-[#e0937a]/35 bg-[#e0937a]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#e0937a]">
-            SELBSTAUFBAUER-RANKING DE (OHNE ERBE)
+            VERMÖGENS-RANKING DE (OHNE ERBE)
           </span>
         </div>
 
@@ -502,14 +510,36 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
           </div>
         </div>
 
-        {/* Dezentes Wasserzeichen unten in der Karte */}
-        <div className="flex flex-col items-center justify-between gap-1 border-t border-white/10 pt-3.5 text-center sm:flex-row sm:text-left">
-          <span className="font-serif-elegant text-xs italic tracking-wide text-[#efe7dd]/70">
-            Werte für Generationen
-          </span>
-          <span className="text-[11px] tracking-wide text-neutral-500">
-            yagibasan-capital.de • @yagibasancapital
-          </span>
+        {/* Footer-Branding unten in der Karte */}
+        <div className="flex flex-col items-center border-t border-white/10 pt-4 text-center">
+          <p className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.3em] text-[#efe7dd]/85">
+            WERTE FÜR GENERATIONEN
+          </p>
+
+          <div className="mt-3 flex w-full items-center justify-center gap-3 sm:gap-5">
+            <span className="h-px w-8 sm:w-16 shrink-0 bg-[#e0937a]/55" />
+            {!wordmarkError ? (
+              <img
+                src={WORDMARK_LOGO_SRC}
+                alt="Yagibasan Capital"
+                onError={() => setWordmarkError(true)}
+                className="h-10 sm:h-12 w-auto max-w-[180px] sm:max-w-[220px] object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)]"
+              />
+            ) : (
+              <div className="flex flex-col items-center leading-tight">
+                <span className="text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-[#e0937a]">
+                  YAGIBASAN
+                </span>
+                <span className="mt-0.5 text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-[#e0937a]">
+                  CAPITAL
+                </span>
+                <span className="mt-1.5 text-[7px] sm:text-[8px] font-medium uppercase tracking-[0.22em] text-[#e0937a]/80">
+                  STRATEGIC FINANCIAL MENTORING
+                </span>
+              </div>
+            )}
+            <span className="h-px w-8 sm:w-16 shrink-0 bg-[#e0937a]/55" />
+          </div>
         </div>
       </div>
     </div>
@@ -529,6 +559,7 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
   const [monthlySavings, setMonthlySavings] = useState<number>(300);
   const [isScreenshotMode, setIsScreenshotMode] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
+  const [headerLogoError, setHeaderLogoError] = useState<boolean>(false);
 
   const copyTimerRef = useRef<number | null>(null);
   const mouseDownOnBackdropRef = useRef<boolean>(false);
@@ -616,13 +647,13 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
   };
 
   const handleCopyResult = async () => {
-    const shareText = `Selbstaufbauer-Ranking DE (ohne Erbe): Mit ${age} Jahren und ${formatEuro(
+    const shareText = `Vermögens-Ranking DE (ohne Erbe): Mit ${age} Jahren und ${formatEuro(
       wealth
-    )} selbstaufgebautem Vermögen bin ich weiter als ${
+    )} aktuellem Vermögen bin ich weiter als ${
       standing.percentile
     } % meiner Altersgruppe (${
       standing.tierTitle
-    }). Realitäts-Check auf yagibasan-capital.de`;
+    }). Vermögens-Check auf yagibasan-capital.de`;
 
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -760,25 +791,41 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Realitäts-Check schließen"
+                aria-label="Vermögens-Check schließen"
                 className="absolute right-4 top-4 sm:right-6 sm:top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a]/80 text-neutral-400 transition hover:border-[#e0937a]/50 hover:text-[#efe7dd]"
               >
                 <X className="h-4 w-4" />
               </button>
             )}
 
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#e0937a]">
-              Yagibasan Capital · Realitäts-Check
-            </p>
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pr-11">
+              {!headerLogoError ? (
+                <img
+                  src={LOGO_SRC}
+                  alt="Yagibasan Capital Logo"
+                  onError={() => setHeaderLogoError(true)}
+                  className="h-9 sm:h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]"
+                />
+              ) : (
+                <span className="font-serif-elegant text-base sm:text-lg font-semibold tracking-wider text-[#efe7dd]">
+                  YAGIBASAN <span className="text-[#e0937a]">CAPITAL</span>
+                </span>
+              )}
+              <span className="hidden sm:inline-block h-4 w-px bg-white/15" />
+              <span className="inline-flex items-center rounded-full border border-[#e0937a]/35 bg-[#e0937a]/10 px-2.5 py-0.5 text-[11px] sm:text-xs font-semibold tracking-[0.14em] text-[#e0937a]">
+                Vermögens-Check
+              </span>
+            </div>
+
             <h2
               id="wealth-rank-title"
-              className="mt-1.5 pr-10 font-serif-elegant text-2xl sm:text-3xl font-semibold tracking-tight text-[#efe7dd]"
+              className="mt-2.5 pr-10 font-serif-elegant text-2xl sm:text-3xl font-semibold tracking-tight text-[#efe7dd]"
             >
               Wo stehst du in deinem Alter?
             </h2>
             <p className="mt-2 max-w-xl text-xs sm:text-sm leading-relaxed text-neutral-400">
-              Vergleiche dein selbstaufgebautes Vermögen (ohne Erbe &amp;
-              Schenkungen) mit deiner Altersgruppe in Deutschland.
+              Vergleiche dein aktuelles Vermögen (ohne Erbe &amp; Schenkungen)
+              mit deiner Altersgruppe in Deutschland.
             </p>
           </div>
 
@@ -825,14 +872,14 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
 
               <div className="h-px bg-white/10" />
 
-              {/* Regler, Feinjustierung & Schnellwahl-Chips: Selbstaufgebautes Vermögen */}
+              {/* Regler, Feinjustierung & Schnellwahl-Chips: Aktuelles Vermögen */}
               <div>
                 <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
                   <label
                     htmlFor="wealth-slider"
                     className="text-xs sm:text-sm font-medium text-neutral-200"
                   >
-                    Selbstaufgebautes Vermögen
+                    Aktuelles Vermögen
                   </label>
 
                   <div className="flex items-center gap-2">
@@ -1057,12 +1104,12 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
                 )}
               </div>
 
-              {/* Sekundäre Aktionen: Screenshot-Ansicht & Ergebnis kopieren */}
+              {/* Sekundäre Aktionen: Screenshot-Ansicht (nur mobil) & Ergebnis kopieren */}
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 <button
                   type="button"
                   onClick={() => setIsScreenshotMode(true)}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-[#1a1a1a] px-4 py-3 text-xs sm:text-sm font-medium text-[#efe7dd] transition hover:border-[#e0937a]/60 hover:bg-[#222222]"
+                  className="inline-flex md:hidden items-center justify-center gap-2 rounded-xl border border-white/15 bg-[#1a1a1a] px-4 py-3 text-xs sm:text-sm font-medium text-[#efe7dd] transition hover:border-[#e0937a]/60 hover:bg-[#222222]"
                 >
                   <Camera className="h-4 w-4 text-[#e0937a]" />
                   <span>Screenshot-Ansicht</span>
@@ -1071,7 +1118,7 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
                 <button
                   type="button"
                   onClick={handleCopyResult}
-                  className={`inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-xs sm:text-sm font-medium transition ${
+                  className={`inline-flex md:col-span-2 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-xs sm:text-sm font-medium transition ${
                     copied
                       ? 'border-[#e0937a]/70 bg-[#e0937a]/15 text-[#efe7dd]'
                       : 'border-white/15 bg-[#1a1a1a] text-neutral-300 hover:border-[#e0937a]/60 hover:text-[#efe7dd]'
