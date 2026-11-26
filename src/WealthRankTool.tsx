@@ -523,7 +523,7 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
                 src={WORDMARK_LOGO_SRC}
                 alt="Yagibasan Capital"
                 onError={() => setWordmarkError(true)}
-                className="h-10 sm:h-12 w-auto max-w-[180px] sm:max-w-[220px] object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.2)]"
+                className="h-20 sm:h-24 w-auto max-w-[260px] sm:max-w-[340px] object-contain drop-shadow-[0_0_12px_rgba(224,147,122,0.25)]"
               />
             ) : (
               <div className="flex flex-col items-center leading-tight">
