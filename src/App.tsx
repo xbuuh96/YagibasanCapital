@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import WealthRankTool from "./WealthRankTool";
 import {
   ChevronDown,
   ChevronRight,
@@ -202,6 +203,7 @@ export default function App() {
   const [startkapital, setStartkapital] = useState(10000);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isWealthRankOpen, setIsWealthRankOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -492,6 +494,35 @@ export default function App() {
     }, 500);
   };
 
+  const handleOpenWealthRank = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    setIsMenuOpen(false);
+    setIsWealthRankOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleCloseWealthRank = () => {
+    setIsWealthRankOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const handleWealthRankToAudit = () => {
+    setIsWealthRankOpen(false);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleWealthRankToBudget = () => {
+    setIsWealthRankOpen(false);
+    document.body.style.overflow = "auto";
+    setTimeout(() => {
+      const targetEl = document.getElementById("budgetplaner");
+      if (!targetEl) return;
+      const navHeight = navRef.current ? navRef.current.getBoundingClientRect().height : 0;
+      const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navHeight + 1;
+      window.scrollTo({ top: Math.max(0, Math.round(targetTop)), behavior: "smooth" });
+    }, 50);
+  };
   const handleOpenPremiumModal = (e: any) => {
     e.preventDefault();
     setIsPremiumModalOpen(true);
@@ -756,6 +787,18 @@ export default function App() {
                 role="menu"
                 className="absolute left-0 mt-2.5 w-60 sm:w-64 bg-[#111111]/95 backdrop-blur-xl border border-[#e0937a]/40 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(224,147,122,0.15)] py-2 z-[120] overflow-hidden"
               >
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={handleOpenWealthRank}
+                  className="w-full flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-semibold text-[#e0937a] bg-[#e0937a]/10 border-b border-[#e0937a]/20 hover:bg-[#e0937a]/20 hover:text-[#efe7dd] transition-colors duration-200 cursor-pointer"
+                >
+                  <span className="flex items-center gap-2">
+                    <BarChart className="w-3.5 h-3.5 text-[#e0937a]" />
+                    <span>Vermögens-Check</span>
+                  </span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#e0937a]" />
+                </button>
                 {menuItems.map((item) => {
                   const isActive = activeSection === item.href;
                   return (
@@ -783,6 +826,14 @@ export default function App() {
             )}
           </div>
         </div>
+        <button
+            type="button"
+            onClick={handleOpenWealthRank}
+            className={`hidden lg:inline-flex items-center gap-2 font-semibold text-[#efe7dd] bg-[#111111]/70 border border-[#e0937a]/40 rounded-sm hover:border-[#e0937a] hover:text-[#e0937a] hover:bg-[#e0937a]/10 transition-all duration-300 cursor-pointer ${isScrolled ? 'text-xs px-3.5 py-2' : 'text-sm px-4 py-2.5'}`}
+          >
+            <BarChart className="w-4 h-4 text-[#e0937a]" />
+            <span>Vermögens-Check</span>
+          </button>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#" onClick={handleOpenModal} className={`font-bold text-[#e0937a] border border-[#e0937a]/50 rounded-sm hover:border-[#e0937a] hover:bg-[#e0937a]/10 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(224,147,122,0.2)] transition-all duration-300 inline-block text-center leading-tight ${isScrolled ? 'text-[9px] sm:text-xs px-2 sm:px-4 py-1.5 sm:py-2' : 'text-[10px] sm:text-sm px-2.5 sm:px-6 py-2 sm:py-3.5'}`}>
             <span className="hidden sm:inline">Kostenloses Erstgespräch</span>
@@ -2097,6 +2148,12 @@ export default function App() {
           </div>
         </div>
       )}
+      <WealthRankTool
+        isOpen={isWealthRankOpen}
+        onClose={handleCloseWealthRank}
+        onOpenAudit={handleWealthRankToAudit}
+        onNavigateToBudget={handleWealthRankToBudget}
+      />
       <Analytics />
     </div>
   );
