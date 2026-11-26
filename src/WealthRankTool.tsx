@@ -346,13 +346,13 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
       >
         {/* Karten-Kopf: Yagibasan Capital Logo mit Kupfer-Glow + Ranking-Badge */}
         <div
-          className={`flex flex-col gap-3 border-b border-white/10 pb-4 ${
+          className={`flex flex-col items-center gap-3 border-b border-white/10 pb-4 ${
             isScreenshotMode
-              ? 'items-start'
+              ? 'sm:items-start'
               : 'sm:flex-row sm:items-center sm:justify-between'
           }`}
         >
-          <div className="flex items-center">
+          <div className="flex w-full items-center justify-center sm:w-auto sm:justify-start">
             {!logoError ? (
               <img
                 src={LOGO_SRC}
@@ -367,7 +367,7 @@ const WealthResultCard: React.FC<WealthResultCardProps> = ({
             )}
           </div>
 
-          <span className="inline-flex w-fit items-center rounded-full border border-[#e0937a]/35 bg-[#e0937a]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#e0937a]">
+          <span className="mx-auto inline-flex w-fit items-center rounded-full border border-[#e0937a]/35 bg-[#e0937a]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#e0937a] sm:mx-0">
             VERMÖGENS-RANKING DE (OHNE ERBE)
           </span>
         </div>
@@ -778,19 +778,21 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
               </button>
             )}
 
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pr-11">
-              {!headerLogoError ? (
-                <img
-                  src={LOGO_SRC}
-                  alt="Yagibasan Capital Logo"
-                  onError={() => setHeaderLogoError(true)}
-                  className="h-9 sm:h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]"
-                />
-              ) : (
-                <span className="font-serif-elegant text-base sm:text-lg font-semibold tracking-wider text-[#efe7dd]">
-                  YAGIBASAN <span className="text-[#e0937a]">CAPITAL</span>
-                </span>
-              )}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 px-10 sm:justify-start sm:gap-3 sm:pl-0 sm:pr-11">
+              <div className="flex w-full items-center justify-center sm:w-auto sm:justify-start">
+                {!headerLogoError ? (
+                  <img
+                    src={LOGO_SRC}
+                    alt="Yagibasan Capital Logo"
+                    onError={() => setHeaderLogoError(true)}
+                    className="h-9 sm:h-10 w-auto object-contain drop-shadow-[0_0_10px_rgba(224,147,122,0.22)]"
+                  />
+                ) : (
+                  <span className="font-serif-elegant text-base sm:text-lg font-semibold tracking-wider text-[#efe7dd]">
+                    YAGIBASAN <span className="text-[#e0937a]">CAPITAL</span>
+                  </span>
+                )}
+              </div>
               <span className="hidden sm:inline-block h-4 w-px bg-white/15" />
               <span className="inline-flex items-center rounded-full border border-[#e0937a]/35 bg-[#e0937a]/10 px-2.5 py-0.5 text-[11px] sm:text-xs font-semibold tracking-[0.14em] text-[#e0937a]">
                 Vermögens-Check
@@ -1043,45 +1045,25 @@ export const WealthRankTool: React.FC<WealthRankToolProps> = ({
 
             {/* 5. Aktionen unten */}
             <div className="flex flex-col gap-3 pt-1">
-              {/* Haupt-CTA für Leads + ruhiger Zweitlink für die jeweils andere Option */}
-              <div className="flex flex-col items-center gap-1.5">
-                {isAuditEligible ? (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => onOpenAudit?.()}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c07a63] to-[#e0937a] px-6 py-3.5 text-xs sm:text-sm font-semibold text-[#0a0a0a] shadow-[0_8px_25px_rgba(224,147,122,0.3)] transition hover:from-[#efe7dd] hover:to-[#efe7dd]"
-                    >
-                      <span>1:1 Mentoring-Audit anfragen</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => onNavigateToBudget?.()}
-                      className="py-1.5 text-center text-xs text-neutral-400 underline-offset-4 transition hover:text-[#e0937a] hover:underline"
-                    >
-                      Lieber zuerst den kostenlosen Budgetplaner ansehen?
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => onNavigateToBudget?.()}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c07a63] to-[#e0937a] px-6 py-3.5 text-xs sm:text-sm font-semibold text-[#0a0a0a] shadow-[0_8px_25px_rgba(224,147,122,0.3)] transition hover:from-[#efe7dd] hover:to-[#efe7dd]"
-                    >
-                      <span>Kostenlosen Budgetplaner sichern</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => onOpenAudit?.()}
-                      className="py-1.5 text-center text-xs text-neutral-400 underline-offset-4 transition hover:text-[#e0937a] hover:underline"
-                    >
-                      Fragen zum 1:1 Mentoring?
-                    </button>
-                  </>
-                )}
+              {/* Beide Haupt-CTAs dauerhaft und stabil nebeneinander */}
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => onNavigateToBudget?.()}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#e0937a]/60 bg-[#1a1a1a] px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#efe7dd] shadow-[0_6px_20px_rgba(0,0,0,0.45)] transition hover:border-[#e0937a] hover:bg-[#e0937a]/15"
+                >
+                  <span>Kostenlosen Budgetplaner sichern</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#e0937a]" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => onOpenAudit?.()}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c07a63] to-[#e0937a] px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0a0a0a] shadow-[0_8px_25px_rgba(224,147,122,0.3)] transition hover:from-[#efe7dd] hover:to-[#efe7dd]"
+                >
+                  <span>1:1 Mentoring-Audit anfragen</span>
+                  <ArrowRight className="h-4 w-4 shrink-0" />
+                </button>
               </div>
 
               {/* Sekundäre Aktionen: Screenshot-Ansicht (nur mobil) & Ergebnis kopieren */}
