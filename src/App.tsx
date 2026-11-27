@@ -904,22 +904,22 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.12)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
           <div className="w-full lg:w-5/12">
-            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6">Die Realität</h2>
+            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6">Der Gründer</h2>
             <h3 className="mb-8 sm:mb-10 leading-[1.3]">
               <span className="block text-[#efe7dd] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 drop-shadow-md">Mein Name ist Burak.</span>
               <span className="block text-[#e0937a] font-serif-elegant italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl drop-shadow-[0_0_12px_rgba(224,147,122,0.3)]">Ich bin der Gründer von Yagibasan Capital.</span>
             </h3>
             <div className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-4 sm:py-6 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_30px_-10px_rgba(224,147,122,0.3)] mt-8 sm:mt-12 relative">
               <p className="text-[#efe7dd] font-serif-elegant italic text-lg sm:text-xl leading-relaxed">
-                „Ich bin heute nicht hier, um euch zu erzählen, dass ich auf einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten Sportwagen und verspreche keine Krypto-Wunder über Nacht.“
+                „Ich bin heute nicht hier, um dir zu erzählen, dass ich auf einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten Sportwagen und verspreche keine Krypto-Wunder über Nacht.“
               </p>
             </div>
           </div>
           <div className="w-full lg:w-7/12 space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light pt-2">
-            <p>Und ja, ich bin Angestellter. Genau wie die allermeisten von euch. Ich kenne den Wecker am Morgen, ich kenne die Abzüge auf dem Gehaltszettel, und ich spüre genau wie ihr, wie die Inflation unsere harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
-            <p>Ich war an exakt dem Punkt, an dem ihr heute vielleicht steht. Ich habe nach den traditionellen Regeln gespielt: Geh zur Schule, leiste gute Arbeit, spar dein Geld auf dem Tagesgeldkonto. Bis ich gemerkt habe, dass man so auf der Stelle tritt.</p>
-            <p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Das war kein Zufall, sondern das Resultat von klaren Entscheidungen und einem einfachen, verlässlichen System.</p>
-            <p>Weil mein Weg dorthin am Anfang durch viel "Ausprobieren" unnötig teuer und nervenaufreibend war, möchte ich meine Erfahrung heute mit dir teilen. Damit du direkt von Beginn an entspannt und richtig an die Sache rangehst.</p>
+            <p>Und ja, ich bin Angestellter - genau wie die meisten, die diese Zeilen lesen. Ich kenne den Wecker am Morgen, die Abzüge auf dem Gehaltszettel und das Gefühl, wie die Inflation deine harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
+            <p>Ich war an exakt dem Punkt, an dem du heute vielleicht stehst. Ich habe nach den traditionellen Regeln gespielt: Geh zur Schule, leiste gute Arbeit, spar dein Geld auf dem Tagesgeldkonto. Bis ich gemerkt habe, dass man so auf der Stelle tritt.</p>
+            <p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Nicht durch Glück oder riskante Wetten, sondern durch konsequente Entscheidungen, klare Regeln und ein Verständnis dafür, wie Geld langfristig arbeitet.</p>
+            <p>Weil mein Weg dorthin am Anfang durch viel „Ausprobieren“ unnötig teuer und nervenaufreibend war, möchte ich meine Erfahrung heute mit dir teilen. Damit du direkt von Beginn an entspannt und richtig an die Sache rangehst.</p>
           </div>
         </div>
       </section>
