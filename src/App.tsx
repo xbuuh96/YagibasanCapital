@@ -911,14 +911,14 @@ export default function App() {
             </h3>
             <div className="border-l-4 border-[#e0937a] pl-5 sm:pl-6 py-4 sm:py-6 bg-gradient-to-r from-[#e0937a]/15 to-transparent rounded-r-lg shadow-[inset_10px_0_30px_-10px_rgba(224,147,122,0.3)] mt-8 sm:mt-12 relative">
               <p className="text-[#efe7dd] font-serif-elegant italic text-lg sm:text-xl leading-relaxed">
-                „Ich bin heute nicht hier, um euch zu erzählen, dass ich auf einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten Sportwagen und verspreche keine Krypto-Wunder über Nacht.“
+                „Ich bin heute nicht hier, um dir zu erzählen, dass ich auf einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten Sportwagen und verspreche keine Krypto-Wunder über Nacht.“
               </p>
             </div>
           </div>
           <div className="w-full lg:w-7/12 space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light pt-2">
-            <p>Und ja, ich bin Angestellter. Genau wie die allermeisten von euch. Ich kenne den Wecker am Morgen, ich kenne die Abzüge auf dem Gehaltszettel, und ich spüre genau wie ihr, wie die Inflation unsere harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
-            <p>Ich war an exakt dem Punkt, an dem ihr heute vielleicht steht. Ich habe nach den traditionellen Regeln gespielt: Geh zur Schule, leiste gute Arbeit, spar dein Geld auf dem Tagesgeldkonto. Bis ich gemerkt habe, dass man so auf der Stelle tritt.</p>
-            <p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Das war kein Zufall, sondern das Resultat von klaren Entscheidungen und einem einfachen, verlässlichen System.</p>
+            <p>Und ja, ich bin Angestellter - Genau wie die meisten, die diese Zeilen lesen. Ich kenne den Wecker am Morgen, die Abzüge auf dem Gehaltszettel und das Gefühl, wie die Inflation unsere harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
+            <p>Ich war an exakt dem Punkt, an dem du heute vielleicht stehst. Ich habe nach den traditionellen Regeln gespielt: Geh zur Schule, leiste gute Arbeit, spar dein Geld auf dem Tagesgeldkonto. Bis ich gemerkt habe, dass man so auf der Stelle tritt.</p>
+            <p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Nicht durch Glück oder riskante Wetten, sondern durch konsequente Entscheidungen, klare Regeln und ein Verständnis dafür, wie Geld langfristig arbeitet.</p>
             <p>Weil mein Weg dorthin am Anfang durch viel "Ausprobieren" unnötig teuer und nervenaufreibend war, möchte ich meine Erfahrung heute mit dir teilen. Damit du direkt von Beginn an entspannt und richtig an die Sache rangehst.</p>
           </div>
         </div>
