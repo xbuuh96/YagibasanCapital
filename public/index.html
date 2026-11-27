@@ -45,22 +45,189 @@
     <meta name="twitter:image" content="https://yagibasan-capital.de/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png" />
 
     <!-- Strukturierte Daten für Google (Marke & Gründer) -->
-    <script type="application/ld+json">
+   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Yagibasan Capital",
-        "alternateName": "Yagibasan Capital – Strategic Financial Mentoring",
-        "url": "https://yagibasan-capital.de/",
-        "logo": "https://yagibasan-capital.de/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png",
-        "description": "Finanzielle Bildung und langfristiger Vermögensaufbau mit Weitblick: Yagibasan Capital schafft Werte für heute und für kommende Generationen.",
-        "founder": {
-          "@type": "Person",
-          "name": "Burak Yagibasan"
-        },
-        "sameAs": [
-          "https://www.instagram.com/yagibasancapital/",
-          "https://x.com/BurakYagibasan"
+        "@graph": [
+          {
+            "@type": "EducationalOrganization",
+            "@id": "https://yagibasan-capital.de/#organization",
+            "name": "Yagibasan Capital",
+            "alternateName": "Yagibasan Capital – Strategic Financial Mentoring",
+            "slogan": "Werte für Generationen",
+            "url": "https://yagibasan-capital.de/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://yagibasan-capital.de/YAGIBASAN_CAPITAL_Gesamtes_Logo_Verlauf_HighRes.png"
+            },
+            "description": "Finanzielle Bildung, Budgetstruktur und langfristiger Vermögensaufbau auf Augenhöhe: Yagibasan Capital begleitet Arbeitnehmer und Einsteiger von den Grundlagen über ETFs bis zur eigenen Depotstruktur.",
+            "founder": {
+              "@type": "Person",
+              "@id": "https://yagibasan-capital.de/#founder",
+              "name": "Burak Yagibasan",
+              "jobTitle": "Gründer von Yagibasan Capital"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Untere Wiesenstraße 30",
+              "postalCode": "57271",
+              "addressLocality": "Hilchenbach",
+              "addressRegion": "Nordrhein-Westfalen",
+              "addressCountry": "DE"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "office@yagibasan-capital.de",
+              "telephone": "+49-157-53698917",
+              "contactType": "customer support",
+              "availableLanguage": ["de"]
+            },
+            "knowsAbout": [
+              "Finanzielle Bildung",
+              "Langfristiger Vermögensaufbau",
+              "Budgetplanung und Notgroschen",
+              "Weltweite ETFs",
+              "Einzelaktien und Dividenden",
+              "Inflation und Zinseszins",
+              "Strategische Finanzplanung"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Yagibasan Capital Angebote",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "name": "Starter",
+                  "description": "Basis-Finanzwissen, Excel-Budgetplaner und regelmäßiger E-Mail-Newsletter.",
+                  "price": "0",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Premium (Monatlich)",
+                  "description": "Einblicke in Einzelaktien-Käufe, Dividendenkalender, Strategie-Updates und Premium Q&A.",
+                  "price": "20",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Premium (Jährlich)",
+                  "description": "Jahreszugang zu Premium-Inhalten, Dividendenkalender, Strategie-Updates und Q&A.",
+                  "price": "200",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "1:1 Mentoring (16-Modul-System)",
+                  "description": "Individuelle 1:1 Betreuung, Depotstrukturierung und Begleitung in vier Phasen inklusive 100-Euro-Challenge.",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "priceCurrency": "EUR",
+                    "valueAddedTaxIncluded": true
+                  }
+                }
+              ]
+            },
+            "sameAs": [
+              "https://www.instagram.com/yagibasancapital/",
+              "https://x.com/BurakYagibasan"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://yagibasan-capital.de/#website",
+            "url": "https://yagibasan-capital.de/",
+            "name": "Yagibasan Capital",
+            "description": "Finanzielle Bildung und langfristiger Vermögensaufbau mit Weitblick: Yagibasan Capital schafft Werte für heute und für kommende Generationen.",
+            "inLanguage": "de-DE",
+            "publisher": {
+              "@id": "https://yagibasan-capital.de/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://yagibasan-capital.de/#webpage",
+            "url": "https://yagibasan-capital.de/",
+            "name": "Yagibasan Capital – Werte für Generationen",
+            "description": "Finanzielle Bildung, Depot-Einblick, Inflationsrechner, Vermögens-Check, Budgetplaner, Premium-Mitgliedschaft und 1:1 Mentoring von Burak Yagibasan.",
+            "inLanguage": "de-DE",
+            "isPartOf": {
+              "@id": "https://yagibasan-capital.de/#website"
+            },
+            "about": {
+              "@id": "https://yagibasan-capital.de/#organization"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://yagibasan-capital.de/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Brauche ich finanzielles Vorwissen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolut nicht! Jeder fängt mal an. Wir bauen dein Wissen von Grund auf gemeinsam auf. Du lernst Schritt für Schritt, wie du dein Geld planst und anfängst zu investieren."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ist das hier Anlageberatung?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nein. Ich biete keine Anlageberatung an. Ich teile hier meinen eigenen, echten Weg, meine Erfahrungen und meine Strategien mit dir – völlig transparent, damit du daraus lernen kannst."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was genau beinhaltet die Premium Mitgliedschaft?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Du siehst exakt, welche Einzelaktien ich wann kaufe, erhältst Einblick in meinen monatlichen Dividendenkalender und bekommst tiefergehende Strategie-Updates zu meinen Entscheidungen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie viel Startkapital brauche ich?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vermögensaufbau funktioniert auch mit kleinen Beträgen. Du kannst bereits ab 25 € oder 50 € im Monat einen Sparplan einrichten. Wichtig ist nur, dass du anfängst."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Für wen ist das 1:1 Mentoring gedacht?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Für alle, die keine Zeit für Trial-and-Error haben. Wenn du eine Abkürzung suchst, um dein Fundament fehlerfrei aufzustellen und eine maßgeschneiderte Strategie für deinen Alltag brauchst."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Gibt es eine Mindestlaufzeit für Premium?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nein. Du kannst die Premium-Mitgliedschaft ganz flexibel testen und sie ist jederzeit monatlich kündbar. Keine versteckten Fallen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche Märkte und Assets handelst du?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Mein Kernfundament (Core) besteht aus weltweiten ETFs. Dazu kommen als Satelliten ausgewählte Einzelaktien (Fokus auf starke Cashflows & Dividenden) sowie ein kleiner Teil Bitcoin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie läuft das Erstgespräch ab?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Völlig entspannt und kostenlos. Wir lernen uns kurz kennen, schauen wo du aktuell stehst und prüfen, ob mein Mentoring für deine aktuelle Situation überhaupt Sinn macht."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -69,7 +236,88 @@
 	<noscript>
 		Bitte aktiviere JavaScript in deinem Browser, um Yagibasan Capital zu nutzen.
 	</noscript>
-	<div id="root"></div>
+	<div id="root">
+		<header>
+			<p>Yagibasan Capital – Werte für Generationen</p>
+			<h1>Yagibasan Capital – Finanzielle Bildung &amp; 1:1 Mentoring: Über Geld spricht man nicht? Über Geld spricht man!</h1>
+			<p>Schön, dass du hier bist. Willkommen bei Yagibasan Capital. Jeder fängt mal an – ganz egal, ob du neu in der Finanzwelt bist oder dein Depot bereits läuft, hier bist du genau richtig. Lass uns das Thema Finanzen gemeinsam, ehrlich und vor allem transparent angehen. Ich dokumentiere hier offen meinen eigenen Weg in die finanzielle Unabhängigkeit.</p>
+		</header>
+
+		<main>
+			<section id="about">
+				<h2>Der Gründer: Mein Name ist Burak</h2>
+				<p>Ich bin der Gründer von Yagibasan Capital. Ich bin heute nicht hier, um dir zu erzählen, dass ich auf einer Yacht in Dubai sitze. Ich posiere nicht vor geleasten Sportwagen und verspreche keine Krypto-Wunder über Nacht.</p>
+				<p>Und ja, ich bin Angestellter – genau wie die meisten, die diese Zeilen lesen. Ich kenne den Wecker am Morgen, die Abzüge auf dem Gehaltszettel und das Gefühl, wie die Inflation deine harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
+				<p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Nicht durch Glück oder riskante Wetten, sondern durch konsequente Entscheidungen, klare Regeln und ein Verständnis dafür, wie Geld langfristig arbeitet.</p>
+			</section>
+
+			<section id="saeulen">
+				<h2>Wie wir vorgehen: Meine 3 Säulen</h2>
+				<p>Vermögensaufbau ist kein Hexenwerk und keine Glückssache. Es ist ein klarer, entspannter Weg, der auf drei einfachen, logischen Schritten basiert:</p>
+				<ul>
+					<li><strong>1. Das Fundament:</strong> Bevor wir investieren, räumen wir auf. Wir filtern unnötige Ausgaben, optimieren dein Budget und bauen ein starkes Mindset auf.</li>
+					<li><strong>2. Dein Notgroschen:</strong> Wir bauen dir eine Rücklage auf, die dir den Rücken freihält, damit du nachts ruhig schlafen kannst.</li>
+					<li><strong>3. Das Wachstum:</strong> Erst wenn die Basis steht, lassen wir dein Geld mit weltweiten ETFs als Motor und gezielten Einzelaktien langfristig für dich arbeiten.</li>
+				</ul>
+			</section>
+
+			<section id="mission">
+				<h2>Meine Mission</h2>
+				<p>Mein Ziel ist es, die Aktionärsquote in Deutschland von aktuell ca. 20 % deutlich zu steigern. Komplett unabhängig, ehrlich und auf Augenhöhe – ohne Provisionen, ohne versteckte Gebühren und ohne Banken im Hintergrund.</p>
+			</section>
+
+			<section id="depot">
+				<h2>Mein Depot-Einblick &amp; Strategie</h2>
+				<p>Transparente Portfolio-Aufteilung (100 % echtes Geld): 55 % Welt-ETFs, 37 % Einzelaktien und 8 % Bitcoin. Mein Ziel: Coast FIRE am 12. Juni 2030 und Full FIRE Status 2036.</p>
+			</section>
+
+			<section id="rechner">
+				<h2>Die nackte Mathematik: Das kostet dich das Warten &amp; Vermögens-Check</h2>
+				<p>Interaktiver Vergleich zwischen Kaufkraftverlust durch Inflation und langfristigem Vermögensaufbau im Depot sowie ein Vermögens-Check zur Einordnung der eigenen Sparrate und Entwicklung.</p>
+			</section>
+
+			<section id="mentoring">
+				<h2>Das 16-Modul Mentoring</h2>
+				<p>Intensive 1:1 Betreuung für deinen individuellen Vermögensaufbau in vier Phasen: 01 Das Fundament &amp; Der Neustart, 02 Die Basics &amp; Dein ETF-Sparplan, 03 Der Turbo (Deine ersten Einzelaktien), 04 Absicherung &amp; Deine Freiheit – inklusive der 100-Euro-Challenge zum Aufdecken versteckter Fixkosten.</p>
+			</section>
+
+			<section id="pakete">
+				<h2>Wähle deinen Weg – Pakete, Newsletter &amp; Budgetplaner</h2>
+				<ul>
+					<li><strong>Starter (0 € dauerhaft):</strong> Basis-Finanzwissen, kostenloser Excel-Budgetplaner und regelmäßiger E-Mail-Newsletter.</li>
+					<li><strong>Premium (20 € / Monat oder 200 € im ersten Jahr):</strong> Live-Einblicke in Einzelaktien-Käufe, voller Dividendenkalender, regelmäßige Strategie-Updates und Premium Q&amp;A.</li>
+					<li><strong>1:1 Mentoring (Auf Anfrage):</strong> Inklusive Premium Zugang, komplettes 16-Modul System, individuelle Depotstrukturierung und direkter 1:1 Support.</li>
+				</ul>
+			</section>
+
+			<section id="faq">
+				<h2>Häufige Fragen (FAQ)</h2>
+				<dl>
+					<dt>Brauche ich finanzielles Vorwissen?</dt>
+					<dd>Absolut nicht! Jeder fängt mal an. Wir bauen dein Wissen von Grund auf gemeinsam auf. Du lernst Schritt für Schritt, wie du dein Geld planst und anfängst zu investieren.</dd>
+					<dt>Ist das hier Anlageberatung?</dt>
+					<dd>Nein. Ich biete keine Anlageberatung an. Ich teile hier meinen eigenen, echten Weg, meine Erfahrungen und meine Strategien mit dir – völlig transparent, damit du daraus lernen kannst.</dd>
+					<dt>Was genau beinhaltet die Premium Mitgliedschaft?</dt>
+					<dd>Du siehst exakt, welche Einzelaktien ich wann kaufe, erhältst Einblick in meinen monatlichen Dividendenkalender und bekommst tiefergehende Strategie-Updates zu meinen Entscheidungen.</dd>
+					<dt>Wie viel Startkapital brauche ich?</dt>
+					<dd>Vermögensaufbau funktioniert auch mit kleinen Beträgen. Du kannst bereits ab 25 € oder 50 € im Monat einen Sparplan einrichten. Wichtig ist nur, dass du anfängst.</dd>
+					<dt>Für wen ist das 1:1 Mentoring gedacht?</dt>
+					<dd>Für alle, die keine Zeit für Trial-and-Error haben. Wenn du eine Abkürzung suchst, um dein Fundament fehlerfrei aufzustellen und eine maßgeschneiderte Strategie für deinen Alltag brauchst.</dd>
+					<dt>Gibt es eine Mindestlaufzeit für Premium?</dt>
+					<dd>Nein. Du kannst die Premium-Mitgliedschaft ganz flexibel testen und sie ist jederzeit monatlich kündbar. Keine versteckten Fallen.</dd>
+					<dt>Welche Märkte und Assets handelst du?</dt>
+					<dd>Mein Kernfundament (Core) besteht aus weltweiten ETFs. Dazu kommen als Satelliten ausgewählte Einzelaktien (Fokus auf starke Cashflows &amp; Dividenden) sowie ein kleiner Teil Bitcoin/Krypto.</dd>
+					<dt>Wie läuft das Erstgespräch ab?</dt>
+					<dd>Völlig entspannt und kostenlos. Wir lernen uns kurz kennen, schauen wo du aktuell stehst und prüfen, ob mein Mentoring für deine aktuelle Situation überhaupt Sinn macht.</dd>
+				</dl>
+			</section>
+		</main>
+
+		<footer>
+			<p>Yagibasan Capital – Burak Yagibasan, Untere Wiesenstraße 30, 57271 Hilchenbach | Kontakt: office@yagibasan-capital.de | Telefon: 0157 53 69 89 17</p>
+			<p>Keine Anlageberatung, Anlagevermittlung oder Finanzportfolioverwaltung im Sinne des KWG, WpIG und der GewO (§ 34f/h).</p>
+		</footer>
+	</div>
 	<!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
