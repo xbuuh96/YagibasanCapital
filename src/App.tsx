@@ -904,7 +904,7 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(224,147,122,0.12)_0%,transparent_60%)] pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
           <div className="w-full lg:w-5/12">
-            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6">Die Realität</h2>
+            <h2 className="text-[#e0937a] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6">Der Gründer</h2>
             <h3 className="mb-8 sm:mb-10 leading-[1.3]">
               <span className="block text-[#efe7dd] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 drop-shadow-md">Mein Name ist Burak.</span>
               <span className="block text-[#e0937a] font-serif-elegant italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl drop-shadow-[0_0_12px_rgba(224,147,122,0.3)]">Ich bin der Gründer von Yagibasan Capital.</span>
@@ -916,10 +916,10 @@ export default function App() {
             </div>
           </div>
           <div className="w-full lg:w-7/12 space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light pt-2">
-            <p>Und ja, ich bin Angestellter - Genau wie die meisten, die diese Zeilen lesen. Ich kenne den Wecker am Morgen, die Abzüge auf dem Gehaltszettel und das Gefühl, wie die Inflation unsere harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
+            <p>Und ja, ich bin Angestellter - genau wie die meisten, die diese Zeilen lesen. Ich kenne den Wecker am Morgen, die Abzüge auf dem Gehaltszettel und das Gefühl, wie die Inflation deine harte Arbeit jeden Tag ein Stück mehr entwertet.</p>
             <p>Ich war an exakt dem Punkt, an dem du heute vielleicht stehst. Ich habe nach den traditionellen Regeln gespielt: Geh zur Schule, leiste gute Arbeit, spar dein Geld auf dem Tagesgeldkonto. Bis ich gemerkt habe, dass man so auf der Stelle tritt.</p>
             <p>Ich habe mir ohne Erbe und neben meinem Vollzeitjob ein finanzielles Fundament aufgebaut, das mich heute objektiv in die Top 1 % der Selfmade-Investoren meiner Altersklasse in Deutschland bringt. Nicht durch Glück oder riskante Wetten, sondern durch konsequente Entscheidungen, klare Regeln und ein Verständnis dafür, wie Geld langfristig arbeitet.</p>
-            <p>Weil mein Weg dorthin am Anfang durch viel "Ausprobieren" unnötig teuer und nervenaufreibend war, möchte ich meine Erfahrung heute mit dir teilen. Damit du direkt von Beginn an entspannt und richtig an die Sache rangehst.</p>
+            <p>Weil mein Weg dorthin am Anfang durch viel „Ausprobieren“ unnötig teuer und nervenaufreibend war, möchte ich meine Erfahrung heute mit dir teilen. Damit du direkt von Beginn an entspannt und richtig an die Sache rangehst.</p>
           </div>
         </div>
       </section>
